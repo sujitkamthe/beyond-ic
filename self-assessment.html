@@ -62,7 +62,7 @@
     <p class="section-intro">This assessment covers the core areas of engineering leadership. There are no right or wrong scores &mdash; only a snapshot of where you are now. Come back monthly. Progress is the goal, not perfection.</p>
 
     <!-- ─── PROGRESS BAR ─── -->
-    <div class="progress-label" id="progressLabel">0 of 35 (0%)</div>
+    <div class="progress-label" id="progressLabel">0 of 67 (0%)</div>
     <div class="progress-bar-container">
       <div class="progress-bar-fill" id="progressFill"></div>
     </div>
@@ -96,6 +96,74 @@
         <input type="checkbox" id="sa-05">
         <label for="sa-05">I make reversible decisions quickly instead of waiting for perfect information</label>
       </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-found-6">
+        <label for="sa-found-6">I know roughly how my time splits across enabling / strategic / hands-on / learning &mdash; and it's not 80% coding</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-found-7">
+        <label for="sa-found-7">I protect focus time on my calendar for leadership work (MR reviews, 1:1 prep, stakeholder updates)</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-found-8">
+        <label for="sa-found-8">I can name my most common emotional triggers and I pause before responding when they fire</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Know Your Style
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Know Your Style <small>(<a href="leadership-styles.html">explore in Know Your Style</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-style-1">
+        <label for="sa-style-1">I can name my default leadership style and at least one blind spot it creates</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-style-2">
+        <label for="sa-style-2">I adapt how I delegate and give feedback depending on the person's style &mdash; I don't lead everyone the same way</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-style-3">
+        <label for="sa-style-3">I know which styles are over- or under-represented on my team and where that creates friction</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-style-4">
+        <label for="sa-style-4">I have deliberately practised a growth-edge behaviour (complementary to my default style) in the last month</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: First 90 Days
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>First 90 Days <small>(<a href="first-90-days.html">explore in First 90 Days</a>)</small>
+        <br><small style="font-weight: 400; color: var(--text-muted);">For any new role or team transition &mdash; applies whenever you are starting fresh.</small>
+      </h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-90d-1">
+        <label for="sa-90d-1">When starting a new role, I spend the first two weeks listening before proposing changes</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-90d-2">
+        <label for="sa-90d-2">I can name the team's top 3 strengths and top 3 problems &mdash; with evidence, not just impressions</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-90d-3">
+        <label for="sa-90d-3">I know who my key stakeholders are and what each one cares about most</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-90d-4">
+        <label for="sa-90d-4">My first initiative in a new role is visible, achievable in 2&ndash;4 weeks, broadly felt, and low-risk</label>
+      </div>
     </div>
   </section>
 
@@ -121,11 +189,15 @@
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="sa-34">
-        <label for="sa-34">When I propose a change, I diagnose resistance before pushing harder</label>
+        <label for="sa-34">When I propose a change, I diagnose resistance (overload / clarity / motivation / confidence / disagreement / habit) before pushing harder</label>
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="sa-35">
         <label for="sa-35">I regularly question whether our current processes and practices are still the best approach</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-comm-6">
+        <label for="sa-comm-6">Significant decisions are captured in written artifacts (design docs, ADRs, RFCs) &mdash; not just meeting notes or Slack threads</label>
       </div>
     </div>
   </section>
@@ -158,67 +230,21 @@
         <input type="checkbox" id="sa-10">
         <label for="sa-10">I check observability dashboards proactively, not just during incidents</label>
       </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       CHECKLIST: People & Culture
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="fade-in">
-    <div class="checklist">
-      <h4>People &amp; Culture <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
       <div class="checklist-item">
-        <input type="checkbox" id="sa-11">
-        <label for="sa-11">I ask prompting questions instead of giving direct answers when mentoring</label>
+        <input type="checkbox" id="sa-tech-6">
+        <label for="sa-tech-6">Our CI/CD pipeline gives pass/fail within ~10 minutes and a broken pipeline is treated as a blocking issue</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="sa-12">
-        <label for="sa-12">I conduct monthly growth check-ins (not just status updates) with people I mentor</label>
+        <input type="checkbox" id="sa-tech-7">
+        <label for="sa-tech-7">Our team has documented architecture principles and conventions &mdash; not just tribal knowledge</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="sa-13">
-        <label for="sa-13">I give specific positive feedback at least weekly</label>
+        <input type="checkbox" id="sa-tech-8">
+        <label for="sa-tech-8">A new joiner can go from repo clone to running the application locally in under 30 minutes</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="sa-14">
-        <label for="sa-14">I give specific constructive feedback when needed, within 24 hours</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-15">
-        <label for="sa-15">In dev huddles, I create space for quieter voices and speak less than 30% of the time</label>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       CHECKLIST: Ownership & Accountability
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="fade-in">
-    <div class="checklist">
-      <h4>Ownership &amp; Accountability <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-16">
-        <label for="sa-16">I respond to team questions within 2 hours, even if just to redirect</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-17">
-        <label for="sa-17">I hold team members accountable when standards slip &mdash; directly and respectfully</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-18">
-        <label for="sa-18">Initiatives I start get completed or explicitly handed off with context</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-19">
-        <label for="sa-19">I push for equal contribution &mdash; not just from the usual volunteers</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="sa-20">
-        <label for="sa-20">I delegate meaningful work with the 5 Cs (Context, Clarity, Confidence, Checkpoints, Consequences)</label>
+        <input type="checkbox" id="sa-tech-9">
+        <label for="sa-tech-9">Security is part of our review habit (input validation, secrets, parameterized queries, authorization checks)</label>
       </div>
     </div>
   </section>
@@ -250,6 +276,156 @@
       <div class="checklist-item">
         <input type="checkbox" id="sa-25">
         <label for="sa-25">I set clear &ldquo;meets&rdquo; vs &ldquo;exceeds&rdquo; expectations at the start of each performance cycle</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-delivery-6">
+        <label for="sa-delivery-6">The team estimates its own work &mdash; estimates are never imposed by people outside the team</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-delivery-7">
+        <label for="sa-delivery-7">I can report at least one DORA metric (deployment frequency is the easiest) and I look at its trend each month</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-delivery-8">
+        <label for="sa-delivery-8">My stakeholder updates follow a 3-part structure (what's done / what's next / what's at risk)</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Consulting Mindset
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Consulting Mindset <small>(<a href="consulting-mindset.html">explore in Consulting Mindset</a>)</small>
+        <br><small style="font-weight: 400; color: var(--text-muted);">Applies if you lead a team in a services / consulting context.</small>
+      </h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-consulting-1">
+        <label for="sa-consulting-1">The client team could operate what we have built without us for at least a day &mdash; and I have evidence, not hope</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-consulting-2">
+        <label for="sa-consulting-2">We run weekly showcases or written updates the client can forward to their executives without edits</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-consulting-3">
+        <label for="sa-consulting-3">My client hears about risks from me before they hear about them from their users, their board, or anyone else</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-consulting-4">
+        <label for="sa-consulting-4">Every major technical choice passes the &ldquo;six months after we leave&rdquo; test &mdash; the client can hire for it, maintain it, evolve it</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-consulting-5">
+        <label for="sa-consulting-5">Client engineers co-author ADRs, review our MRs, and lead work with us as backup &mdash; not the other way round</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: People & Culture
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>People &amp; Culture <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-11">
+        <label for="sa-11">I ask prompting questions instead of giving direct answers when mentoring</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-12">
+        <label for="sa-12">I conduct monthly growth check-ins (not just status updates) with people I mentor</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-13">
+        <label for="sa-13">I give specific positive feedback at least weekly</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-14">
+        <label for="sa-14">I give specific constructive feedback when needed, within 24 hours</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-15">
+        <label for="sa-15">In dev huddles, I create space for quieter voices and speak less than 30% of the time</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-people-6">
+        <label for="sa-people-6">My 1:1s follow a 3-part structure (their agenda / my feedback / growth) &mdash; they are never status updates</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-people-7">
+        <label for="sa-people-7">In my last quarterly review cycle, no one on my team was surprised by their assessment</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-people-8">
+        <label for="sa-people-8">I have had at least one hard conversation this quarter that I was tempted to avoid &mdash; and I did not avoid it</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Team Health
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Team Health <small>(<a href="team-health.html">explore in Team Health</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-team-1">
+        <label for="sa-team-1">People on my team volunteer mistakes in retros &mdash; they are not only discovered when they become incidents</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-team-2">
+        <label for="sa-team-2">I can point to a recent moment where I responded to bad news with curiosity, not blame</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-team-3">
+        <label for="sa-team-3">I actively watch for burnout signals (cynicism, withdrawal, quality drop, silent overwork) &mdash; and act on them early</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-team-4">
+        <label for="sa-team-4">When two team members are in conflict, I address it within days &mdash; not weeks or months</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-team-5">
+        <label for="sa-team-5">I model sustainable pace &mdash; my working hours, after-hours messages, and weekend behaviour match what I expect from the team</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Ownership & Accountability
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Ownership &amp; Accountability <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-16">
+        <label for="sa-16">I respond to team questions within 2 hours, even if just to redirect</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-17">
+        <label for="sa-17">I hold team members accountable when standards slip &mdash; directly and respectfully</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-18">
+        <label for="sa-18">Initiatives I start get completed or explicitly handed off with context</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-19">
+        <label for="sa-19">I push for equal contribution &mdash; not just from the usual volunteers</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-20">
+        <label for="sa-20">I delegate meaningful work with the 5 Cs (Context, Clarity, Confidence, Checkpoints, Consequences)</label>
       </div>
     </div>
   </section>
@@ -292,11 +468,12 @@
     <div class="tip info-tip">
       <span class="tip-icon">&#128161;</span>
       <div>
-        <p><strong>Scoring Guide</strong></p>
-        <p><strong>30&ndash;35:</strong> You're operating with strong leadership habits across the board.</p>
-        <p><strong>22&ndash;29:</strong> Solid foundation &mdash; pick your weakest area and focus there for 2 weeks.</p>
-        <p><strong>12&ndash;21:</strong> You're likely still spending most energy on IC work. Re-read <a href="foundations.html">Foundations</a> and <a href="people-culture.html">People &amp; Culture</a>.</p>
-        <p><strong>0&ndash;11:</strong> Start with one section. Pick 3 items from this list and commit to them this week. Progress, not perfection.</p>
+        <p><strong>Scoring Guide (67 items total)</strong></p>
+        <p><strong>55&ndash;67:</strong> You're operating with strong leadership habits across the board. Keep investing in the areas that still feel weakest.</p>
+        <p><strong>40&ndash;54:</strong> Solid foundation &mdash; pick your weakest section and focus there for 2 weeks. Most leaders live here for years, and that is fine.</p>
+        <p><strong>20&ndash;39:</strong> You're likely still spending most energy on IC work. Re-read <a href="foundations.html">Foundations</a> and <a href="people-culture.html">People &amp; Culture</a> &mdash; the shift compounds from there.</p>
+        <p><strong>0&ndash;19:</strong> Start with one section. Pick 3 items and commit to them this week. Progress, not perfection.</p>
+        <p style="margin-top: 12px;"><em>If you lead in a product company rather than consulting, skip the Consulting Mindset section and adjust your total accordingly (from 67 to 62).</em></p>
       </div>
     </div>
   </section>
