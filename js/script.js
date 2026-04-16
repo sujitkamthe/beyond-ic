@@ -46,6 +46,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ─── Mobile Dropdown Toggle ───
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      if (window.innerWidth <= 860) {
+        e.preventDefault();
+        e.stopPropagation();
+        var dropdown = toggle.closest('.nav-dropdown');
+        var wasOpen = dropdown.classList.contains('open');
+        // Close all dropdowns first
+        document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+        if (!wasOpen) dropdown.classList.add('open');
+      }
+    });
+  });
+});
+
 // ─── Nav Scroll Effect ───
 window.addEventListener('scroll', function() {
   var nav = document.getElementById('navbar');
@@ -56,10 +73,13 @@ window.addEventListener('scroll', function() {
 (function setActiveNav() {
   var currentPage = document.body.getAttribute('data-current-page');
   if (!currentPage) return;
-  document.querySelectorAll('.nav-links a').forEach(function(link) {
+  document.querySelectorAll('.nav-links a, .nav-dropdown-menu a').forEach(function(link) {
     var href = link.getAttribute('href');
     if (href === currentPage || (currentPage === 'index' && href === 'index.html')) {
       link.classList.add('active');
+      // Also mark parent dropdown as active
+      var dropdown = link.closest('.nav-dropdown');
+      if (dropdown) dropdown.classList.add('active');
     }
   });
 })();

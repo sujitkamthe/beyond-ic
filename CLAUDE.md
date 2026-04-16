@@ -32,6 +32,15 @@ This is a **learning resource**, not a performance review. The tone must be:
 - Use "common pitfall" instead of "anti-pattern" when describing human behavior
 - Use "better approach" instead of "good pattern"
 
+### The "Why" Principle — This Is Critical
+Every practice, framework, and convention in this guide MUST explain WHY it exists — not just WHAT to do. New leaders need to understand the reasoning so they can:
+1. **Teach it to their team** — "We do X because Y" is 10x more effective than "We do X because the guide says so"
+2. **Adapt it to context** — When you understand why, you know when to bend the rule and when to hold firm
+3. **Defend it to stakeholders** — "We invest in testing because last quarter we spent 140 hours on rework" beats "best practice says so"
+4. **Build genuine buy-in** — People follow rules they understand; they resist rules that feel arbitrary
+
+When writing or editing content: for every framework, convention, or recommendation, include the reasoning. What problem does it solve? What happens when teams skip it? What is the cost of NOT doing this? The "why" is what transforms this guide from a checklist into a learning resource that builds real leadership judgment.
+
 ## Design System
 - **Theme:** "The Scholarly Leader" — deep navy accents, white backgrounds, serif body text
 - **Fonts:** Lora (serif, body text) + Inter (sans-serif, headings/UI) via Google Fonts

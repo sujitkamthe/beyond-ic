@@ -138,6 +138,39 @@ nav.scrolled { box-shadow: var(--shadow); }
   display: none; background: none; border: none; cursor: pointer;
   font-size: 1.4rem; color: var(--accent); padding: 4px;
 }
+
+/* ─── Nav Dropdowns ─── */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown-toggle {
+  text-decoration: none; color: var(--text-secondary);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.82rem;
+  transition: var(--transition); font-weight: 500; white-space: nowrap;
+  cursor: pointer; display: flex; align-items: center; gap: 4px;
+  background: none; border: none; font-family: inherit;
+}
+.nav-dropdown-toggle::after {
+  content: '▾'; font-size: 0.7em; opacity: 0.6;
+}
+.nav-dropdown-toggle:hover { background: var(--accent-pale); color: var(--accent); text-decoration: none; }
+.nav-dropdown.active > .nav-dropdown-toggle { background: var(--accent-pale); color: var(--accent); font-weight: 600; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  padding: 6px 0; min-width: 220px; z-index: 1001;
+  margin-top: 4px;
+}
+.nav-dropdown:hover > .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block; padding: 8px 16px; color: var(--text-secondary);
+  font-size: 0.82rem; font-weight: 500; text-decoration: none;
+  transition: var(--transition); white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--accent-pale); color: var(--accent); text-decoration: none; }
+.nav-dropdown-menu a.active { color: var(--accent); font-weight: 600; background: var(--accent-pale); }
+
 .theme-toggle {
   background: var(--bg-alt); border: 1px solid var(--border); cursor: pointer;
   padding: 5px 10px; border-radius: 6px; font-size: 0.9rem;
@@ -154,6 +187,16 @@ nav.scrolled { box-shadow: var(--shadow); }
     border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
   }
   .hamburger { display: block; }
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown-toggle { width: 100%; justify-content: space-between; }
+  .nav-dropdown-menu {
+    position: static; box-shadow: none; border: none;
+    padding: 0 0 0 16px; margin-top: 0; min-width: auto;
+    display: none;
+  }
+  .nav-dropdown.open > .nav-dropdown-menu { display: block; }
+  .nav-dropdown:hover > .nav-dropdown-menu { display: none; }
+  .nav-dropdown.open:hover > .nav-dropdown-menu { display: block; }
 }
 
 /* ─── PAGE LAYOUT ─── */
