@@ -58,6 +58,7 @@ multiplier-playbook/
   communication-change.html   — Pyramid Principle, Executive Presence, Managing Up, Influence Without Authority, Driving Change, Status Quo, Written Artifacts
   first-90-days.html          — Listen/Learn/Act framework, Week 1 Essentials, Common Traps (standalone page)
   technical-excellence.html   — Clean Code (multi-language), Standards, Testing, Observability, Security, Tooling
+  consulting-mindset.html     — Consulting Mindset, Client Communication, Knowledge Transfer, Ramp-Up, Technical Decisions, Building Trust, Common Traps
   people-culture.html         — Delegation, Mentoring, Feedback, Ownership, Huddles, Hard Conversations, Hiring, Feedback Tracking, Underperformance, 1:1s
   team-health.html            — Psychological Safety, Remote Leadership, Burnout Prevention, Conflict Mediation (standalone page)
   delivery-execution.html     — Delivery, Incidents, Tech Debt, Stakeholders, Expectations, DORA Metrics, Estimation, Planning Artifacts
