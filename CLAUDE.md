@@ -44,7 +44,8 @@ This is a **learning resource**, not a performance review. The tone must be:
 ```
 multiplier-playbook/
   index.html                  — Home page with "Choose Your Path" grid
-  foundations.html             — Mindshift, Problem Solving, Decisions, Time Management, Self-Awareness, Personality Types
+  foundations.html             — Mindshift, Problem Solving, Decisions, Time Management, Self-Awareness
+  leadership-styles.html      — 4 Leadership Styles, Self-Discovery, Growth Direction, Maturity Spectrum, Team Composition, Adaptive Leadership
   communication-change.html   — Pyramid Principle, Executive Presence, Managing Up, Influence Without Authority, Driving Change, Status Quo, Written Artifacts
   first-90-days.html          — Listen/Learn/Act framework, Week 1 Essentials, Common Traps (standalone page)
   technical-excellence.html   — Clean Code (multi-language), Standards, Testing, Observability, Security, Tooling
