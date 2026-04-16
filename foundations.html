@@ -45,7 +45,8 @@
       <li><a href="#problem-solver">2. Think Like a Problem Solver</a></li>
       <li><a href="#decision-making">3. Decision Making &amp; Effective Moderation</a></li>
       <li><a href="#driving-change">4. Driving Change</a></li>
-      <li><a href="#status-quo">5. Challenging the Status Quo</a></li>
+      <li><a href="#communication">5. Communicate with Structure and Presence</a></li>
+      <li><a href="#status-quo">6. Challenging the Status Quo</a></li>
     </ul>
   </div>
 
@@ -704,10 +705,158 @@
   <div class="section-divider"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SECTION 5: CHALLENGING THE STATUS QUO
+       SECTION 5: COMMUNICATE WITH STRUCTURE AND PRESENCE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="communication">
+    <span class="section-num">Section 5</span>
+    <h2>Communicate with Structure and Presence</h2>
+    <p class="section-intro">The ability to communicate clearly &mdash; to stakeholders, executives, and your own team &mdash; is what separates leaders who have influence from those who only have opinions. Great ideas that can't be articulated clearly don't get adopted. This section covers the thinking frameworks that make your communication sharp, structured, and confident.</p>
+
+    <h3>The Pyramid Principle</h3>
+    <p>Developed by Barbara Minto at McKinsey, this is the single most powerful framework for structured communication. The core idea: <strong>lead with the answer, then support it.</strong></p>
+
+    <div class="framework">
+      <h4>How It Works</h4>
+      <ol>
+        <li><strong>Start with the conclusion.</strong> State your recommendation, finding, or key message first. Don't build up to it &mdash; lead with it. Your audience's attention is highest at the start.</li>
+        <li><strong>Group supporting arguments.</strong> Organise your supporting points into 2-4 logical groups. Each group should be a distinct reason or category that backs your conclusion.</li>
+        <li><strong>Support each group with evidence.</strong> Under each argument, provide the data, examples, or reasoning that makes it credible.</li>
+      </ol>
+      <p style="margin-top: 16px;"><strong>Why this matters:</strong> Most engineers communicate bottom-up &mdash; they walk through their process, the things they tried, the details they found, and eventually arrive at a conclusion. Executives and stakeholders don't have time for the journey. They want the answer first, then they'll ask for details if needed.</p>
+    </div>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Bottom-Up (How most engineers communicate)</h5>
+        <p>"So we looked at the database performance, and there are some slow queries, and we also noticed the connection pool is undersized, and then we found that the index on the orders table is missing, and we think we can fix it in about 3 days, and the impact would be a 40% improvement in page load times."</p>
+      </div>
+      <div class="better">
+        <h5>Pyramid (Lead with the answer)</h5>
+        <p>"We can improve page load times by 40% with 3 days of work. The root cause is database performance &mdash; specifically: a missing index on the orders table, an undersized connection pool, and several unoptimised queries. Here's the plan..."</p>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Practice tip:</strong> Before your next stakeholder update, write your key message in one sentence. If you can't, you haven't finished thinking. The Pyramid Principle forces clarity of thought before clarity of speech.</p>
+    </div>
+
+    <h3>MECE Thinking</h3>
+    <p>MECE (Mutually Exclusive, Collectively Exhaustive) is a framework for structuring analysis so that nothing overlaps and nothing is missed. It's how consultants and great leaders break down problems.</p>
+
+    <div class="framework">
+      <h4>The Two Rules</h4>
+      <ul>
+        <li><strong>Mutually Exclusive:</strong> Each category is distinct. No item belongs in two categories. This prevents double-counting and confusion.</li>
+        <li><strong>Collectively Exhaustive:</strong> All categories together cover the entire problem space. Nothing falls through the cracks.</li>
+      </ul>
+      <p style="margin-top: 12px;"><strong>Example:</strong> You're asked "Why are we missing sprint deadlines?" A MECE breakdown might be:</p>
+      <ol>
+        <li><strong>Estimation issues</strong> (we underestimate complexity)</li>
+        <li><strong>Scope issues</strong> (scope creeps mid-sprint)</li>
+        <li><strong>Execution issues</strong> (blockers, context switching, skill gaps)</li>
+        <li><strong>Process issues</strong> (unclear acceptance criteria, review bottlenecks)</li>
+      </ol>
+      <p>These four categories don't overlap, and together they cover every possible reason. You can now investigate each one systematically instead of chasing anecdotes.</p>
+    </div>
+
+    <h3>Issue &rarr; Impact &rarr; Action</h3>
+    <p>When you need to raise a problem &mdash; to a stakeholder, in a meeting, or in a Slack message &mdash; use this three-part structure. It's concise, clear, and gives the listener everything they need to respond.</p>
+
+    <div class="framework">
+      <h4>The Formula</h4>
+      <ol>
+        <li><strong>Issue:</strong> What's happening? (one sentence, factual)</li>
+        <li><strong>Impact:</strong> Why does it matter? Who is affected and how? (translate to business terms)</li>
+        <li><strong>Action:</strong> What are you doing about it, or what do you need? (be specific)</li>
+      </ol>
+      <p style="margin-top: 12px;"><strong>Example:</strong></p>
+      <p><strong>Issue:</strong> "The payment API is returning intermittent 500 errors under load."</p>
+      <p><strong>Impact:</strong> "This affects approximately 5% of checkout attempts during peak hours, which translates to roughly 200 failed transactions per day."</p>
+      <p><strong>Action:</strong> "We've identified the root cause as a connection pool limit. A fix is in progress and we'll deploy by end of day. No action needed from you, but I wanted you to be aware."</p>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#9889;</span>
+      <p><strong>Why this matters:</strong> Most people raise issues without quantifying impact or stating what they need. The listener is left thinking "How bad is this? What should I do?" Issue-Impact-Action removes that ambiguity.</p>
+    </div>
+
+    <h3>Situation &rarr; Complication &rarr; Resolution</h3>
+    <p>SCR is a storytelling framework for proposals, escalations, and persuasive communication. It works because it mirrors how humans naturally process information: context, tension, relief.</p>
+
+    <div class="framework">
+      <h4>The Three Parts</h4>
+      <ol>
+        <li><strong>Situation:</strong> What is the current state? (everyone agrees on this &mdash; it's shared context)</li>
+        <li><strong>Complication:</strong> What changed, or what's the problem? (this creates the tension that demands a response)</li>
+        <li><strong>Resolution:</strong> What should we do? (your recommendation)</li>
+      </ol>
+      <p style="margin-top: 12px;"><strong>Example for proposing a tech investment:</strong></p>
+      <p><strong>Situation:</strong> "Our test suite runs in 45 minutes. We run it on every MR and deploy twice a day."</p>
+      <p><strong>Complication:</strong> "Developers wait for CI feedback before they can merge, and the queue backs up in the afternoon. We estimated this costs the team 3-4 hours of idle waiting per day across all developers."</p>
+      <p><strong>Resolution:</strong> "I propose we invest 2 days in parallelising the test suite. Based on similar optimisations, we expect to cut CI time to under 15 minutes. The ROI pays for itself within the first week."</p>
+    </div>
+
+    <h3>Executive Presence</h3>
+    <p>Executive presence isn't about charisma or seniority &mdash; it's about how you show up when the stakes are high. It's a set of learnable behaviours.</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Speaking in Leadership Forums</h4>
+        <ul>
+          <li><strong>Prepare your top 3 points</strong> before the meeting. If you're asked to speak, you won't scramble.</li>
+          <li><strong>Lead with the headline.</strong> "The release is on track with one risk I want to flag." Then details.</li>
+          <li><strong>Be concise.</strong> In executive settings, less is more. State your point in 30 seconds. Elaborate only if asked.</li>
+          <li><strong>Say "I don't know, but I'll find out"</strong> when you don't have the answer. Guessing destroys credibility faster than admitting a gap.</li>
+          <li><strong>Use numbers.</strong> "We reduced build time by 60%" lands harder than "We made builds faster."</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Handling Tough Questions</h4>
+        <ul>
+          <li><strong>Don't rush.</strong> Take a breath before answering. A 2-second pause signals confidence, not uncertainty.</li>
+          <li><strong>Reframe if needed.</strong> "That's a great question. The way I'd frame it is..." lets you steer toward where you have clarity.</li>
+          <li><strong>Acknowledge what you don't know.</strong> "I'd want to verify the exact numbers before committing to that. Can I follow up by EOD?"</li>
+          <li><strong>Bridge to what you do know.</strong> "I'm not sure about X specifically, but what I can tell you is Y, which is related."</li>
+          <li><strong>Follow up.</strong> If you commit to getting back with an answer, actually do it. Reliability builds presence over time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Demo Confidence</h4>
+        <ul>
+          <li><strong>Know your audience.</strong> Executives care about outcomes and risks. Skip the technical deep-dive unless asked.</li>
+          <li><strong>Tell a story.</strong> "Before this feature, users had to do X in 5 steps. Now it's 1 click." Impact, not implementation.</li>
+          <li><strong>Prepare for failure.</strong> Have a backup plan if the demo breaks. "Let me show you the flow on these screenshots while we investigate" is better than freezing.</li>
+          <li><strong>End with what's next.</strong> "Next sprint we'll add X. The risk we're watching is Y."</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Building Confidence Over Time</h4>
+        <ul>
+          <li><strong>Start with written updates.</strong> If live communication feels intimidating, begin with weekly 3-bullet emails. Build the muscle.</li>
+          <li><strong>Dry-run with a peer.</strong> Before a big meeting, do a 5-minute practice run. "Does this make sense? Am I missing anything?"</li>
+          <li><strong>Observe leaders you admire.</strong> Notice how they structure their communication, handle tough questions, and project confidence. It's a skill, not a personality trait.</li>
+          <li><strong>Record yourself</strong> (optional). Watching yourself present reveals filler words, pacing issues, and body language habits you'd never notice otherwise.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip purple-tip">
+      <span class="tip-icon">&#128218;</span>
+      <p><strong>Go deeper:</strong> Read <em>The Pyramid Principle</em> by Barbara Minto for the definitive guide to structured communication. For executive presence, <em>Executive Presence</em> by Sylvia Ann Hewlett breaks down the components into concrete, practicable skills.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6: CHALLENGING THE STATUS QUO
        ═══════════════════════════════════════════════════════════ -->
   <section class="fade-in" id="status-quo">
-    <span class="section-num">Section 5</span>
+    <span class="section-num">Section 6</span>
     <h2>Challenging the Status Quo</h2>
     <p class="section-intro">The best teams are never satisfied with "this is how we have always done it." Great leaders cultivate a habit of questioning assumptions and looking for better ways &mdash; not for the sake of change, but because the world around us is evolving fast.</p>
 

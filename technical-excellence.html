@@ -227,6 +227,114 @@
       </div>
     </div>
 
+    <!-- ── Design Principles: The "Why" Behind Good Code ── -->
+    <h3>Design Principles: Understanding the "Why"</h3>
+    <p>Most engineers know the names of these principles. Fewer understand <em>why</em> they exist &mdash; what specific pain they prevent. As a leader, your job is to teach the "why" so the team applies principles from understanding, not obedience.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Tell, Don't Ask &mdash; Why it prevents fragile code
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>The principle:</strong> Tell objects what to do rather than asking for their state and deciding externally.</p>
+          <p><strong>Why it matters:</strong> When you query an object's state, make a decision, and then tell it what to do &mdash; you've spread the logic across two places. If the rules change, you have to find every place that queries and decides. When the object owns the decision, the logic lives in one place and can't fall out of sync.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Ask, then act (fragile)</h5>
+              <p><code>if (account.getBalance() >= amount) { account.setBalance(account.getBalance() - amount); }</code></p>
+              <p style="margin-top:6px;">The withdrawal logic is outside the entity. Every caller must remember to check the balance first. Someone will forget.</p>
+            </div>
+            <div class="better">
+              <h5>Tell (robust)</h5>
+              <p><code>account.withdraw(amount);</code></p>
+              <p style="margin-top:6px;">The entity validates internally and throws if insufficient. The rule lives in one place. It can never be bypassed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Rich Domain Model &mdash; Why "anemic entities" cost you
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>The problem:</strong> Entities with only getters and setters, and services that contain all the business logic. This is called an "anemic domain model" and it's one of the most common and costly patterns in enterprise code.</p>
+          <p><strong>Why it matters:</strong> When business rules live in services instead of entities, the same rule gets reimplemented in multiple services. Rules drift apart. Testing is harder because you have to test the service-entity interaction rather than the entity in isolation. The codebase grows in complexity without growing in clarity.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Anemic (rules scattered in services)</h5>
+              <p><code>// In OrderService:<br>order.setStatus(CONFIRMED);<br>order.setConfirmedAt(now());<br>order.setConfirmedBy(user);</code></p>
+              <p style="margin-top:6px;">Three fields must be set together for consistency. Any caller that forgets one creates a bug. The entity can't protect its own invariants.</p>
+            </div>
+            <div class="better">
+              <h5>Rich (entity owns its behaviour)</h5>
+              <p><code>order.confirm(user);</code></p>
+              <p style="margin-top:6px;">The entity sets all required fields atomically, validates preconditions, and can never be left in an inconsistent state.</p>
+            </div>
+          </div>
+          <p style="margin-top:12px;"><strong>The test:</strong> If your entities have only getters and setters, and your services are full of <code>entity.getX() &rarr; process &rarr; entity.setX()</code> chains, the domain model is anemic. Move the behaviour to where the data lives.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Fail Fast &mdash; Why silent failures are expensive
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>The principle:</strong> Detect and report errors as early as possible. Don't let bad data travel through the system.</p>
+          <p><strong>Why it matters:</strong> A null value that slips through silently corrupts data three layers down and causes a bug that takes hours to trace. The same null caught at the entry point takes seconds to diagnose. The further bad data travels, the harder and more expensive it is to debug.</p>
+          <p><strong>In practice:</strong> Validate constructor arguments immediately. Use <code>Objects.requireNonNull()</code> for required parameters. Prefer exceptions over returning null or default values for exceptional conditions. Never swallow exceptions silently.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Composition Over Inheritance &mdash; Why deep hierarchies break
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>The principle:</strong> Favour "has-a" relationships over "is-a" when reusing behaviour.</p>
+          <p><strong>Why it matters:</strong> Inheritance creates tight coupling between parent and child. A change to the parent can break every child in unexpected ways (the "fragile base class" problem). Deep hierarchies (3+ levels) become nearly impossible to reason about. Composition lets you mix and match behaviours without this coupling.</p>
+          <p><strong>The test:</strong> If a class inherits from another purely to reuse code (not because it truly "is a" specialisation), refactor to composition. Inject the behaviour as a dependency instead of inheriting it.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Law of Demeter &mdash; Why long call chains are a warning sign
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>The principle:</strong> An object should only talk to its immediate friends, not reach through other objects to access their internals.</p>
+          <p><strong>Why it matters:</strong> <code>order.getCustomer().getAddress().getCity()</code> means your code is coupled to the internal structure of Order, Customer, AND Address. If any of those structures change, your code breaks. If you instead call <code>order.getShippingCity()</code>, only Order needs to know the internal structure.</p>
+          <p><strong>In MR reviews:</strong> When you see chains of 3+ method calls reaching through objects, suggest a wrapper method that encapsulates the traversal. This makes the code more resilient to structural changes.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Abstractions &mdash; Why missing and leaky ones are costly
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Missing abstractions</strong> mean business logic operates directly on raw DTOs or infrastructure. When the same mapping or validation logic appears in 5 different services, you have 5 places to maintain and 5 places to introduce inconsistencies.</p>
+          <p><strong>Leaky abstractions</strong> mean implementation details escape through your API. When your service returns JPA entities instead of domain types, or when your API response mirrors database column names, changing your database means changing your API contract.</p>
+          <p><strong>What to look for in reviews:</strong></p>
+          <ul>
+            <li>Services working directly with DTOs instead of domain entities</li>
+            <li>Controllers orchestrating 5+ service calls (missing a facade)</li>
+            <li>Database types (Timestamp, FK IDs) appearing in API responses</li>
+            <li>The same mapping logic duplicated across multiple files</li>
+            <li>Direct third-party library usage scattered everywhere instead of wrapped in a service</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Elevating MR Reviews ── -->
     <h3>Elevating MR Reviews</h3>
 
