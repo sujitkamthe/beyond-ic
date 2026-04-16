@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery &amp; Execution &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="delivery-execution.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Delivery &amp; Execution</h1>
+    <p class="subtitle">Delivering with confidence, handling production issues, managing tech debt, building stakeholder trust, and setting clear expectations.</p>
+  </div>
+
+  <!-- ─── IN-PAGE TABLE OF CONTENTS ─── -->
+  <div class="page-toc">
+    <h4>On This Page</h4>
+    <ul>
+      <li><a href="#delivering-with-confidence">1. Delivering with Confidence</a></li>
+      <li><a href="#incident-management">2. Incident Management &amp; Production Discipline</a></li>
+      <li><a href="#tech-debt">3. Tech Debt as Culture, Not Hero Work</a></li>
+      <li><a href="#stakeholder-communication">4. Stakeholder Communication</a></li>
+      <li><a href="#setting-expectations">5. Setting Clear Expectations</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1: DELIVERING WITH CONFIDENCE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="delivering-with-confidence">
+    <span class="section-num">Section 1</span>
+    <h2>Delivering with Confidence</h2>
+    <p class="section-intro">Shipping features is the starting line, not the finish line. The real measure of a team is whether what they ship stays shipped &mdash; no regressions, no emergency fixes, no erosion of stakeholder trust. Confident delivery is a skill that can be built systematically.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Shipping features is the baseline. Shipping features that don't come back as bugs, that stakeholders trust, and that the team is proud of &mdash; that's the goal.</p>
+    </div>
+
+    <h3>Why Bugs Reach Production</h3>
+    <p>When bugs slip through, it is rarely because someone was careless. More often, the system around the team has gaps. Here are three common challenges and how great teams address them:</p>
+
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>Missing Domain Context</h4>
+        <p><strong>The challenge:</strong> People start building without fully understanding the business domain, the edge cases, or how the feature fits into the bigger picture. The code works, but it doesn't handle real-world scenarios.</p>
+        <p><strong>What helps:</strong> A 30-minute context walkthrough before development starts. Have someone who understands the domain walk through the "why" behind the feature, the edge cases users will hit, and the gotchas from similar past work.</p>
+      </div>
+      <div class="card">
+        <h4>Weak Test Coverage</h4>
+        <p><strong>The challenge:</strong> Tests verify that code runs without errors, but they don't verify that it does the right thing. They test the happy path and miss the edge cases that users inevitably find.</p>
+        <p><strong>What helps:</strong> Review tests with the same rigor as production code. Ask: "Would this test fail if the feature broke?" If not, it is providing false confidence. Tests should encode business expectations, not just code expectations.</p>
+      </div>
+      <div class="card">
+        <h4>Rubber-Stamp Reviews</h4>
+        <p><strong>The challenge:</strong> Code reviews happen, but they don't catch issues. Reviewers skim the diff, leave a quick "LGTM," and move on. The review process gives the appearance of quality without the substance.</p>
+        <p><strong>What helps:</strong> Use an MR checklist that reviewers work through. Make reviewers co-responsible for the quality of what they approve. A good review should take time &mdash; if every review takes two minutes, the process is not working.</p>
+      </div>
+    </div>
+
+    <h3>Sprint Hygiene Checklist</h3>
+    <p>Confident delivery doesn't happen by accident. It comes from disciplined habits throughout the sprint. Here is a rhythm that great teams follow:</p>
+
+    <div class="framework">
+      <h4>Sprint Rhythm</h4>
+      <ol>
+        <li><strong>Sprint Start:</strong> Acceptance criteria are clear for every ticket. Domain context is shared. Everyone knows what "done" looks like before they write a single line of code.</li>
+        <li><strong>Day 3 Check:</strong> Any ticket that has not moved in 2 days gets a check-in. Not to pressure &mdash; but to surface blockers early. "Is something in the way?" is a better question than "Why isn't this done?"</li>
+        <li><strong>Mid-Sprint Pulse:</strong> Are we on track? What are the risks? If something is slipping, communicate to stakeholders now &mdash; not at the end of the sprint when surprises are far more damaging.</li>
+        <li><strong>"Almost Done" Check:</strong> Is the MR open? Do the tests pass? Is it on staging? "Almost done" is not done. Walk through the last mile together to prevent features from lingering at 90% completion.</li>
+        <li><strong>Definition of Done:</strong> Code + tests + review + staging verification = done. Not before. This is the team's shared contract, and it protects everyone &mdash; the developer, the reviewer, and the stakeholders.</li>
+      </ol>
+    </div>
+
+    <h3>The 30% Rule</h3>
+    <div class="framework">
+      <h4>Raise It Early, Not Late</h4>
+      <p>If you are 30% into a task and something feels wrong &mdash; the approach is more complex than expected, the requirements are unclear, the scope is bigger than estimated &mdash; raise it <strong>now</strong>, not at 80%.</p>
+      <p>At 30%, the team has options: adjust scope, change approach, get help, or re-estimate. At 80%, the options narrow to "push through" or "miss the deadline" &mdash; neither of which is good.</p>
+      <p>Early transparency is not a weakness. It is one of the strongest signals of professional maturity. Great teams build a culture where raising risks early is celebrated, not penalised.</p>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Track sprint progress proactively.</strong> Check the board daily. Read open MRs. Notice when things go quiet. "How's it going?" in standup is hoping, not tracking. Real tracking means looking at the work, not just listening to updates.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2: INCIDENT MANAGEMENT & PRODUCTION DISCIPLINE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="incident-management">
+    <span class="section-num">Section 2</span>
+    <h2>Incident Management &amp; Production Discipline</h2>
+    <p class="section-intro">Production issues are inevitable. What separates mature teams from the rest is not the absence of incidents &mdash; it is how quickly they respond, how honestly they diagnose, and how effectively they prevent recurrence.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>How a team handles production issues reveals its true maturity. The goal isn't zero incidents &mdash; it's fast response, real root causes, and safety nets that prevent recurrence.</p>
+    </div>
+
+    <h3>Severity Framework</h3>
+    <p>Not all production issues demand the same urgency. A clear severity framework helps the team triage quickly and avoids both over-reacting to minor issues and under-reacting to critical ones:</p>
+
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>Severity</th>
+          <th>Definition</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Critical</strong></td>
+          <td>Data loss, security breach, or core user flow completely broken</td>
+          <td>Drop everything. All hands on deck until resolved.</td>
+        </tr>
+        <tr>
+          <td><strong>High</strong></td>
+          <td>Major feature broken for a subset of users</td>
+          <td>Fix same day. Communicate impact to stakeholders immediately.</td>
+        </tr>
+        <tr>
+          <td><strong>Medium</strong></td>
+          <td>Partial breakage with a workaround available</td>
+          <td>Fix this sprint. Document the workaround for affected users.</td>
+        </tr>
+        <tr>
+          <td><strong>Low</strong></td>
+          <td>Cosmetic issue or edge case affecting very few users</td>
+          <td>Add to backlog. Prioritise alongside other work.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Incident Response Playbook</h3>
+    <p>When a production issue hits, clarity of process matters more than individual heroics. Here is a six-step framework that great teams follow:</p>
+
+    <div class="framework">
+      <h4>6 Steps to Handle Any Incident</h4>
+      <ol>
+        <li><strong>Acknowledge within 15 minutes.</strong> Someone owns the incident. They may not have the fix yet, but they have confirmed "we see it, we are on it." Silence is the worst response.</li>
+        <li><strong>Diagnose.</strong> Check logs, metrics, and recent deployments. Was anything deployed in the last few hours? Correlation is not causation, but it is the best starting point.</li>
+        <li><strong>Communicate to stakeholders.</strong> Don't wait until you have the fix. Stakeholders need to know: what is happening, who is affected, and what you are doing about it. Update them every 30 minutes during critical incidents.</li>
+        <li><strong>Fix or mitigate.</strong> The goal is to stop the bleeding first, then fix the root cause. Feature flags, rollbacks, and configuration changes can buy time for a proper fix. Do not rush a code fix under pressure if a simpler mitigation exists.</li>
+        <li><strong>Verify the fix.</strong> After deploying the fix, monitor for at least 30 minutes. Watch the metrics. Confirm the issue is resolved, not just masked. A fix that reintroduces a different problem is worse than no fix at all.</li>
+        <li><strong>Communicate resolution.</strong> Tell stakeholders the issue is resolved, what happened, and what you are doing to prevent recurrence. Close the loop completely.</li>
+      </ol>
+    </div>
+
+    <h3>Blameless Post-Mortem</h3>
+    <p>After every significant incident, the team should run a blameless post-mortem. The goal is learning, not blame. The five questions below get to the heart of what happened and what to do about it:</p>
+
+    <div class="framework">
+      <h4>5 Post-Mortem Questions</h4>
+      <ol>
+        <li><strong>What happened?</strong> A clear, factual timeline. What broke, when, and what was the sequence of events?</li>
+        <li><strong>What was the impact?</strong> How many users were affected? For how long? What was the business cost?</li>
+        <li><strong>What was the root cause?</strong> Use the 5 Whys technique. Keep asking "why" until you reach the systemic cause, not the surface symptom.</li>
+        <li><strong>Why didn't we catch this sooner?</strong> Were there missing tests, missing alerts, missing review steps? What gap in our safety nets allowed this through?</li>
+        <li><strong>What safety nets will we add?</strong> Every post-mortem should produce at least one actionable safety net &mdash; with a specific owner and a specific deadline. If the post-mortem doesn't produce action items, it was just a meeting.</li>
+      </ol>
+      <p><strong>The key rule:</strong> Every post-mortem produces at least one actionable safety net with an owner and deadline. A post-mortem without action items is a missed opportunity.</p>
+    </div>
+
+    <h3>Building Safety Nets</h3>
+    <p>Safety nets are the defences your team builds to prevent known failure modes from recurring. They come in four categories, and a mature team invests in all of them:</p>
+
+    <div class="card-grid two-col">
+      <div class="card" style="border-left: 3px solid var(--success);">
+        <h4>Test Safety Nets</h4>
+        <p>Every bug fix should include a test that would have caught the bug. This is not optional &mdash; it is how the team's safety net grows over time. Each incident makes the test suite stronger, not just the code.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--info);">
+        <h4>Monitoring Safety Nets</h4>
+        <p>If users found the issue before your alerts did, you have a monitoring gap. Add an alert for that specific failure mode. Over time, your monitoring should catch issues before users even notice them.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--warning);">
+        <h4>Process Safety Nets</h4>
+        <p>Add a review checklist item, institute a domain walkthrough, or require staging verification for specific types of changes. Process safety nets catch the issues that code and monitoring miss &mdash; the human-factor failures.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--purple);">
+        <h4>Code Safety Nets</h4>
+        <p>Input validation, circuit breakers, feature flags, graceful degradation. These are defences built into the code itself. When things go wrong (and they will), code safety nets limit the blast radius and give the team time to respond.</p>
+      </div>
+    </div>
+
+    <h3>What Stakeholders Need During Incidents</h3>
+    <div class="framework">
+      <h4>Understanding Stakeholder Frustration</h4>
+      <p>Stakeholders are not annoyed by bugs &mdash; they understand that software has issues. What frustrates them is:</p>
+      <ul>
+        <li><strong>Silence:</strong> They hear about a problem from a customer, then hear nothing from the team. Even "we are investigating" is better than silence.</li>
+        <li><strong>Recurrence:</strong> The same type of issue happens again. This signals that the team is not learning from incidents or investing in prevention.</li>
+        <li><strong>Surprise:</strong> They find out about a problem late, or hear about it from someone other than the team. Stakeholders value early heads-up over polished updates.</li>
+        <li><strong>No prevention plan:</strong> The issue is fixed, but there is no explanation of what will prevent it from happening again. Stakeholders need to see that the team is building defences, not just fighting fires.</li>
+      </ul>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Look for the pattern.</strong> If the same type of issue keeps happening, you are fixing symptoms, not causes. Categorise incidents quarterly &mdash; the pattern reveals the systemic fix needed. Three similar incidents in different features usually point to one shared root cause.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3: TECH DEBT AS CULTURE, NOT HERO WORK
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="tech-debt">
+    <span class="section-num">Section 3</span>
+    <h2>Tech Debt as Culture, Not Hero Work</h2>
+    <p class="section-intro">Every team has tech debt. The question is not whether you have it &mdash; it is whether you have a sustainable system for managing it. The teams that handle tech debt best are the ones where it is everyone's responsibility, not one person's heroic side project.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>The leader's job is not to resolve tech debt personally &mdash; it's to build a culture where tech debt gets resolved naturally. If you fix everything yourself, the moment you stop, it piles up again.</p>
+    </div>
+
+    <h3>4 Structures That Make Tech Debt Everyone's Job</h3>
+    <p>Instead of relying on one person's initiative, build structures that make tech debt resolution a normal part of how the team works:</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>The 20% Rule</h4>
+        <p>Reserve approximately 20% of every sprint's capacity for technical health work &mdash; tech debt, refactoring, tooling improvements, test coverage. This is not a luxury; it is an investment.</p>
+        <p><strong>Framing for stakeholders:</strong> "We reserve capacity for reliability work. This is the investment that prevents the production issues and slow delivery that cost us trust and rework time."</p>
+      </div>
+      <div class="card">
+        <h4>1 Item Per Person Per Sprint</h4>
+        <p>Set the expectation that every team member resolves at least one tech debt item per sprint. It can be small &mdash; removing a feature toggle, adding a missing test, fixing a lint rule, improving an error message. Small, consistent efforts compound dramatically over time.</p>
+      </div>
+      <div class="card">
+        <h4>Tech Debt Fridays</h4>
+        <p>Dedicate a regular block (Friday afternoon works well) for collaborative tech debt work. Make it a learning opportunity, not a chore. Pair up, tackle something together, share what you learned. This builds shared ownership and makes the invisible work visible.</p>
+      </div>
+      <div class="card">
+        <h4>Champions for Big Items</h4>
+        <p>For larger tech debt initiatives (migrating a library, rearchitecting a module, upgrading a major dependency), assign one person as the champion. They own the plan and the progress &mdash; not all the work. They break it into manageable pieces, track progress, and coordinate contributions from the rest of the team.</p>
+      </div>
+    </div>
+
+    <h3>The Boy Scout Rule</h3>
+    <div class="framework">
+      <h4>Leave the Code Better Than You Found It</h4>
+      <p>Every MR is an opportunity to improve the codebase, even in small ways. Rename a confusing variable. Extract a duplicated block. Add a missing null check. Remove dead code. Improve an error message.</p>
+      <p>No single change is dramatic, but the compound effect is transformative. Over weeks and months, the codebase gradually gets cleaner, more readable, and more maintainable &mdash; without ever needing a dedicated "cleanup sprint."</p>
+      <p>The key is consistency: make it a habit, not a heroic effort. When every MR leaves the code slightly better, the entire team becomes a force for continuous improvement.</p>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Frame tech debt for stakeholders in business terms:</strong> "Investing in quality prevents the production issues that cost us trust and rework time." Stakeholders respond to business risk and opportunity, not technical jargon. "We need to refactor the service layer" means nothing to them. "This investment will help us ship features faster with fewer bugs" means everything.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4: STAKEHOLDER COMMUNICATION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="stakeholder-communication">
+    <span class="section-num">Section 4</span>
+    <h2>Stakeholder Communication</h2>
+    <p class="section-intro">Communication with stakeholders is one of the most impactful skills a leader can develop &mdash; and one of the most undertrained. It is not about impressing people with technical depth. It is about building the trust that lets your team do its best work.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Stakeholders don't need to understand your code. They need to trust that you'll deliver, communicate early if things change, and speak their language.</p>
+    </div>
+
+    <h3>The Trust Equation</h3>
+    <p>Stakeholder trust is built on four pillars. Weakness in any one of them undermines the others:</p>
+
+    <div class="card-grid two-col">
+      <div class="card" style="border-left: 3px solid var(--info);">
+        <h4>Credibility</h4>
+        <p>Give accurate estimates. When you don't know something, say so &mdash; and explain how you will find out. Stakeholders respect "I need to investigate this and will have an answer by Thursday" far more than a confident guess that turns out wrong.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--success);">
+        <h4>Reliability</h4>
+        <p>Meet your deadlines or raise risks early. If you consistently deliver what you promise, stakeholders give you more autonomy. If you consistently miss without warning, they start micromanaging &mdash; not because they want to, but because they feel they have to.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--warning);">
+        <h4>Transparency</h4>
+        <p>Report blockers immediately. Share trade-offs openly. Don't hide bad news hoping it will resolve itself. Stakeholders can handle problems; what they cannot handle is surprises. A risk raised early is a manageable situation. A risk revealed late is a crisis.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--purple);">
+        <h4>Empathy</h4>
+        <p>Understand their priorities, their pressures, their constraints. Propose alternatives, not just "no." When you push back on a request, pair it with "here is what we can do instead." Empathy turns "us vs. them" into "we are solving this together."</p>
+      </div>
+    </div>
+
+    <h3>The 3-Part Status Update</h3>
+    <div class="framework">
+      <h4>Simple, Clear, Actionable</h4>
+      <p>Whether it is a written update or a verbal one, every stakeholder update should cover three things:</p>
+      <ol>
+        <li><strong>What's done:</strong> 1&ndash;2 sentences on progress since the last update. Focus on outcomes, not activities.</li>
+        <li><strong>What's next:</strong> 1&ndash;2 sentences on what the team will focus on next. Set clear expectations.</li>
+        <li><strong>What's at risk:</strong> Anything that might affect the timeline, scope, or quality &mdash; and what you are doing about it.</li>
+      </ol>
+      <p><strong>Example:</strong> "The user dashboard is complete and on staging for review. Next, we are starting the reporting module, targeting end of next week. One risk: the API integration is taking longer than expected due to incomplete documentation from the vendor. We have scheduled a call with them for Wednesday and will update you Thursday on the revised timeline."</p>
+    </div>
+
+    <h3>Translating Tech to Business</h3>
+    <p>Stakeholders do not need to understand the technical details. They need to understand the impact. Here is how to translate common engineering work into language stakeholders care about:</p>
+
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>What You're Doing (Technical)</th>
+          <th>What They Hear (Business Impact)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Refactoring the service layer</td>
+          <td>"We're restructuring the code so we can add features faster with fewer bugs."</td>
+        </tr>
+        <tr>
+          <td>Migrating the test framework</td>
+          <td>"We're improving our testing tools so we catch bugs before users see them."</td>
+        </tr>
+        <tr>
+          <td>Database migration</td>
+          <td>"Users might see brief slowness during the migration window. Here's our plan to minimise impact and our rollback strategy if anything goes wrong."</td>
+        </tr>
+        <tr>
+          <td>Paying down tech debt</td>
+          <td>"We're investing in reliability to prevent the kind of issues we saw last month. This reduces the risk of production incidents and rework."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>The 1:1 Stakeholder Meeting</h3>
+    <div class="framework">
+      <h4>5 Steps to a Productive Stakeholder Conversation</h4>
+      <ol>
+        <li><strong>Open with their priorities:</strong> Start by asking what is most important to them right now. This shows empathy and ensures you address what matters most to them, not just what matters most to you.</li>
+        <li><strong>Update with the 3-part structure:</strong> What's done, what's next, what's at risk. Keep it concise. Resist the urge to go into technical detail unless they ask.</li>
+        <li><strong>Align on sequencing:</strong> If there are competing priorities, discuss trade-offs openly. "We can do A or B this sprint, but not both. Here's what I recommend and why."</li>
+        <li><strong>Ask what you're missing:</strong> "Is there anything coming up that I should know about? Any context that would change our priorities?" This catches blindspots and signals that you value their perspective.</li>
+        <li><strong>Commit to specific follow-ups:</strong> End with clear action items. "I will send you the revised estimate by Friday. Can you confirm the priority ranking by Wednesday?" Specific beats vague every time.</li>
+      </ol>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Start small.</strong> If stakeholder communication feels daunting, start with a brief written weekly update. A few bullet points sent every Friday builds rhythm and trust before you ever need a face-to-face meeting. Practice translating tech to business with peers before stakeholder meetings. The "no surprises" rule &mdash; stakeholders should never hear about a risk or issue for the first time in a formal review &mdash; is the single most important principle to internalise.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 5: SETTING CLEAR EXPECTATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="setting-expectations">
+    <span class="section-num">Section 5</span>
+    <h2>Setting Clear Expectations</h2>
+    <p class="section-intro">Clarity is one of the most underrated leadership tools. When people know exactly what is expected of them, they can focus on doing great work instead of guessing whether they are on the right track. Vague expectations breed anxiety, misalignment, and frustration on all sides.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>When expectations are vague, everyone thinks they're exceeding them. Clarity is a kindness &mdash; it removes ambiguity and lets people focus on growth instead of guessing.</p>
+    </div>
+
+    <h3>The Impact Ladder</h3>
+    <p>A clear framework for what "meets" and "exceeds" expectations looks like helps everyone &mdash; the leader, the team member, and the organization &mdash; have honest, productive conversations about performance:</p>
+
+    <div class="card-grid three-col">
+      <div class="card" style="border-left: 3px solid var(--danger);">
+        <h4>Below Expectations</h4>
+        <p>Did not deliver committed work on time. Quality issues required significant rework. Needed hand-holding on tasks that should be within capability. Did not participate meaningfully in reviews or team activities.</p>
+        <p>This is not a judgement of the person &mdash; it is a signal that something needs to change: clearer guidance, better support, adjusted scope, or a direct conversation about the gap.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--info);">
+        <h4>Meets Expectations</h4>
+        <p>Delivered committed work on time and with quality. Wrote meaningful tests. Participated actively in code reviews. Responded to questions and requests promptly. Communicated blockers early.</p>
+        <p><strong>This is the baseline, and it is a good place to be.</strong> Meeting expectations consistently is the foundation that everything else is built on. It should be acknowledged and respected.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--success);">
+        <h4>Exceeds Expectations</h4>
+        <p>Everything in "meets" plus: drove measurable improvement beyond assigned work. Championed a new practice that the team adopted. Mentored someone who visibly grew. Identified and fixed a systemic problem. Improved developer experience. Led an initiative from idea to completion.</p>
+        <p><strong>Exceeding requires impact beyond your immediate tasks.</strong> It is about making the team or the system better, not just doing your own work faster.</p>
+      </div>
+    </div>
+
+    <div class="key-insight">
+      <h4>Key Distinction</h4>
+      <p>Exceeding expectations requires impact beyond your immediate tasks. Working weekends to finish committed stories isn't exceeding &mdash; it may mean the estimation was wrong. Exceeding means lifting the team, improving the system, or solving problems nobody assigned to you.</p>
+    </div>
+
+    <h3>The Expectation-Setting Conversation</h3>
+    <p>At the start of every performance cycle, have an explicit conversation about expectations. This removes guesswork and creates a shared reference point for later discussions:</p>
+
+    <div class="framework">
+      <h4>4 Steps at Cycle Start</h4>
+      <ol>
+        <li><strong>Define "meets" explicitly:</strong> Walk through what consistent, solid performance looks like in concrete terms. What does the person need to deliver, how should they engage with the team, and what quality bar should they hit?</li>
+        <li><strong>Define "exceeds" explicitly:</strong> Be specific about what going beyond looks like. Give examples from the current context. "Exceeds" should be achievable but genuinely stretch &mdash; not just "doing meets, but more of it."</li>
+        <li><strong>Write it down together:</strong> Document the expectations so both parties can reference them later. This prevents the "that's not what I meant" conversation months later. Shared documentation is shared accountability.</li>
+        <li><strong>Check in monthly:</strong> Don't wait for the end-of-cycle review to discuss progress. Monthly check-ins let you course-correct early, celebrate progress, and adjust expectations if the context has changed.</li>
+      </ol>
+    </div>
+
+    <h3>The Evidence-Based Assessment Conversation</h3>
+    <p>One of the most delicate leadership moments is when someone self-rates as "exceeds" but the evidence shows "meets." Handled poorly, this conversation damages trust. Handled well, it becomes a powerful growth moment:</p>
+
+    <div class="framework">
+      <h4>Having the Conversation</h4>
+      <ol>
+        <li><strong>Don't argue feelings &mdash; discuss evidence.</strong> Avoid "I disagree with your self-assessment." Instead: "Let's walk through the expectations we documented and look at the evidence together."</li>
+        <li><strong>Reference the expectations document.</strong> This is why writing expectations down matters. It depersonalises the conversation. You are both looking at the same criteria and evaluating against it.</li>
+        <li><strong>Be specific about the gap.</strong> Instead of "you didn't exceed," say: "You consistently met expectations on delivery and quality, which is great. For exceeds, I'd look for something like driving an improvement that lifted the whole team &mdash; like the testing initiative you were considering. That would be a strong example."</li>
+        <li><strong>Make it forward-looking.</strong> End with a clear path: "Here is what I think would move you to 'exceeds' next cycle. Let's talk about how I can support that." The conversation should leave the person motivated, not deflated.</li>
+      </ol>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Calibration check:</strong> If everyone on the team "exceeds expectations" but the team's culture and quality haven't visibly improved, the bar needs recalibration. "Exceeds" should mean the team is measurably better because of that person's contributions. If everyone exceeds but nothing changes, the expectations are too easy.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CLOSING QUOTE ─── -->
+  <section class="fade-in">
+    <div class="quote">
+      <p>Plans are useless, but planning is indispensable.</p>
+      <div class="attribution">&mdash; Dwight D. Eisenhower</div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

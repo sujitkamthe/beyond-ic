@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Excellence &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="technical-excellence.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Technical Excellence</h1>
+    <p class="subtitle">Raising the bar on code quality, testing, observability, and engineering practices &mdash; as a leader, not just a coder.</p>
+  </div>
+
+  <!-- ─── IN-PAGE TOC ─── -->
+  <div class="page-toc">
+    <h4>In This Section</h4>
+    <ul>
+      <li><a href="#clean-code">Champion Clean Code</a></li>
+      <li><a href="#standards">Setting and Maintaining Standards</a></li>
+      <li><a href="#testing">Testing That Actually Catches Bugs</a></li>
+      <li><a href="#observability">Building an Observability Mindset</a></li>
+      <li><a href="#tools">Getting the Most from Your Tools</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: Champion Clean Code                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="clean-code" class="fade-in">
+    <span class="section-num">Section 1</span>
+    <h2>Champion Clean Code</h2>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>The gap between "code that works" and "code that's clean" is where most teams lose velocity over time. Clean code isn't a luxury &mdash; it's how you avoid drowning in complexity as the codebase grows.</p>
+    </div>
+
+    <!-- ── Modern Language Features ── -->
+    <h3>Modern Language Features</h3>
+    <p>Languages evolve, and teams that keep up write simpler, safer, more expressive code. The challenge isn't learning new features &mdash; it's building a habit of reaching for them instead of falling back on familiar patterns. Here's a framework using Java as an illustrative example; the same principle applies to whatever language your team uses.</p>
+
+    <div class="accordion">
+
+      <!-- Records -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Records &mdash; Replace Boilerplate DTOs
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p>Records let you express "this is just data" in a single line, eliminating the noise of getters, equals, hashCode, and toString that obscure intent.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Pitfall</h5>
+              <p>A 60-line class with private fields, constructor, six getters, equals, hashCode, and toString &mdash; just to carry three fields between layers.</p>
+            </div>
+            <div class="better">
+              <h5>Better Approach</h5>
+              <p><code>record OrderSummary(String orderId, BigDecimal total, Instant createdAt) {}</code> &mdash; one line, immutable, clear intent.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">&#9889;</span>
+            <p><strong>Action:</strong> Search your codebase for DTOs that are pure data carriers. Convert one to a record in your next MR and share the before/after with the team.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sealed Classes -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Sealed Classes &mdash; Express Domain Constraints in Types
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p>Sealed classes let the compiler enforce that only a known, finite set of subtypes exist. This turns runtime surprises into compile-time errors and makes domain models self-documenting.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Pitfall</h5>
+              <p>An open class hierarchy where any module can extend <code>PaymentResult</code>, leading to unexpected subtypes and fragile <code>instanceof</code> chains.</p>
+            </div>
+            <div class="better">
+              <h5>Better Approach</h5>
+              <p><code>sealed interface PaymentResult permits Approved, Declined, PendingReview {}</code> &mdash; the compiler guarantees exhaustive handling.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">&#9889;</span>
+            <p><strong>Action:</strong> Identify one place where your code uses a string or enum to represent a fixed set of outcomes. Model it with sealed types instead and discuss the tradeoffs in a team review.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern Matching -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Pattern Matching &mdash; Safer, More Readable Conditionals
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p>Pattern matching eliminates the <code>instanceof</code>-then-cast dance and makes conditional logic declarative. Combined with sealed classes, it gives you exhaustiveness checking.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Pitfall</h5>
+              <p>Chains of <code>if (obj instanceof Foo) { Foo f = (Foo) obj; ... }</code> &mdash; verbose, error-prone, and easy to forget a case.</p>
+            </div>
+            <div class="better">
+              <h5>Better Approach</h5>
+              <p><code>if (obj instanceof Foo f) { ... }</code> or <code>switch</code> expressions with pattern cases &mdash; the variable is scoped, typed, and the compiler checks coverage.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">&#9889;</span>
+            <p><strong>Action:</strong> Grep for <code>instanceof</code> in your codebase. Pick one instance and refactor it to use pattern matching. Note how much cleaner the result reads.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Virtual Threads -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Virtual Threads &mdash; Simple Concurrency for I/O-Heavy Services
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p>Virtual threads let you write straightforward blocking code that scales like async, without the complexity of reactive chains or callback hell. They're ideal for services that spend most of their time waiting on I/O.</p>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Pitfall</h5>
+              <p>A thread pool of 200 platform threads handling 2000 concurrent requests, with most threads blocked waiting on database or HTTP calls &mdash; leading to thread exhaustion and cascading timeouts.</p>
+            </div>
+            <div class="better">
+              <h5>Better Approach</h5>
+              <p>Virtual threads via <code>Executors.newVirtualThreadPerTaskExecutor()</code> &mdash; each request gets its own lightweight thread. The code reads sequentially, but scales to thousands of concurrent operations.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">&#9889;</span>
+            <p><strong>Action:</strong> Identify one I/O-heavy service in your stack. Prototype it with virtual threads and benchmark the difference. Share results with the team to build confidence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Wins -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Quick Wins &mdash; Small Features, Big Readability Gains
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p>Not every improvement requires a major refactor. These smaller language features can be adopted incrementally and improve readability immediately:</p>
+          <ul>
+            <li><strong><code>stream.toList()</code></strong> &mdash; replaces <code>.collect(Collectors.toList())</code>. Less noise, same result.</li>
+            <li><strong>Text blocks</strong> &mdash; multi-line strings without concatenation or escape characters. Great for SQL queries, JSON templates, and test fixtures.</li>
+            <li><strong>Helpful NullPointerExceptions</strong> &mdash; the JVM now tells you exactly which reference was null in a chain. Enable this and save debugging time.</li>
+          </ul>
+          <div class="pattern-grid">
+            <div class="pitfall">
+              <h5>Pitfall</h5>
+              <p>Sticking with verbose, older idioms out of habit &mdash; <code>.collect(Collectors.toList())</code>, manual string concatenation for multi-line SQL, cryptic NPE stack traces.</p>
+            </div>
+            <div class="better">
+              <h5>Better Approach</h5>
+              <p>Adopting small, zero-risk improvements incrementally. Each one is a tiny readability win; together they add up to a noticeably cleaner codebase.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">&#9889;</span>
+            <p><strong>Action:</strong> Add a "quick wins" section to your team's coding conventions doc. List three small modern idioms and encourage everyone to use them in their next MR.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+
+    <!-- ── Design Principles to Model ── -->
+    <h3>Design Principles to Model</h3>
+    <p>As a leader, you set the tone for how code is structured. These aren't theoretical ideals &mdash; they're practical principles you can champion in every review and pairing session.</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>In Service Layers</h4>
+        <ul>
+          <li><strong>Single Responsibility:</strong> Each service class owns one cohesive piece of business logic. When a class does too many things, it becomes hard to test and harder to change.</li>
+          <li><strong>No business logic in controllers:</strong> Controllers translate HTTP to method calls and back. The moment business rules leak into controllers, you lose reusability and testability.</li>
+          <li><strong>Centralized exception handling:</strong> Use a global exception handler (e.g., <code>@ControllerAdvice</code> in Spring) so error responses are consistent and individual services stay clean.</li>
+          <li><strong>Proper validation:</strong> Validate at the boundary. Use declarative validation annotations and custom validators rather than scattering <code>if</code> checks through service code.</li>
+          <li><strong>Strategy pattern over switches:</strong> When you see a growing <code>switch</code> or <code>if/else</code> chain based on type, consider whether a strategy map would make it extensible without modification.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Code Smells to Spot in Reviews</h4>
+        <ul>
+          <li><strong>God classes:</strong> A class that knows too much and does too much. If you can't describe its responsibility in one sentence, it's probably doing too many things.</li>
+          <li><strong>Primitive obsession:</strong> Using raw strings and ints where a value object (e.g., <code>EmailAddress</code>, <code>Money</code>) would add type safety and domain clarity.</li>
+          <li><strong>Feature envy:</strong> A method that spends more time interacting with another class's data than its own &mdash; a sign the logic might belong elsewhere.</li>
+          <li><strong>Dead code:</strong> Commented-out blocks, unused methods, unreachable branches. They add cognitive load and create false signals in searches.</li>
+          <li><strong>Copy-paste duplication:</strong> Two or more code blocks that are nearly identical. Extracting the common logic reduces the surface area for bugs.</li>
+          <li><strong>Serialization anti-patterns:</strong> Exposing internal entities directly as API responses, leaking database structure to consumers, or missing versioning on DTOs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── Elevating MR Reviews ── -->
+    <h3>Elevating MR Reviews</h3>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>An MR review is the most frequent teaching opportunity you have. Every review is a chance to raise someone's understanding &mdash; or a missed opportunity.</p>
+    </div>
+
+    <h4>The MR Review Checklist</h4>
+    <p>Use this as a mental framework, not a rigid form. Over time, the team internalizes these habits and the quality bar rises naturally.</p>
+
+    <div class="checklist">
+      <h4>MR Review Focus Areas</h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-naming">
+        <label for="mr-naming"><strong>Naming:</strong> Do class, method, and variable names clearly communicate intent? Would a new team member understand them without context?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-srp">
+        <label for="mr-srp"><strong>Single Responsibility:</strong> Does each class and method do one thing well? Are there methods trying to do too much?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-modern">
+        <label for="mr-modern"><strong>Modern Language Features:</strong> Could any part of this code be simplified with records, pattern matching, or other modern idioms?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-errors">
+        <label for="mr-errors"><strong>Error Handling:</strong> Are exceptions handled intentionally? Are error messages helpful for debugging? Are edge cases considered?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-tests">
+        <label for="mr-tests"><strong>Tests:</strong> Are tests present, meaningful, and covering the important scenarios &mdash; including edge cases and failure paths?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-dead">
+        <label for="mr-dead"><strong>Dead Code:</strong> Is there commented-out code, unused imports, or unreachable logic that should be removed?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-observability">
+        <label for="mr-observability"><strong>Observability:</strong> Does the change include appropriate logging, metrics, or trace annotations? Would you be able to debug this in production?</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="mr-domain">
+        <label for="mr-domain"><strong>Domain Correctness:</strong> Does the implementation actually solve the problem described in the ticket? Are business rules correctly applied?</label>
+      </div>
+    </div>
+
+    <h4>What Great MR Comments Look Like</h4>
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Weak MR Comment</h5>
+        <p>"This is wrong. Use <code>@Transactional</code>."</p>
+        <p style="margin-top: 8px; font-size: 0.82rem; color: var(--text-muted);">Tells the author <em>what</em> to do but not <em>why</em>. Feels like a command, not coaching.</p>
+      </div>
+      <div class="better">
+        <h5>Strong MR Comment</h5>
+        <p>"This method updates two tables but isn't wrapped in a transaction. If the second write fails, you'll have inconsistent data. Consider adding <code>@Transactional</code> here. Here's a good explanation of the pitfalls: [link to resource]."</p>
+        <p style="margin-top: 8px; font-size: 0.82rem; color: var(--text-muted);">Explains the risk, suggests the fix, and points to a learning resource. The author walks away understanding <em>why</em>.</p>
+      </div>
+    </div>
+
+    <div class="tip success-tip">
+      <span class="tip-icon">&#127919;</span>
+      <p><strong>Action:</strong> This week, pick one topic above. Run a 30-minute brown-bag session using examples from your own codebase. Then ask someone else to run the next one.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: Setting and Maintaining Standards            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="standards" class="fade-in">
+    <span class="section-num">Section 2</span>
+    <h2>Setting and Maintaining Standards</h2>
+
+    <div class="quote">
+      <p>The standard you walk past is the standard you accept.</p>
+      <div class="attribution">&mdash; Lt. General David Morrison</div>
+    </div>
+
+    <!-- ── Teach, Then Enforce Framework ── -->
+    <h3>Teach, Then Enforce</h3>
+    <p>Standards stick when people understand the reasoning behind them. Jumping straight to enforcement without education breeds resentment. Here is a five-step approach that builds buy-in first.</p>
+
+    <div class="framework">
+      <h4>The "Teach, Then Enforce" Framework</h4>
+      <ol>
+        <li><strong>Introduce with rationale:</strong> Explain the standard and <em>why</em> it matters. Connect it to real problems the team has experienced. People follow rules they understand.</li>
+        <li><strong>Document in a wiki:</strong> Write it down in a shared, discoverable location. If it's not written down, it's not a standard &mdash; it's a preference.</li>
+        <li><strong>Model it yourself:</strong> Adopt the standard in your own code first. Nothing undermines a standard faster than the person who introduced it ignoring it.</li>
+        <li><strong>Coach for two weeks with explanations:</strong> During the grace period, point out deviations gently and explain the reasoning again. This is teaching, not policing.</li>
+        <li><strong>Enforce after the grace period:</strong> Once the team has had time to learn and adjust, hold the line. Reference the documented standard in MR reviews: "Per our conventions..."</li>
+      </ol>
+    </div>
+
+    <!-- ── Standards Worth Setting Checklist ── -->
+    <h3>Standards Worth Setting</h3>
+    <p>Not every preference deserves to be a standard. Focus on the ones that have the highest impact on quality, velocity, and team experience.</p>
+
+    <div class="checklist">
+      <h4>High-Impact Standards</h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-mr-reviews">
+        <label for="std-mr-reviews"><strong>Meaningful MR reviews:</strong> Every MR gets a thoughtful review &mdash; not just a rubber-stamp approval. Reviewers check for correctness, clarity, and adherence to team conventions.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-tests">
+        <label for="std-tests"><strong>Tests with every MR:</strong> No feature or bug fix ships without accompanying tests. The test coverage expectation is documented and understood.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-ci">
+        <label for="std-ci"><strong>CI pipeline stays green:</strong> A red pipeline is treated as a blocking issue. The person who broke it owns fixing it before moving on.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-formatters">
+        <label for="std-formatters"><strong>Formatters enforced automatically:</strong> Code formatting is handled by tooling (Prettier, Spotless, etc.) so it never becomes an MR discussion topic.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-acceptance">
+        <label for="std-acceptance"><strong>Tickets have acceptance criteria before development:</strong> No one starts coding until the "done" criteria are clear. This prevents rework and misaligned expectations.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-slack">
+        <label for="std-slack"><strong>Team questions answered promptly:</strong> When someone asks a question in a team channel, it gets a response within a reasonable window. Silence kills collaboration.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="std-infra">
+        <label for="std-infra"><strong>Infrastructure changes via code, not console:</strong> All infra modifications go through version-controlled config (Terraform, Helm, etc.) &mdash; no manual console changes that can't be reproduced or audited.</label>
+      </div>
+    </div>
+
+    <!-- ── Stack-Specific Standards Accordion ── -->
+    <h3>Stack-Specific Standards</h3>
+    <p>These are illustrative examples organized by technology layer. Adapt them to whatever stack your team uses.</p>
+
+    <div class="accordion">
+
+      <!-- Spring Boot Services -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Spring Boot Services
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <ul>
+            <li>Use constructor injection exclusively &mdash; no field injection with <code>@Autowired</code>. It makes dependencies explicit and classes testable.</li>
+            <li>Externalize all configuration via <code>application.yml</code> profiles. No hard-coded URLs, credentials, or environment-specific values in code.</li>
+            <li>Apply consistent error response structure across all APIs using a global <code>@ControllerAdvice</code> exception handler.</li>
+            <li>Use <code>@Transactional</code> at the service layer, not the repository layer. Understand propagation behavior before annotating.</li>
+            <li>Separate API models (DTOs) from persistence entities. Never expose JPA entities directly in REST responses.</li>
+            <li>Configure health checks, readiness probes, and liveness probes for every service from day one.</li>
+            <li>Standardize logging format (structured JSON) and ensure every log entry includes a correlation/trace ID.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Frontend / Angular -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Frontend / Angular
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <ul>
+            <li>Use strict TypeScript settings (<code>strict: true</code>) &mdash; the short-term friction pays off in long-term reliability.</li>
+            <li>Follow a consistent module/feature-folder structure. New team members should be able to find any component within 30 seconds.</li>
+            <li>Write unit tests for services and complex component logic. Use integration tests for user flows.</li>
+            <li>Use reactive forms for anything beyond trivial inputs. Template-driven forms become unmanageable in complex scenarios.</li>
+            <li>Centralize HTTP interceptors for auth tokens, error handling, and retry logic. Don't scatter this across services.</li>
+            <li>Enforce linting and formatting rules (ESLint + Prettier) via pre-commit hooks. Eliminate style debates from MR reviews.</li>
+            <li>Lazy-load feature modules to keep initial bundle size small and load times fast.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Database & Migrations -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Database &amp; Migrations
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <ul>
+            <li>Use a migration tool (Flyway, Liquibase, or equivalent) for all schema changes. No manual DDL in production.</li>
+            <li>Every migration script is versioned, idempotent, and reviewed like application code.</li>
+            <li>Separate read and write models when query patterns diverge significantly from the write path.</li>
+            <li>Index intentionally based on actual query patterns, not guesswork. Review slow query logs periodically.</li>
+            <li>Never store sensitive data in plain text. Encrypt at rest and use parameterized queries exclusively &mdash; no string concatenation for SQL.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Infrastructure (K8s / Terraform) -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Infrastructure (K8s / Terraform)
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <ul>
+            <li>All infrastructure is defined in code and version-controlled. If it's not in the repo, it doesn't exist.</li>
+            <li>Use namespaces and resource limits in Kubernetes. No unbounded pods that can starve neighbors.</li>
+            <li>Define resource requests and limits for every container. Review and right-size them quarterly based on actual usage.</li>
+            <li>Standardize on a deployment strategy (rolling, blue-green, canary) and document the rollback procedure.</li>
+            <li>Store secrets in a secrets manager (Vault, AWS Secrets Manager, etc.), not in config maps or environment variables checked into source control.</li>
+            <li>Terraform state is stored remotely with locking enabled. No local state files, no manual <code>terraform apply</code> from laptops.</li>
+            <li>Every infra change goes through the same MR review process as application code.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+
+    <div class="tip">
+      <span class="tip-icon">&#128161;</span>
+      <p>Standards are not about control. They're about making the right thing the easy thing. When the standard is clear and agreed upon, people follow it naturally.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: Testing That Actually Catches Bugs           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="testing" class="fade-in">
+    <span class="section-num">Section 3</span>
+    <h2>Testing That Actually Catches Bugs</h2>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>If bugs consistently reach production, the testing strategy needs rethinking at a systemic level &mdash; not just "be more careful." The question isn't "who missed this?" but "why didn't our process catch it?"</p>
+    </div>
+
+    <!-- ── Testing Pyramid Framework ── -->
+    <h3>The Testing Pyramid, Applied</h3>
+    <p>The pyramid isn't just a diagram for conference slides. It's a practical allocation strategy for where your team's testing effort should go.</p>
+
+    <div class="framework">
+      <h4>Testing Layers</h4>
+      <ol>
+        <li><strong>Unit tests (the base &mdash; fast, many, high coverage):</strong> Test behavior, not implementation. A good unit test describes what the code should do, not how it does it. If refactoring internals breaks your tests, they're coupled too tightly.</li>
+        <li><strong>Integration tests (the middle &mdash; real dependencies):</strong> Use real databases via tools like Testcontainers, not in-memory substitutes like H2. The whole point of integration tests is verifying that your code works with the real thing. Fake databases hide real bugs.</li>
+        <li><strong>Contract tests (API boundaries):</strong> When services communicate, contract tests verify that producers and consumers agree on the shape of data. This catches breaking changes before they reach a shared environment.</li>
+        <li><strong>E2E tests (the top &mdash; critical paths only):</strong> End-to-end tests are expensive to write and maintain. Reserve them for the most critical user journeys. Keep them fast by testing happy paths and the most important failure modes, not every permutation.</li>
+      </ol>
+    </div>
+
+    <!-- ── Test Quality Standards Checklist ── -->
+    <h3>Test Quality Standards</h3>
+
+    <div class="checklist">
+      <h4>What Good Testing Looks Like</h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-behavior">
+        <label for="test-behavior"><strong>Tests check behavior, not implementation:</strong> Tests should survive internal refactors. If you rename a private method and tests break, they were testing the wrong thing.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-named">
+        <label for="test-named"><strong>Tests are named as specifications:</strong> <code>shouldReturnEmptyListWhenNoOrdersExist()</code> is a specification. <code>test1()</code> is not. Good test names are documentation.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-edge">
+        <label for="test-edge"><strong>Edge cases are covered:</strong> Null inputs, empty collections, boundary values, concurrent access, large payloads. The interesting bugs live at the edges.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-bugfix">
+        <label for="test-bugfix"><strong>Every bug fix includes a test that would have caught it:</strong> Before fixing the bug, write a test that fails. Then fix the code. This ensures the same bug never comes back.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-flaky">
+        <label for="test-flaky"><strong>Flaky tests are treated as bugs:</strong> A test that sometimes passes and sometimes fails is worse than no test &mdash; it erodes trust in the entire test suite. Fix or remove flaky tests immediately.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="test-mutation">
+        <label for="test-mutation"><strong>Mutation testing as a quality gate:</strong> Code coverage tells you what code was executed. Mutation testing tells you whether your tests actually catch mistakes. Consider tools like PIT or Stryker to measure real test strength.</label>
+      </div>
+    </div>
+
+    <!-- ── Weak vs Strong Test Patterns ── -->
+    <h3>What Makes a Test Strong?</h3>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Weak Test</h5>
+        <p>Calls the method, asserts it doesn't throw. Checks that the return value is not null. Verifies a mock was called once.</p>
+        <p style="margin-top: 8px; font-size: 0.82rem; color: var(--text-muted);">This test passes even if the logic is completely wrong. It checks that code <em>runs</em>, not that it's <em>correct</em>.</p>
+      </div>
+      <div class="better">
+        <h5>Strong Test</h5>
+        <p>Tests the happy path with specific expected outputs. Tests boundary conditions (zero, one, many). Tests error paths (invalid input, missing data). Verifies side effects (database state, events published).</p>
+        <p style="margin-top: 8px; font-size: 0.82rem; color: var(--text-muted);">This test suite would catch a real bug. Each test describes one specific behavior the system must exhibit.</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#128269;</span>
+      <p>Review tests in MRs with the same rigor as production code. Ask: "What scenario would break this? What if this input is null, empty, or enormous?"</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 4: Building an Observability Mindset            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="observability" class="fade-in">
+    <span class="section-num">Section 4</span>
+    <h2>Building an Observability Mindset</h2>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Having monitoring tools isn't the same as having an observability culture. The goal: if something goes wrong in production, the team knows within 5 minutes &mdash; from dashboards, not from users.</p>
+    </div>
+
+    <!-- ── Five Observability Practices Framework ── -->
+    <h3>Five Observability Practices</h3>
+
+    <div class="framework">
+      <h4>Building Observability Into the Team's Rhythm</h4>
+      <ol>
+        <li><strong>Morning dashboard check (5 min before standup):</strong> Make it a habit for the team to glance at key dashboards before standup. Catching anomalies early prevents them from becoming incidents. Over time, people develop intuition for what "normal" looks like.</li>
+        <li><strong>Feature = code + tests + monitoring:</strong> A feature isn't done until it's observable. Every new capability should ship with metrics, logging, and (where appropriate) alerts. Build this into your definition of done.</li>
+        <li><strong>Trace IDs across all services:</strong> When a request flows through multiple services, a shared trace ID is the thread that ties the story together. Without it, debugging distributed issues becomes guesswork.</li>
+        <li><strong>Alert hygiene &mdash; every alert must be actionable:</strong> If an alert fires and the on-call person's response is "ignore it," that alert is noise. Regularly prune alerts. Every one that remains should have a clear runbook for what to do when it fires.</li>
+        <li><strong>Post-mortem requirement:</strong> After every incident, ask: "What would have caught this sooner?" The answer often points to a missing metric, a log that should have been an alert, or a dashboard gap. Feed these findings back into the system.</li>
+      </ol>
+    </div>
+
+    <!-- ── Observability Building Blocks Cards ── -->
+    <h3>Observability Building Blocks</h3>
+
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>RED Metrics for Every Service</h4>
+        <p>The RED method gives you a universal health check for any service:</p>
+        <ul>
+          <li><strong>Rate:</strong> How many requests per second is this service handling?</li>
+          <li><strong>Error:</strong> What percentage of those requests are failing?</li>
+          <li><strong>Duration:</strong> How long are requests taking (p50, p95, p99)?</li>
+        </ul>
+        <p>If you can answer these three questions for every service, you have a solid foundation.</p>
+      </div>
+      <div class="card">
+        <h4>Structured JSON Logging</h4>
+        <p>Unstructured text logs are for reading. Structured JSON logs are for querying, filtering, and alerting at scale.</p>
+        <ul>
+          <li>Include correlation/trace IDs in every log entry</li>
+          <li>Use consistent field names across services</li>
+          <li>Log at appropriate levels (INFO for business events, WARN for recoverable issues, ERROR for failures)</li>
+          <li>Never log sensitive data (passwords, tokens, PII)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Actionable Alerts</h4>
+        <p>An alert should tell the responder three things: what is wrong, how bad is it, and what to do first.</p>
+        <ul>
+          <li>Every alert links to a runbook or playbook</li>
+          <li>Alerts fire on symptoms (error rate, latency), not causes</li>
+          <li>Set thresholds based on real baselines, not guesses</li>
+          <li>Review alert noise monthly &mdash; prune or tune anything that fires without action</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip success-tip">
+      <span class="tip-icon">&#127919;</span>
+      <p><strong>Action:</strong> Assign each team member one service to own observability for. Their goal: create a dashboard that answers "Is this service healthy?" in under 30 seconds.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 5: Getting the Most from Your Tools             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="tools" class="fade-in">
+    <span class="section-num">Section 5</span>
+    <h2>Getting the Most from Your Tools</h2>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Tools only create value when they're adopted consistently. A convention doc nobody reads is dead. A CI check nobody enables is theatre. A plugin nobody contributes to dies.</p>
+    </div>
+
+    <!-- ── Tool Adoption Playbook Framework ── -->
+    <h3>The Tool Adoption Playbook</h3>
+
+    <div class="framework">
+      <h4>Five Steps to Make Tools Stick</h4>
+      <ol>
+        <li><strong>Announce:</strong> Demo the tool to the team. Show a real example of the problem it solves and how it solves it. Don't just send a link &mdash; show it working.</li>
+        <li><strong>Link:</strong> Reference the tool in MR templates, onboarding docs, and team wikis. Make it discoverable at the moment someone needs it, not buried in a Slack thread from three months ago.</li>
+        <li><strong>Curate:</strong> Assign a rotating owner to keep the tool's documentation current. Stale docs are worse than no docs &mdash; they teach the team to stop trusting documentation.</li>
+        <li><strong>Enforce:</strong> Reference the tool and its conventions in code reviews. "Per our conventions doc, we use X here" is a gentle, repeatable way to reinforce adoption.</li>
+        <li><strong>Contribute:</strong> Encourage everyone to add or improve at least one thing per month &mdash; a new rule, a better config, an updated example. Shared ownership prevents single points of failure.</li>
+      </ol>
+    </div>
+
+    <!-- ── Tool Category Cards ── -->
+    <h3>Tools Worth Investing In</h3>
+
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>Static Analysis</h4>
+        <p>Tools like PMD, SonarQube, ESLint, or Checkstyle catch issues before they reach code review, freeing reviewers to focus on design and logic.</p>
+        <ul>
+          <li>Start with one tool and a small, opinionated rule set</li>
+          <li>Don't let choosing the "perfect" tool delay action</li>
+          <li>Integrate into CI so violations block merges</li>
+          <li>Review and tune rules quarterly &mdash; remove ones that generate noise without catching real issues</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>AI Coding Assistants</h4>
+        <p>AI tools can accelerate development, but only if the team has clear expectations about quality and review standards.</p>
+        <ul>
+          <li>Share effective prompts and patterns with the team</li>
+          <li>AI-generated code meets the same review bar as human-written code &mdash; no exceptions</li>
+          <li>Use AI for boilerplate, test generation, and documentation &mdash; not as a substitute for understanding</li>
+          <li>Discuss AI-assisted workflows openly; demystify and normalize their use</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Coding Conventions</h4>
+        <p>A living conventions document is one of the highest-leverage artifacts a team can maintain.</p>
+        <ul>
+          <li>Make conventions a living document, not a forgotten file</li>
+          <li>Link to them from MR templates and onboarding guides</li>
+          <li>Include the <em>why</em> behind each convention, not just the <em>what</em></li>
+          <li>Review and update conventions quarterly as the team evolves</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#128161;</span>
+      <p>The best time to set up static analysis was 6 months ago. The second-best time is this sprint.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

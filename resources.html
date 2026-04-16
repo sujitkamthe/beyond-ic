@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="resources.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Resources</h1>
+    <p class="subtitle">Books, videos, articles, and frameworks to deepen your engineering leadership practice. Pick the one that matches your current challenge.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1: ESSENTIAL VIDEOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="videos">
+    <h2>Essential Videos</h2>
+    <p class="section-intro">Short talks that pack a punch. Each one introduces a concept you can start applying immediately.</p>
+
+    <div class="card-grid two-col">
+
+      <div class="card">
+        <h4>Radical Candor &mdash; Kim Scott</h4>
+        <p>The framework for honest feedback without being harsh.</p>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/4yODalLQ2lM" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Turn the Ship Around &mdash; David Marquet</h4>
+        <p>How to build leaders at every level, not followers.</p>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/OqmdLcyES_Q" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>The 5 Whys &mdash; Root Cause Analysis</h4>
+        <p>The root-cause technique behind better problem solving.</p>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/SckACO-pzoM" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Psychological Safety &mdash; Amy Edmondson</h4>
+        <p>Why people don't speak up in teams and how to fix it.</p>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/LhoLuui9gX8" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2: RECOMMENDED BOOKS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="books">
+    <h2>Recommended Books</h2>
+    <p class="section-intro">You do not need to read all of these. Find the one that speaks to your current challenge and start there.</p>
+
+    <div class="card-grid three-col">
+
+      <div class="card">
+        <h4>On Leadership &amp; People</h4>
+        <ul>
+          <li><strong>Radical Candor</strong> &mdash; Kim Scott. Giving direct, caring feedback.</li>
+          <li><strong>Turn the Ship Around!</strong> &mdash; L. David Marquet. Creating leaders at every level.</li>
+          <li><strong>The Manager's Path</strong> &mdash; Camille Fournier. The IC-to-leader journey for engineers.</li>
+          <li><strong>An Elegant Puzzle</strong> &mdash; Will Larson. Systems thinking for engineering management.</li>
+          <li><strong>Dare to Lead</strong> &mdash; Bren&eacute; Brown. Courage, vulnerability, and empathy.</li>
+          <li><strong>Inside-Out Leadership</strong> &mdash; Rajiv Vij. Self-awareness as the foundation of leadership.</li>
+          <li><strong>Crucial Conversations</strong> &mdash; Patterson et al. Navigating high-stakes disagreements.</li>
+          <li><strong>The Five Dysfunctions of a Team</strong> &mdash; Patrick Lencioni. Why teams fail and how to fix it.</li>
+          <li><strong>Thanks for the Feedback</strong> &mdash; Stone &amp; Heen. How people process and receive feedback.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>On Code Quality &amp; Engineering</h4>
+        <ul>
+          <li><strong>Clean Code</strong> &mdash; Robert C. Martin. Writing maintainable code.</li>
+          <li><strong>Effective Java</strong> &mdash; Joshua Bloch. Best practices for Java.</li>
+          <li><strong>Refactoring</strong> &mdash; Martin Fowler. Systematically improving code quality.</li>
+          <li><strong>A Philosophy of Software Design</strong> &mdash; John Ousterhout. Thinking about complexity.</li>
+          <li><strong>Release It!</strong> &mdash; Michael Nygard. Building production-ready software.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>On Delivery &amp; Teams</h4>
+        <ul>
+          <li><strong>Accelerate</strong> &mdash; Forsgren, Humble &amp; Kim. The science of high-performing teams.</li>
+          <li><strong>The Phoenix Project</strong> &mdash; Gene Kim. DevOps, flow, and eliminating waste.</li>
+          <li><strong>Team Topologies</strong> &mdash; Skelton &amp; Pais. How team structure affects delivery.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3: ARTICLES & EXTERNAL LINKS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="articles">
+    <h2>Articles &amp; External Links</h2>
+    <p class="section-intro">Curated references from teams and thinkers who have thought deeply about these topics. Each link is worth bookmarking.</p>
+
+    <div class="card-grid two-col">
+
+      <div class="card">
+        <h4>Decision Making</h4>
+        <ul>
+          <li><a href="https://www.amazon.jobs/content/en/our-workplace/leadership-principles" target="_blank" style="color:var(--accent-link)">Amazon Leadership Principles</a> &mdash; origin of "Disagree and Commit"</li>
+          <li><a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions" target="_blank" style="color:var(--accent-link)">Architecture Decision Records</a> &mdash; documenting technical decisions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Code Quality &amp; Reviews</h4>
+        <ul>
+          <li><a href="https://google.github.io/eng-practices/review/" target="_blank" style="color:var(--accent-link)">Google Code Review Guide</a> &mdash; one of the best review guides</li>
+          <li><a href="https://refactoring.guru/refactoring/smells" target="_blank" style="color:var(--accent-link)">Refactoring Guru Code Smells</a> &mdash; visual reference for code smells</li>
+          <li><a href="https://openjdk.org/jeps/0" target="_blank" style="color:var(--accent-link)">OpenJDK JEP Index</a> &mdash; understanding modern Java features</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Team Culture &amp; Feedback</h4>
+        <ul>
+          <li><a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/" target="_blank" style="color:var(--accent-link)">Google re:Work Project Aristotle</a> &mdash; research on psychological safety</li>
+          <li><a href="https://www.radicalcandor.com/our-approach/" target="_blank" style="color:var(--accent-link)">Radical Candor Framework</a> &mdash; the Care Personally &times; Challenge Directly model</li>
+          <li><a href="https://management30.com/practice/delegation-poker/" target="_blank" style="color:var(--accent-link)">Management 3.0 Delegation Poker</a> &mdash; 7 levels of delegation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Incident Management</h4>
+        <ul>
+          <li><a href="https://sre.google/sre-book/postmortem-culture/" target="_blank" style="color:var(--accent-link)">Google SRE Postmortem Culture</a> &mdash; blameless post-mortems</li>
+          <li><a href="https://www.atlassian.com/incident-management/handbook" target="_blank" style="color:var(--accent-link)">Atlassian Incident Handbook</a> &mdash; practical incident response</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── TIP ─── -->
+  <section class="fade-in">
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>How to use these:</strong> Don't try to read everything. Pick the one book or video that matches your biggest current challenge. Apply one idea this week. Come back for the next resource when you're ready.</p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

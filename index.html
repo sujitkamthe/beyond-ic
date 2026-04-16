@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond IC &mdash; A Guide for Engineering Leaders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="index">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Beyond IC</h1>
+      <p class="subtitle">A self-guided field guide for engineers who want to build high-performing teams &mdash; not just write great code.</p>
+      <p class="tagline">Your job is not to be the best coder on the team. Your job is to make the team the best.</p>
+      <a href="#paths" class="cta-btn">Choose Your Path</a>
+    </div>
+  </div>
+
+  <!-- ─── HOW TO USE ─── -->
+  <section class="fade-in">
+    <h2>How to Use This Playbook</h2>
+    <div class="section-intro">
+      <p>This is a learning resource, not a test. There are no grades, no scores to report &mdash; just practical guidance you can put to work right away.</p>
+      <p>Start with whatever area feels most relevant to you right now. There is no required reading order; each section stands on its own.</p>
+      <p>Every section includes frameworks, tips, and practical actions you can apply this week. Small, consistent steps compound into real growth.</p>
+      <p>Come back to the <a href="self-assessment.html">self-assessment</a> monthly to track where you have been and where you are headed.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CHOOSE YOUR PATH ─── -->
+  <section class="wide fade-in" id="paths">
+    <h2>Choose Your Path</h2>
+    <p class="section-intro">Pick the area that resonates most with where you are today. Every path leads forward.</p>
+
+    <div class="path-grid">
+
+      <!-- Card 1: Foundations -->
+      <a href="foundations.html" class="path-card">
+        <span class="path-icon">&#129517;</span>
+        <h3>Foundations</h3>
+        <p>The leadership mindshift, problem-solving thinking, decision making, and driving change.</p>
+        <div class="path-chapters">Mindshift &middot; Problem Solving &middot; Decisions &middot; Driving Change &middot; Challenging the Status Quo</div>
+      </a>
+
+      <!-- Card 2: Technical Excellence -->
+      <a href="technical-excellence.html" class="path-card">
+        <span class="path-icon">&#128295;</span>
+        <h3>Technical Excellence</h3>
+        <p>Raising the bar on code quality, testing, observability, and engineering practices.</p>
+        <div class="path-chapters">Clean Code &middot; Standards &middot; Testing &middot; Observability &middot; Tooling</div>
+      </a>
+
+      <!-- Card 3: People & Culture -->
+      <a href="people-culture.html" class="path-card">
+        <span class="path-icon">&#129309;</span>
+        <h3>People &amp; Culture</h3>
+        <p>Growing people, mentoring, giving feedback, building ownership, and making every voice heard.</p>
+        <div class="path-chapters">Mentoring &middot; Feedback &middot; Ownership &middot; Dev Huddles &middot; Hard Conversations &middot; Growing People</div>
+      </a>
+
+      <!-- Card 4: Delivery & Execution -->
+      <a href="delivery-execution.html" class="path-card">
+        <span class="path-icon">&#128640;</span>
+        <h3>Delivery &amp; Execution</h3>
+        <p>Delivering with confidence, handling incidents, managing stakeholders, and setting expectations.</p>
+        <div class="path-chapters">Delivery &middot; Incidents &middot; Tech Debt &middot; Stakeholders &middot; Expectations</div>
+      </a>
+
+      <!-- Card 5: Resources -->
+      <a href="resources.html" class="path-card">
+        <span class="path-icon">&#128218;</span>
+        <h3>Resources</h3>
+        <p>Books, videos, articles, and frameworks to deepen your leadership practice.</p>
+      </a>
+
+      <!-- Card 6: Self-Assessment -->
+      <a href="self-assessment.html" class="path-card">
+        <span class="path-icon">&#128200;</span>
+        <h3>Self-Assessment</h3>
+        <p>An honest checklist to understand where you are and track your growth over time.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CLOSING QUOTE ─── -->
+  <section class="fade-in">
+    <div class="quote">
+      <p>The greatest leaders are not those who do the greatest things. They are the ones who get others to do the greatest things.</p>
+      <div class="attribution">&mdash; Ronald Reagan</div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

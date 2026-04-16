@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Assessment &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="self-assessment.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#x1F319;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Self-Assessment</h1>
+    <p class="subtitle">An honest reflection tool to understand where you are today and track your growth over time. Check the items you do consistently &mdash; not things you've done once.</p>
+  </div>
+
+  <!-- ─── INTRO ─── -->
+  <section class="fade-in">
+    <p class="section-intro">This assessment covers the core areas of engineering leadership. There are no right or wrong scores &mdash; only a snapshot of where you are now. Come back monthly. Progress is the goal, not perfection.</p>
+
+    <!-- ─── PROGRESS BAR ─── -->
+    <div class="progress-label" id="progressLabel">0 of 30 (0%)</div>
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Foundations & Thinking
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Foundations &amp; Thinking <small>(<a href="foundations.html">explore in Foundations</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-01">
+        <label for="sa-01">I can articulate the top 3 problems my team or stakeholders face right now</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-02">
+        <label for="sa-02">When I see a recurring issue, I investigate the root cause rather than fixing the symptom</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-03">
+        <label for="sa-03">I prioritise the highest-impact problems, not the most comfortable or exciting ones</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-04">
+        <label for="sa-04">I drive discussions to clear decisions with owners and timelines</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-05">
+        <label for="sa-05">I make reversible decisions quickly instead of waiting for perfect information</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Technical Excellence
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Technical Excellence <small>(<a href="technical-excellence.html">explore in Technical Excellence</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-06">
+        <label for="sa-06">I give substantive MR feedback on code quality, design, and modern practices &mdash; not just correctness</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-07">
+        <label for="sa-07">I actively model and suggest modern language features in reviews</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-08">
+        <label for="sa-08">I have run or organized a tech learning session in the last 2 weeks</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-09">
+        <label for="sa-09">I enforce testing standards &mdash; no MR merges without meaningful tests</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-10">
+        <label for="sa-10">I check observability dashboards proactively, not just during incidents</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: People & Culture
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>People &amp; Culture <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-11">
+        <label for="sa-11">I ask prompting questions instead of giving direct answers when mentoring</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-12">
+        <label for="sa-12">I conduct monthly growth check-ins (not just status updates) with people I mentor</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-13">
+        <label for="sa-13">I give specific positive feedback at least weekly</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-14">
+        <label for="sa-14">I give specific constructive feedback when needed, within 24 hours</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-15">
+        <label for="sa-15">In dev huddles, I create space for quieter voices and speak less than 30% of the time</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Ownership & Accountability
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Ownership &amp; Accountability <small>(<a href="people-culture.html">explore in People &amp; Culture</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-16">
+        <label for="sa-16">I respond to team questions within 2 hours, even if just to redirect</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-17">
+        <label for="sa-17">I hold team members accountable when standards slip &mdash; directly and respectfully</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-18">
+        <label for="sa-18">Initiatives I start get completed or explicitly handed off with context</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-19">
+        <label for="sa-19">I push for equal contribution &mdash; not just from the usual volunteers</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-20">
+        <label for="sa-20">I delegate meaningful work with the 5 Cs (Context, Clarity, Confidence, Checkpoints, Consequences)</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Delivery & Execution
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Delivery &amp; Execution <small>(<a href="delivery-execution.html">explore in Delivery &amp; Execution</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-21">
+        <label for="sa-21">I track sprint progress proactively &mdash; checking the board, reading MRs, not just asking in standup</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-22">
+        <label for="sa-22">I question &ldquo;almost done&rdquo; claims by asking for evidence (MR open? Tests passing? On staging?)</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-23">
+        <label for="sa-23">I raise risks to stakeholders before they become surprises</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-24">
+        <label for="sa-24">I ensure every production incident results in at least one safety net (test, alert, or process change)</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-25">
+        <label for="sa-25">I set clear &ldquo;meets&rdquo; vs &ldquo;exceeds&rdquo; expectations at the start of each performance cycle</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKLIST: Growth & Learning
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in">
+    <div class="checklist">
+      <h4>Growth &amp; Learning <small>(<a href="resources.html">explore in Resources</a>)</small></h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-26">
+        <label for="sa-26">I assign &ldquo;learn and teach&rdquo; tasks with deadlines and deliverables, not just &ldquo;go read about it&rdquo;</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-27">
+        <label for="sa-27">I follow up when someone doesn't complete a learning assignment</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-28">
+        <label for="sa-28">People I mentor are measurably more independent than they were 3 months ago</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-29">
+        <label for="sa-29">I regularly challenge existing processes and practices &mdash; &ldquo;is this still the best way?&rdquo;</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="sa-30">
+        <label for="sa-30">My team can function well if I'm unavailable for a week</label>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SCORING GUIDE ─── -->
+  <section class="fade-in">
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <div>
+        <p><strong>Scoring Guide</strong></p>
+        <p><strong>25&ndash;30:</strong> You're operating with strong leadership habits across the board.</p>
+        <p><strong>18&ndash;24:</strong> Solid foundation &mdash; pick your weakest area and focus there for 2 weeks.</p>
+        <p><strong>10&ndash;17:</strong> You're likely still spending most energy on IC work. Re-read <a href="foundations.html">Foundations</a> and <a href="people-culture.html">People &amp; Culture</a>.</p>
+        <p><strong>0&ndash;9:</strong> Start with one section. Pick 3 items from this list and commit to them this week. Progress, not perfection.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CLOSING QUOTE ─── -->
+  <section class="fade-in">
+    <div class="quote">
+      <p>The greatest leader is not the one who does the greatest things, but the one who gets people to do the greatest things.</p>
+    </div>
+  </section>
+
+  <!-- ─── CLOSING CALLOUT ─── -->
+  <section class="fade-in">
+    <div class="callout" style="text-align: center;">
+      <p>Come back next month. Check more boxes. That's growth.</p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
