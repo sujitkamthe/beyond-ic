@@ -18,6 +18,7 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="foundations.html">Foundations</a>
+        <a href="communication-change.html">Communication &amp; Change</a>
         <a href="technical-excellence.html">Technical Excellence</a>
         <a href="people-culture.html">People &amp; Culture</a>
         <a href="delivery-execution.html">Delivery &amp; Execution</a>
@@ -47,6 +48,9 @@
       <li><a href="#building-ownership">Building Ownership</a></li>
       <li><a href="#inclusive-huddles">Running Inclusive Dev Huddles</a></li>
       <li><a href="#honest-conversations">Having Honest Conversations</a></li>
+      <li><a href="#hiring-team-composition">Hiring &amp; Team Composition</a></li>
+      <li><a href="#frequent-feedback-tracking">Frequent Feedback &amp; Progress Tracking</a></li>
+      <li><a href="#navigating-underperformance">Navigating Underperformance</a></li>
     </ul>
   </div>
 
@@ -474,16 +478,15 @@
       </div>
     </div>
 
-    <h3>4 Ownership-Building Habits</h3>
+    <h3>3 Ownership-Building Habits</h3>
     <p>Ownership does not emerge from speeches. It comes from repeated small behaviors that become team norms.</p>
 
     <div class="framework">
-      <h4>Framework: 4 Habits That Build Ownership</h4>
+      <h4>Framework: 3 Habits That Build Ownership</h4>
       <ol>
         <li><strong>Rotate domain ownership monthly</strong> &mdash; Assign each person a domain area (authentication, payments, CI pipeline, etc.) that they are the "go-to" for that month. Rotate regularly so knowledge spreads and no one becomes a permanent bottleneck.</li>
         <li><strong>The 2-hour rule</strong> &mdash; Two sides of the same coin: if you are stuck for more than 2 hours, ask for help. If someone asks you a question, respond within 2 hours. This creates a fast feedback loop and prevents both silent struggling and unresponsive knowledge silos.</li>
-        <li><strong>1 tech debt item per person per sprint</strong> &mdash; Make tech debt reduction everyone's responsibility, not a special initiative. Each team member picks one small improvement each sprint. Over time, this compounds into a dramatically cleaner codebase.</li>
-        <li><strong>The Boy Scout Rule</strong> &mdash; Leave code better than you found it. Every time you touch a file, make one small improvement: rename a confusing variable, add a missing test, extract a helper method. This is not extra work &mdash; it is a habit that prevents decay.</li>
+        <li><strong>Continuous codebase improvement</strong> &mdash; For practices like the Boy Scout Rule and tech debt ownership, see <a href='delivery-execution.html#tech-debt'>Tech Debt as Culture</a>. Embed these into your team norms so they become automatic, not occasional.</li>
       </ol>
     </div>
 
@@ -710,11 +713,248 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 7: Hiring & Team Composition
+       ═══════════════════════════════════════════════════════ -->
+  <section id="hiring-team-composition" class="fade-in">
+    <span class="section-num">Section 07</span>
+    <h2>Hiring &amp; Team Composition</h2>
+    <p class="section-intro">
+      Who you bring onto the team shapes everything that follows &mdash; the quality of work, the culture, the pace of growth. Getting hiring right is one of the most important investments a leader can make.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>The highest-leverage decision a leader makes is who joins the team. A great hire raises everyone's game. A poor hire creates months of drag. Invest the time upfront.</p>
+    </div>
+
+    <h3>What to Evaluate Beyond Technical Skills</h3>
+    <p>Technical ability is the baseline. What separates good hires from great ones is what they bring beyond code.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Learning Orientation</h4>
+        <p>Do they seek feedback? Do they learn from mistakes? Are they curious?</p>
+        <p><strong>Why it matters:</strong> Technical skills can be taught; the drive to learn cannot be.</p>
+      </div>
+      <div class="card">
+        <h4>Ownership Mindset</h4>
+        <p>Do they take initiative? Do they follow through? Do they see problems as theirs to solve?</p>
+        <p><strong>Why it matters:</strong> Teams with ownership do not need managers &mdash; they need leaders who set direction.</p>
+      </div>
+      <div class="card">
+        <h4>Communication Clarity</h4>
+        <p>Can they explain complex ideas simply? Do they ask good questions?</p>
+        <p><strong>Why it matters:</strong> Engineers who cannot communicate create bottlenecks and misunderstandings.</p>
+      </div>
+      <div class="card">
+        <h4>Team Amplification</h4>
+        <p>Do they make others better? Do they share knowledge? Do they help when not asked?</p>
+        <p><strong>Why it matters:</strong> A 10x engineer who hoards knowledge is worth less than an 8x engineer who lifts everyone.</p>
+      </div>
+    </div>
+
+    <h3>Onboarding That Actually Works</h3>
+    <p>A great hire can still fail if the onboarding is poor. Structure the first three months deliberately.</p>
+
+    <div class="framework">
+      <h4>Framework: The First 90 Days</h4>
+      <ol>
+        <li><strong>Before Day 1</strong> &mdash; Local setup works, accounts created, buddy assigned. Nobody should spend their first day fighting tooling.</li>
+        <li><strong>Week 1</strong> &mdash; Pair on a real (small) task. Not just reading docs. Getting into the code immediately builds confidence and context faster than any onboarding document.</li>
+        <li><strong>Week 2&ndash;4</strong> &mdash; Gradually increase scope. Explicit check-ins on what is confusing. Ask: "What surprised you? What does not make sense yet?"</li>
+        <li><strong>Month 2</strong> &mdash; First independent feature. Review with extra care and encouragement. This is where they start building ownership.</li>
+        <li><strong>Month 3</strong> &mdash; They should be contributing at baseline. If not, investigate what is blocking. Is it unclear expectations, missing context, or a deeper issue?</li>
+      </ol>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>The interview question that reveals the most:</strong> "Tell me about a time you made something significantly better that was not your job." Ownership shows up in stories, not claims.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 8: Frequent Feedback & Progress Tracking
+       ═══════════════════════════════════════════════════════ -->
+  <section id="frequent-feedback-tracking" class="fade-in">
+    <span class="section-num">Section 08</span>
+    <h2>Frequent Feedback &amp; Progress Tracking</h2>
+    <p class="section-intro">
+      Feedback is not a quarterly event &mdash; it is a daily practice. The leaders who grow their people fastest are the ones who build feedback into the rhythm of normal work, not the ones who save it for formal reviews.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Feedback given months later is almost worthless. The most effective feedback is given within hours &mdash; while the context is fresh and the person can immediately apply it. Great leaders build feedback into daily work, not quarterly reviews.</p>
+    </div>
+
+    <h3>The Feedback Rhythm</h3>
+    <p>Feedback is not a single event. It is a continuous practice with different intensities at different cadences.</p>
+
+    <div class="framework">
+      <h4>Framework: The Feedback Rhythm</h4>
+      <ul>
+        <li><strong>Daily</strong> &mdash; Quick acknowledgments in MR reviews, Slack ("Great catch on that edge case"), standups. These micro-moments of recognition add up.</li>
+        <li><strong>Weekly</strong> &mdash; One specific piece of feedback per team member (positive or constructive). Takes 2 minutes. The consistency matters more than the depth.</li>
+        <li><strong>Bi-weekly</strong> &mdash; Brief 1:1 check-ins focused on growth, not status. Ask: "What is going well? What is frustrating? What do you need from me?"</li>
+        <li><strong>Monthly</strong> &mdash; The Growth Check-In (deeper). Review goals set last month. Identify gaps. Set next goals. Connect to career path.</li>
+        <li><strong>Quarterly</strong> &mdash; Formal assessment aligned with expectations set at cycle start. No surprises &mdash; everything here was discussed in the weeklies and monthlies.</li>
+      </ul>
+    </div>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>If your quarterly review contains surprises for the person being reviewed, your feedback rhythm is broken. They should already know exactly where they stand.</p>
+    </div>
+
+    <h3>Tracking Progress Without Micromanaging</h3>
+    <p>There is a meaningful difference between staying informed and hovering. Great leaders track closely without breathing down necks.</p>
+
+    <div class="framework">
+      <h4>Framework: Tracking vs. Micromanaging</h4>
+      <div class="pattern-grid">
+        <div class="pitfall">
+          <h5>Micromanaging</h5>
+          <p>"I ask for hourly updates. I review every line before it merges. I tell people how to solve problems."</p>
+        </div>
+        <div class="better">
+          <h5>Tracking</h5>
+          <p>"I check the board daily. I read MRs. I notice patterns. I bring up concerns in 1:1s."</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>5 Practical Tracking Habits</h3>
+    <div class="checklist">
+      <h4>Daily/Weekly Tracking Practices</h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="pc-track-1">
+        <label for="pc-track-1">Review the sprint board for 5 minutes daily &mdash; look for stale items, blockers, and patterns.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="pc-track-2">
+        <label for="pc-track-2">Read 2&ndash;3 MRs per day (even if you are not the reviewer) &mdash; stay connected to the code.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="pc-track-3">
+        <label for="pc-track-3">Note who is struggling silently &mdash; quiet does not mean fine.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="pc-track-4">
+        <label for="pc-track-4">Check Grafana/monitoring for your team's services &mdash; know the health of what you own.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="pc-track-5">
+        <label for="pc-track-5">Follow up on commitments made in previous 1:1s &mdash; accountability goes both ways.</label>
+      </div>
+    </div>
+
+    <h3>The Catch-Up Cadence</h3>
+    <p>Not everyone needs the same frequency of attention. Adjust your cadence based on where each person is.</p>
+
+    <div class="framework">
+      <h4>Framework: Different Rhythms for Different Needs</h4>
+      <ul>
+        <li><strong>People who are ramping up or struggling</strong> &mdash; Weekly 30-minute 1:1s. They need more guidance, more encouragement, and faster feedback loops.</li>
+        <li><strong>People who are performing well</strong> &mdash; Bi-weekly 1:1s. They are on track but still benefit from regular check-ins on growth and direction.</li>
+        <li><strong>People who are strong and independent</strong> &mdash; Monthly 1:1s. But never skip entirely &mdash; even strong performers need attention, recognition, and a space to talk about what is next for them.</li>
+      </ul>
+      <p style="margin-top:16px;"><strong>The rule:</strong> If you have not had a meaningful conversation with someone in 2 weeks, you are losing signal on their growth and engagement.</p>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>The most dangerous state</strong> is when someone stops giving you problems. It usually means they have stopped caring, not that everything is fine. Check in.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 9: Navigating Underperformance
+       ═══════════════════════════════════════════════════════ -->
+  <section id="navigating-underperformance" class="fade-in">
+    <span class="section-num">Section 09</span>
+    <h2>Navigating Underperformance</h2>
+    <p class="section-intro">
+      Addressing underperformance is one of the hardest parts of leadership. It requires courage, empathy, and structure. Done well, it can turn someone's trajectory around. Done poorly &mdash; or not at all &mdash; it erodes the entire team.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Most leaders avoid addressing underperformance until it is too late. By then, the team has compensated silently, high performers are frustrated, and the underperformer is confused because nobody told them. Early, honest intervention is kinder to everyone.</p>
+    </div>
+
+    <h3>The Escalation Path</h3>
+    <p>Underperformance does not jump from "everything is fine" to "we need to let you go." There is a clear progression, and each step gives the person a genuine opportunity to improve.</p>
+
+    <div class="framework">
+      <h4>Framework: The Escalation Path</h4>
+      <ol>
+        <li><strong>Informal feedback</strong> &mdash; Immediate, specific, within 24 hours of observing the issue. "Hey, I noticed X in your MR today. Here is why it matters and what I would suggest instead." Most issues resolve here when addressed early.</li>
+        <li><strong>Pattern conversation</strong> &mdash; When you see the same issue 3+ times: "I have noticed a pattern. In the last month, X happened in 3 situations. What is going on?" This shifts from incident to trend.</li>
+        <li><strong>Formal expectations reset</strong> &mdash; Written agreement on specific improvements with a timeline. "In the next 4 weeks, I need to see X, Y, Z. Let us check in weekly." Clear, documented, unambiguous.</li>
+        <li><strong>Performance improvement plan</strong> &mdash; If the expectations reset does not work, formal documentation with HR/management. Clear milestones, clear timeline, clear consequences.</li>
+        <li><strong>Separation</strong> &mdash; If the person cannot meet the bar despite support, the kindest thing for everyone is to help them find a better fit. Prolonging a failing situation helps no one.</li>
+      </ol>
+    </div>
+
+    <h3>Diagnosing Underperformance</h3>
+    <p>Before escalating, invest the time to understand the root cause. The intervention depends entirely on the diagnosis.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Skill Gap?</h4>
+        <p>They want to perform but lack the capability. <strong>Invest in training, pairing, and mentoring.</strong> This is the most solvable type of underperformance.</p>
+      </div>
+      <div class="card">
+        <h4>Motivation Gap?</h4>
+        <p>They have the skill but not the drive. <strong>Understand what has changed.</strong> Boredom? Burnout? Personal issues? Wrong role? The conversation here is exploratory, not corrective.</p>
+      </div>
+      <div class="card">
+        <h4>Clarity Gap?</h4>
+        <p>Were expectations actually clear? <strong>Sometimes the leader failed to communicate, not the person failed to perform.</strong> Before blaming execution, audit the briefing.</p>
+      </div>
+      <div class="card">
+        <h4>Fit Gap?</h4>
+        <p>Sometimes good people are in the wrong role. <strong>Help them find the right one.</strong> A struggling backend engineer might thrive in DevOps, or vice versa.</p>
+      </div>
+    </div>
+
+    <h3>Protecting the Team While Supporting the Individual</h3>
+    <p>When someone is underperforming, the rest of the team feels it. Balancing support for the individual with fairness to the team requires deliberate action.</p>
+
+    <div class="framework">
+      <h4>Framework: Balancing Team and Individual Needs</h4>
+      <div class="pattern-grid">
+        <div class="pitfall">
+          <h5>What Not to Do</h5>
+          <p>Do not publicly shame or call out underperformers. Do not let the team compensate silently for months &mdash; that breeds resentment and burns out your best people.</p>
+        </div>
+        <div class="better">
+          <h5>What to Do Instead</h5>
+          <p>Redistribute work transparently when someone is on a growth plan. Check in with high performers: "I know you have been carrying extra load. I am addressing it. Thank you for your patience."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Having the first conversation early is hard.</strong> Having it 6 months late is much harder &mdash; for you, for them, and for the team. The sooner you name it, the sooner you can fix it.</p>
+    </div>
+  </section>
+
   <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="foundations.html">Foundations</a>
+      <a href="communication-change.html">Communication &amp; Change</a>
       <a href="technical-excellence.html">Technical Excellence</a>
       <a href="people-culture.html">People &amp; Culture</a>
       <a href="delivery-execution.html">Delivery &amp; Execution</a>

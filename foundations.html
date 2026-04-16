@@ -18,6 +18,7 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="foundations.html">Foundations</a>
+        <a href="communication-change.html">Communication &amp; Change</a>
         <a href="technical-excellence.html">Technical Excellence</a>
         <a href="people-culture.html">People &amp; Culture</a>
         <a href="delivery-execution.html">Delivery &amp; Execution</a>
@@ -44,9 +45,7 @@
       <li><a href="#mindshift">1. The Leadership Mindshift</a></li>
       <li><a href="#problem-solver">2. Think Like a Problem Solver</a></li>
       <li><a href="#decision-making">3. Decision Making &amp; Effective Moderation</a></li>
-      <li><a href="#driving-change">4. Driving Change</a></li>
-      <li><a href="#communication">5. Communicate with Structure and Presence</a></li>
-      <li><a href="#status-quo">6. Challenging the Status Quo</a></li>
+      <li><a href="#time-management">4. Managing Your Time and Energy</a></li>
     </ul>
   </div>
 
@@ -531,405 +530,118 @@
   <div class="section-divider"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SECTION 4: DRIVING CHANGE
+       SECTION 4: MANAGING YOUR TIME AND ENERGY
        ═══════════════════════════════════════════════════════════ -->
-  <section class="fade-in" id="driving-change">
+  <section class="fade-in" id="time-management">
     <span class="section-num">Section 4</span>
-    <h2>Driving Change</h2>
-    <p class="section-intro">Identifying what needs to change is only half the challenge. The other half &mdash; often the harder half &mdash; is making that change actually happen and stick. Great leaders develop the patience and persistence to drive change through to completion.</p>
+    <h2>Managing Your Time and Energy</h2>
+    <p class="section-intro">The shift from IC to leader changes how you should spend your time. Many leaders fill their days with the same activities as before &mdash; coding, debugging, reviewing &mdash; and wonder why leadership work never gets done. Intentional time management is how you create space for the work that only a leader can do.</p>
 
     <div class="key-insight">
       <h4>Key Insight</h4>
-      <p>When you propose a change and nothing happens, diagnose why before assuming resistance. People may be overburdened, overwhelmed, lacking clarity, or lacking confidence &mdash; not resisting. The fix depends entirely on the diagnosis.</p>
+      <p>If you spend 100% of your time on the same work you did as an IC, you have 0% capacity for leadership. The transition requires deliberately reallocating your time &mdash; and that means doing less of what you are comfortable with.</p>
     </div>
 
-    <h3>Why Change Doesn't Happen</h3>
-    <p>When change stalls, it is tempting to assume people are resistant. But there are actually six distinct reasons why change fails, and each requires a different response:</p>
-
-    <div class="card-grid three-col">
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Overload</h4>
-        <p><strong>Signal:</strong> "I agree, but I just can't right now."</p>
-        <p>People genuinely want to adopt the change but are drowning in existing commitments. Asking them to do more without removing something is a recipe for failure.</p>
-        <p><strong>Fix:</strong> Help them make space. Remove or defer something else. Make the change part of existing work, not an addition to it.</p>
-      </div>
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Lack of Clarity</h4>
-        <p><strong>Signal:</strong> "I'm not sure what exactly you want me to do differently."</p>
-        <p>The change was communicated in abstract terms. People understand the "why" but not the concrete "what" or "how."</p>
-        <p><strong>Fix:</strong> Be specific. Instead of "write better tests," say "every PR should include at least one test for the happy path and one for the primary error case."</p>
-      </div>
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Lack of Motivation</h4>
-        <p><strong>Signal:</strong> "I don't really see why this matters."</p>
-        <p>People do not see the connection between the change and outcomes they care about. The "why" has not landed.</p>
-        <p><strong>Fix:</strong> Connect the change to something they value: team quality, fewer production incidents, less rework, personal growth. Use real data and stories, not abstract arguments.</p>
-      </div>
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Lack of Confidence</h4>
-        <p><strong>Signal:</strong> "I'll try..." (but then doesn't). Hesitation. Avoidance.</p>
-        <p>People want to change but are not sure they know how. They may be embarrassed to admit it.</p>
-        <p><strong>Fix:</strong> Provide coaching, pairing, or examples. Lower the bar for the first attempt. Celebrate early effort, not just outcomes.</p>
-      </div>
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Disagreement</h4>
-        <p><strong>Signal:</strong> Direct pushback. Counter-arguments. Visible reluctance.</p>
-        <p>This is actual resistance &mdash; and it may be well-founded. The person sees trade-offs you have not considered.</p>
-        <p><strong>Fix:</strong> Listen genuinely. Ask what concerns them. They may have valid points that improve the change. If you still believe in it, make the case clearly and use "disagree and commit."</p>
-      </div>
-      <div class="card" style="border-left: 3px solid var(--info);">
-        <h4>Habit</h4>
-        <p><strong>Signal:</strong> People agree, start well, then gradually revert to old patterns.</p>
-        <p>Old habits are strong. Without sustained reinforcement, people drift back to what is familiar.</p>
-        <p><strong>Fix:</strong> Build reminders into the workflow (checklists, PR templates, automated checks). Follow up consistently. Normalise the new way until it becomes the new default.</p>
-      </div>
-    </div>
-
-    <h3>7 Steps to Drive Lasting Change</h3>
+    <h3>How Leaders Should Spend Their Time</h3>
     <div class="framework">
-      <h4>A Framework for Making Change Stick</h4>
-      <ol>
-        <li><strong>Make the case:</strong> Explain why the change matters using evidence, stories, and impact data. Connect it to things the team already cares about.</li>
-        <li><strong>Make it specific:</strong> Translate the change from an abstract principle to a concrete, observable behaviour. "Improve code quality" is vague. "Every PR gets a review within 4 hours and includes at least one learning comment" is specific.</li>
-        <li><strong>Make it small:</strong> Start with the smallest possible version of the change. A pilot, a trial period, a single team. Small wins build momentum for bigger shifts.</li>
-        <li><strong>Make space:</strong> If you are asking people to do something new, remove or simplify something old. Change requires capacity, and most teams are already at capacity.</li>
-        <li><strong>Model it yourself:</strong> Be the first and most visible adopter. If you are asking the team to write better commit messages, make yours exemplary. People follow behaviour, not words.</li>
-        <li><strong>Reinforce relentlessly:</strong> Mention it in standups. Celebrate people who adopt it. Give feedback when it slips. The first few weeks are critical &mdash; most changes die from lack of follow-through, not lack of buy-in.</li>
-        <li><strong>Measure and share:</strong> Track the impact of the change and share results with the team. "Since we started doing X, our production incidents dropped by 40%." Data sustains motivation.</li>
-      </ol>
+      <h4>The 40/30/20/10 Guideline</h4>
+      <p>This is not a rigid formula, but a useful mental model for how an engineering leader's week should roughly break down:</p>
+      <ul>
+        <li><strong>40% &mdash; Enabling the team:</strong> MR reviews with teaching feedback, pairing sessions, unblocking people, answering questions, 1:1s. This is your highest-leverage work.</li>
+        <li><strong>30% &mdash; Strategic and improvement work:</strong> Setting standards, driving process improvements, tech vision, planning, stakeholder communication. This is the work that only you can do.</li>
+        <li><strong>20% &mdash; Hands-on technical work:</strong> Coding, debugging, spikes. You stay sharp technically but you are not the primary producer. Contribute to the most architecturally significant work, not routine stories.</li>
+        <li><strong>10% &mdash; Learning and growth:</strong> Reading, preparing sessions, staying current on the ecosystem, reflecting on what is working and what is not.</li>
+      </ul>
+      <p style="margin-top: 12px;"><strong>Why this matters:</strong> Most leaders default to 80% hands-on coding and 20% everything else. The team does not grow, quality does not improve, and the leader burns out wondering why nothing changes.</p>
     </div>
 
-    <h3>Push vs. Pause</h3>
-    <p>Knowing when to keep pushing and when to pause and reassess is one of the subtler leadership skills:</p>
+    <h3>Protecting Time for Leadership Work</h3>
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Block Focus Time</h4>
+        <p>Protect 2 hours daily for proactive leadership work &mdash; MR reviews, 1:1 prep, standards documentation, stakeholder updates. Treat it like a meeting that cannot be moved. If this time does not exist on your calendar, it will not happen.</p>
+      </div>
+      <div class="card">
+        <h4>Batch Reactive Work</h4>
+        <p>Slack messages, questions, and small requests are important but they fragment deep work. Designate 2-3 windows per day for responding to messages rather than staying in real-time mode all day. Communicate this to the team so they know when to expect responses.</p>
+      </div>
+      <div class="card">
+        <h4>Say No Strategically</h4>
+        <p>Every "yes" to a meeting, a task, or a favour is a "no" to something else. Before accepting, ask: "Is this the highest-impact use of my time right now?" Learn to say: "I cannot take this on this sprint, but here is who can help."</p>
+      </div>
+      <div class="card">
+        <h4>Audit Your Week Monthly</h4>
+        <p>At the end of each month, look at how you actually spent your time. How much was enabling? How much was strategic? How much was coding? If the ratio is wrong, adjust next month. What gets measured improves.</p>
+      </div>
+    </div>
 
-    <table class="comparison">
-      <thead>
-        <tr>
-          <th>Push Harder When...</th>
-          <th>Pause and Reassess When...</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>The team understands the why but is slow to start</td>
-          <td>Multiple people are pushing back with specific concerns</td>
-        </tr>
-        <tr>
-          <td>Early adopters are seeing positive results</td>
-          <td>The change is creating more problems than it solves</td>
-        </tr>
-        <tr>
-          <td>Resistance is mostly habit and inertia</td>
-          <td>You cannot clearly articulate the expected benefit</td>
-        </tr>
-        <tr>
-          <td>You have evidence that it works elsewhere</td>
-          <td>The team is already overwhelmed with other changes</td>
-        </tr>
-        <tr>
-          <td>Not changing has a clear, measurable cost</td>
-          <td>You are the only person who believes in this change</td>
-        </tr>
-        <tr>
-          <td>You have made the change small and specific</td>
-          <td>You have been pushing for weeks with no traction</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>Handling Specific Situations</h3>
+    <h3>Common Time Traps for Leaders</h3>
     <div class="accordion">
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          <span>"We've tried this before"</span>
+          "I will just fix this myself &mdash; it is faster"
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>This is worth taking seriously. Ask: "What happened when you tried it? What went wrong?" Often, the previous attempt failed not because the idea was bad, but because of poor execution, bad timing, or lack of follow-through.</p>
-          <p>Acknowledge the history, then explain what is different this time: new context, new approach, new commitment to follow-through. If you cannot articulate what is different, maybe they have a point.</p>
+          <p><strong>Why it is a trap:</strong> It is faster <em>today</em>, but it means you will be fixing similar things forever. Every time you fix something instead of teaching someone else to fix it, you make yourself more of a bottleneck.</p>
+          <p><strong>Better:</strong> Pair with the person for 30 minutes. It takes longer now but saves you hundreds of hours over the next year.</p>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          <span>"I don't have time"</span>
+          "I need to be in every meeting"
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>This is usually true, not an excuse. People are genuinely busy. The fix is not to push harder &mdash; it is to make space. Ask: "What could I take off your plate to make room for this?" or "How can we integrate this into something you are already doing?"</p>
-          <p>If the change truly matters, it has to be prioritised like any other work &mdash; with something else deprioritised to make room.</p>
+          <p><strong>Why it is a trap:</strong> Being in every meeting means you have no time for the work that comes out of meetings. Presence is not the same as impact.</p>
+          <p><strong>Better:</strong> For each recurring meeting, ask: "What would happen if I stopped attending?" If the answer is "nothing," stop attending. Delegate meeting attendance to team members who would grow from the exposure.</p>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          <span>"The current way works fine"</span>
+          "I am too busy for 1:1s this week"
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Sometimes this is true. Not every process needs to change. Ask yourself: "Is this change solving a real problem, or am I optimising for its own sake?"</p>
-          <p>If the problem is real, help people see it. Share data, tell stories, or run a small experiment. "Works fine" often means "I haven't noticed the cost." Making the cost visible can shift the perspective.</p>
+          <p><strong>Why it is a trap:</strong> 1:1s are not administrative overhead &mdash; they are your primary tool for understanding what is really happening on the team, giving feedback, and growing people. Skipping them consistently means you are flying blind.</p>
+          <p><strong>Better:</strong> 1:1s are the last thing to cancel, not the first. Even a 15-minute check-in is better than nothing.</p>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          <span>People agree but don't change behaviour</span>
+          "I will do the leadership work after I finish my stories"
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Agreement without action is the most common failure mode for change initiatives. The gap between "I agree" and "I do it consistently" is enormous.</p>
-          <p>Close the gap by making the new behaviour the path of least resistance. Use checklists, templates, automation, and gentle reminders. Build the change into the tools and processes people already use every day. And follow up &mdash; consistently, kindly, persistently.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          <span>One person consistently blocks changes</span>
-          <span class="arrow">&#9660;</span>
-        </div>
-        <div class="accordion-body">
-          <p>First, understand why. Are they raising legitimate concerns? Do they have context others lack? Sometimes the "blocker" is actually the most thoughtful person in the room.</p>
-          <p>If, after genuine listening, their objections do not hold up, have a direct conversation: "I value your input, and I have heard your concerns. Here is why I believe we should move forward. I need your commitment to give this a fair try." If it continues, this becomes a performance conversation, not a change management conversation.</p>
+          <p><strong>Why it is a trap:</strong> Stories never "finish." There is always another one. If leadership work only happens when story work is done, it never happens.</p>
+          <p><strong>Better:</strong> Commit to fewer stories. Make space for leadership work by taking on 60-70% of the story load you would take as an IC. The remaining 30-40% is your leadership capacity.</p>
         </div>
       </div>
     </div>
 
     <div class="tip info-tip">
       <span class="tip-icon">&#128161;</span>
-      <p><strong>Persistence matters:</strong> Real change takes 4&ndash;6 weeks of sustained effort. Most initiatives die in week 2. The difference between teams that improve and those that don't is not talent &mdash; it is persistence.</p>
-    </div>
-
-    <div class="tip purple-tip">
-      <span class="tip-icon">&#128156;</span>
-      <p><strong>Empathy check:</strong> Before deciding people are resistant, ask yourself: Are they overloaded? Do they understand what I am asking? Do they know how to do it? Do they believe it matters? The answer will tell you what kind of support they actually need.</p>
+      <p><strong>The weekly reflection:</strong> Every Friday, spend 10 minutes asking yourself: "Did I spend my time this week on the things that only a leader can do? Or did I fill it with IC work because it felt more comfortable?" Honest self-awareness is the first step to better time allocation.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 5: COMMUNICATE WITH STRUCTURE AND PRESENCE
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="fade-in" id="communication">
-    <span class="section-num">Section 5</span>
-    <h2>Communicate with Structure and Presence</h2>
-    <p class="section-intro">The ability to communicate clearly &mdash; to stakeholders, executives, and your own team &mdash; is what separates leaders who have influence from those who only have opinions. Great ideas that can't be articulated clearly don't get adopted. This section covers the thinking frameworks that make your communication sharp, structured, and confident.</p>
-
-    <h3>The Pyramid Principle</h3>
-    <p>Developed by Barbara Minto at McKinsey, this is the single most powerful framework for structured communication. The core idea: <strong>lead with the answer, then support it.</strong></p>
-
-    <div class="framework">
-      <h4>How It Works</h4>
-      <ol>
-        <li><strong>Start with the conclusion.</strong> State your recommendation, finding, or key message first. Don't build up to it &mdash; lead with it. Your audience's attention is highest at the start.</li>
-        <li><strong>Group supporting arguments.</strong> Organise your supporting points into 2-4 logical groups. Each group should be a distinct reason or category that backs your conclusion.</li>
-        <li><strong>Support each group with evidence.</strong> Under each argument, provide the data, examples, or reasoning that makes it credible.</li>
-      </ol>
-      <p style="margin-top: 16px;"><strong>Why this matters:</strong> Most engineers communicate bottom-up &mdash; they walk through their process, the things they tried, the details they found, and eventually arrive at a conclusion. Executives and stakeholders don't have time for the journey. They want the answer first, then they'll ask for details if needed.</p>
-    </div>
-
-    <div class="pattern-grid">
-      <div class="pitfall">
-        <h5>Bottom-Up (How most engineers communicate)</h5>
-        <p>"So we looked at the database performance, and there are some slow queries, and we also noticed the connection pool is undersized, and then we found that the index on the orders table is missing, and we think we can fix it in about 3 days, and the impact would be a 40% improvement in page load times."</p>
-      </div>
-      <div class="better">
-        <h5>Pyramid (Lead with the answer)</h5>
-        <p>"We can improve page load times by 40% with 3 days of work. The root cause is database performance &mdash; specifically: a missing index on the orders table, an undersized connection pool, and several unoptimised queries. Here's the plan..."</p>
-      </div>
-    </div>
-
-    <div class="tip info-tip">
-      <span class="tip-icon">&#128161;</span>
-      <p><strong>Practice tip:</strong> Before your next stakeholder update, write your key message in one sentence. If you can't, you haven't finished thinking. The Pyramid Principle forces clarity of thought before clarity of speech.</p>
-    </div>
-
-    <h3>MECE Thinking</h3>
-    <p>MECE (Mutually Exclusive, Collectively Exhaustive) is a framework for structuring analysis so that nothing overlaps and nothing is missed. It's how consultants and great leaders break down problems.</p>
-
-    <div class="framework">
-      <h4>The Two Rules</h4>
-      <ul>
-        <li><strong>Mutually Exclusive:</strong> Each category is distinct. No item belongs in two categories. This prevents double-counting and confusion.</li>
-        <li><strong>Collectively Exhaustive:</strong> All categories together cover the entire problem space. Nothing falls through the cracks.</li>
-      </ul>
-      <p style="margin-top: 12px;"><strong>Example:</strong> You're asked "Why are we missing sprint deadlines?" A MECE breakdown might be:</p>
-      <ol>
-        <li><strong>Estimation issues</strong> (we underestimate complexity)</li>
-        <li><strong>Scope issues</strong> (scope creeps mid-sprint)</li>
-        <li><strong>Execution issues</strong> (blockers, context switching, skill gaps)</li>
-        <li><strong>Process issues</strong> (unclear acceptance criteria, review bottlenecks)</li>
-      </ol>
-      <p>These four categories don't overlap, and together they cover every possible reason. You can now investigate each one systematically instead of chasing anecdotes.</p>
-    </div>
-
-    <h3>Issue &rarr; Impact &rarr; Action</h3>
-    <p>When you need to raise a problem &mdash; to a stakeholder, in a meeting, or in a Slack message &mdash; use this three-part structure. It's concise, clear, and gives the listener everything they need to respond.</p>
-
-    <div class="framework">
-      <h4>The Formula</h4>
-      <ol>
-        <li><strong>Issue:</strong> What's happening? (one sentence, factual)</li>
-        <li><strong>Impact:</strong> Why does it matter? Who is affected and how? (translate to business terms)</li>
-        <li><strong>Action:</strong> What are you doing about it, or what do you need? (be specific)</li>
-      </ol>
-      <p style="margin-top: 12px;"><strong>Example:</strong></p>
-      <p><strong>Issue:</strong> "The payment API is returning intermittent 500 errors under load."</p>
-      <p><strong>Impact:</strong> "This affects approximately 5% of checkout attempts during peak hours, which translates to roughly 200 failed transactions per day."</p>
-      <p><strong>Action:</strong> "We've identified the root cause as a connection pool limit. A fix is in progress and we'll deploy by end of day. No action needed from you, but I wanted you to be aware."</p>
-    </div>
-
-    <div class="tip">
-      <span class="tip-icon">&#9889;</span>
-      <p><strong>Why this matters:</strong> Most people raise issues without quantifying impact or stating what they need. The listener is left thinking "How bad is this? What should I do?" Issue-Impact-Action removes that ambiguity.</p>
-    </div>
-
-    <h3>Situation &rarr; Complication &rarr; Resolution</h3>
-    <p>SCR is a storytelling framework for proposals, escalations, and persuasive communication. It works because it mirrors how humans naturally process information: context, tension, relief.</p>
-
-    <div class="framework">
-      <h4>The Three Parts</h4>
-      <ol>
-        <li><strong>Situation:</strong> What is the current state? (everyone agrees on this &mdash; it's shared context)</li>
-        <li><strong>Complication:</strong> What changed, or what's the problem? (this creates the tension that demands a response)</li>
-        <li><strong>Resolution:</strong> What should we do? (your recommendation)</li>
-      </ol>
-      <p style="margin-top: 12px;"><strong>Example for proposing a tech investment:</strong></p>
-      <p><strong>Situation:</strong> "Our test suite runs in 45 minutes. We run it on every MR and deploy twice a day."</p>
-      <p><strong>Complication:</strong> "Developers wait for CI feedback before they can merge, and the queue backs up in the afternoon. We estimated this costs the team 3-4 hours of idle waiting per day across all developers."</p>
-      <p><strong>Resolution:</strong> "I propose we invest 2 days in parallelising the test suite. Based on similar optimisations, we expect to cut CI time to under 15 minutes. The ROI pays for itself within the first week."</p>
-    </div>
-
-    <h3>Executive Presence</h3>
-    <p>Executive presence isn't about charisma or seniority &mdash; it's about how you show up when the stakes are high. It's a set of learnable behaviours.</p>
-
-    <div class="card-grid two-col">
-      <div class="card">
-        <h4>Speaking in Leadership Forums</h4>
-        <ul>
-          <li><strong>Prepare your top 3 points</strong> before the meeting. If you're asked to speak, you won't scramble.</li>
-          <li><strong>Lead with the headline.</strong> "The release is on track with one risk I want to flag." Then details.</li>
-          <li><strong>Be concise.</strong> In executive settings, less is more. State your point in 30 seconds. Elaborate only if asked.</li>
-          <li><strong>Say "I don't know, but I'll find out"</strong> when you don't have the answer. Guessing destroys credibility faster than admitting a gap.</li>
-          <li><strong>Use numbers.</strong> "We reduced build time by 60%" lands harder than "We made builds faster."</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>Handling Tough Questions</h4>
-        <ul>
-          <li><strong>Don't rush.</strong> Take a breath before answering. A 2-second pause signals confidence, not uncertainty.</li>
-          <li><strong>Reframe if needed.</strong> "That's a great question. The way I'd frame it is..." lets you steer toward where you have clarity.</li>
-          <li><strong>Acknowledge what you don't know.</strong> "I'd want to verify the exact numbers before committing to that. Can I follow up by EOD?"</li>
-          <li><strong>Bridge to what you do know.</strong> "I'm not sure about X specifically, but what I can tell you is Y, which is related."</li>
-          <li><strong>Follow up.</strong> If you commit to getting back with an answer, actually do it. Reliability builds presence over time.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card-grid two-col">
-      <div class="card">
-        <h4>Demo Confidence</h4>
-        <ul>
-          <li><strong>Know your audience.</strong> Executives care about outcomes and risks. Skip the technical deep-dive unless asked.</li>
-          <li><strong>Tell a story.</strong> "Before this feature, users had to do X in 5 steps. Now it's 1 click." Impact, not implementation.</li>
-          <li><strong>Prepare for failure.</strong> Have a backup plan if the demo breaks. "Let me show you the flow on these screenshots while we investigate" is better than freezing.</li>
-          <li><strong>End with what's next.</strong> "Next sprint we'll add X. The risk we're watching is Y."</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4>Building Confidence Over Time</h4>
-        <ul>
-          <li><strong>Start with written updates.</strong> If live communication feels intimidating, begin with weekly 3-bullet emails. Build the muscle.</li>
-          <li><strong>Dry-run with a peer.</strong> Before a big meeting, do a 5-minute practice run. "Does this make sense? Am I missing anything?"</li>
-          <li><strong>Observe leaders you admire.</strong> Notice how they structure their communication, handle tough questions, and project confidence. It's a skill, not a personality trait.</li>
-          <li><strong>Record yourself</strong> (optional). Watching yourself present reveals filler words, pacing issues, and body language habits you'd never notice otherwise.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tip purple-tip">
-      <span class="tip-icon">&#128218;</span>
-      <p><strong>Go deeper:</strong> Read <em>The Pyramid Principle</em> by Barbara Minto for the definitive guide to structured communication. For executive presence, <em>Executive Presence</em> by Sylvia Ann Hewlett breaks down the components into concrete, practicable skills.</p>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       SECTION 6: CHALLENGING THE STATUS QUO
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="fade-in" id="status-quo">
-    <span class="section-num">Section 6</span>
-    <h2>Challenging the Status Quo</h2>
-    <p class="section-intro">The best teams are never satisfied with "this is how we have always done it." Great leaders cultivate a habit of questioning assumptions and looking for better ways &mdash; not for the sake of change, but because the world around us is evolving fast.</p>
-
-    <div class="key-insight">
-      <h4>Key Insight</h4>
-      <p>The world around us is changing fast &mdash; AI is reshaping how we write code, test, deploy. Teams that question "how we've always done it" will thrive. Teams that don't will fall behind. The goal is not to chase every trend, but to regularly ask: "Is this still the best way?"</p>
-    </div>
-
-    <h3>The Quarterly "Why Do We Still Do This?" Review</h3>
-    <p>Set aside time each quarter to honestly examine your team's assumptions. These questions can reveal opportunities hiding in plain sight:</p>
-
-    <div class="framework">
-      <h4>Questions for Quarterly Review</h4>
-      <ul>
-        <li><strong>Are our processes still fit for purpose?</strong> What made sense when the team was 4 people may not work at 12. What was right for waterfall may not be right for continuous delivery.</li>
-        <li><strong>What manual work could be automated with AI?</strong> Code generation, test creation, documentation, code review assistance &mdash; the tooling landscape is evolving rapidly.</li>
-        <li><strong>Are our patterns and practices keeping up with the language/framework evolution?</strong> Languages and frameworks introduce new features, deprecate old patterns. Are you still writing 2020-style code in 2026?</li>
-        <li><strong>What would we do differently if we started fresh today?</strong> This question cuts through inertia. You may not be able to start fresh, but the answer reveals what is worth incrementally improving.</li>
-        <li><strong>What are other teams doing that we are not?</strong> Look outward. Talk to peers. Read engineering blogs. Attend meetups. The best ideas often come from outside your immediate circle.</li>
-      </ul>
-    </div>
-
-    <h3>Areas to Continuously Challenge</h3>
-    <div class="card-grid two-col">
-      <div class="card">
-        <h4>Delivery Process</h4>
-        <p>Are sprints still the right cadence, or would continuous flow work better? Are standups serving the team, or are they just a ritual? Is your planning process helping you deliver, or slowing you down?</p>
-        <p><strong>Ask yourself:</strong> "If we designed our delivery process from scratch today, what would it look like?"</p>
-      </div>
-      <div class="card">
-        <h4>Development Workflow</h4>
-        <p>Are you leveraging AI tools effectively &mdash; for code generation, test scaffolding, documentation, and review? Is your CI/CD pipeline as fast as it could be? Are your development environments helping or hindering productivity?</p>
-        <p><strong>Ask yourself:</strong> "What part of our workflow feels like unnecessary friction?"</p>
-      </div>
-      <div class="card">
-        <h4>Architecture Patterns</h4>
-        <p>Are your patterns still appropriate, or were they inherited from five years ago when the context was different? Technology evolves, requirements change, team capabilities grow. Patterns should evolve too.</p>
-        <p><strong>Ask yourself:</strong> "Are we using this pattern because it is the best choice, or because it is what we know?"</p>
-      </div>
-      <div class="card">
-        <h4>Testing Strategy</h4>
-        <p>Are you testing the right things at the right levels? Is your test suite giving you confidence, or just giving you coverage numbers? Are you spending too much time on tests that rarely catch bugs, and too little on the areas that matter most?</p>
-        <p><strong>Ask yourself:</strong> "Where was our last production bug? Would our test suite have caught it?"</p>
-      </div>
-      <div class="card">
-        <h4>Communication</h4>
-        <p>Are your meetings, docs, and channels serving the team well? Is information flowing to the right people at the right time? Are decisions being documented and discoverable, or are they lost in Slack threads?</p>
-        <p><strong>Ask yourself:</strong> "If a new team member joined today, how long would it take them to understand how we work?"</p>
-      </div>
-    </div>
-
-    <div class="tip success-tip">
-      <span class="tip-icon">&#127793;</span>
-      <p><strong>Innovation doesn't require permission.</strong> If you see a better way, propose it with evidence. Run a small experiment. Share the results. That's how teams evolve. The best improvements often start as informal experiments, not formal initiatives.</p>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ─── CLOSING QUOTE ─── -->
+  <!-- ─── CLOSING ─── -->
   <section class="fade-in">
     <div class="quote">
-      <p>The measure of intelligence is the ability to change.</p>
-      <div class="attribution">&mdash; Albert Einstein</div>
+      <p>The most important thing about leadership is your character and the values that guide your life.</p>
+      <div class="attribution">&mdash; Brene Brown</div>
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+<!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="foundations.html">Foundations</a>
-      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
       <a href="people-culture.html">People &amp; Culture</a>
       <a href="delivery-execution.html">Delivery &amp; Execution</a>
       <a href="resources.html">Resources</a>
