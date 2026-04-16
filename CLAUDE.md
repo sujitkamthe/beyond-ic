@@ -5,6 +5,9 @@ A self-guided, multi-page website for engineering leaders who want to build high
 
 Hosted on GitHub Pages. Built as static HTML/CSS/JS with no build step.
 
+## Sibling Site
+A companion guide for the stage *before* leadership — senior engineers who own features end-to-end and champion craft — lives at `../craft-ownership/` ("Craft & Ownership"). Same design system, plum-and-parchment palette instead of navy. Keep the two disjoint: team-management topics (delegation, hiring, 1:1s) stay here; feature-ownership and daily-craft topics stay there.
+
 ## Who It's For
 Engineering leaders (typically 6+ years experience) on any team, at any company. They are skilled coders who need to develop leadership muscles: setting standards, growing people, driving change, and building team culture.
 
@@ -53,12 +56,14 @@ When writing or editing content: for every framework, convention, or recommendat
 ```
 multiplier-playbook/
   index.html                  — Home page with "Choose Your Path" grid
+  12-week-plan.html           — Sequenced 12-week learning journey for new leaders (read → apply → reflect → peer)
   foundations.html             — Mindshift, Problem Solving, Decisions, Time Management, Self-Awareness
   leadership-styles.html      — 4 Leadership Styles, Self-Discovery, Growth Direction, Maturity Spectrum, Team Composition, Adaptive Leadership
   communication-change.html   — Pyramid Principle, Executive Presence, Managing Up, Influence Without Authority, Driving Change, Status Quo, Written Artifacts
   first-90-days.html          — Listen/Learn/Act framework, Week 1 Essentials, Common Traps (standalone page)
   technical-excellence.html   — Clean Code (multi-language), Standards, Testing, Observability, Security, Tooling
   consulting-mindset.html     — Consulting Mindset, Client Communication, Knowledge Transfer, Ramp-Up, Technical Decisions, Building Trust, Common Traps
+  ai-modern-team.html         — AI as colleague, Code review with AI, Growing juniors in an AI world, Team norms, Stakeholder expectations, Leader's own AI practice, Common traps
   people-culture.html         — Delegation, Mentoring, Feedback, Ownership, Huddles, Hard Conversations, Hiring, Feedback Tracking, Underperformance, 1:1s
   team-health.html            — Psychological Safety, Remote Leadership, Burnout Prevention, Conflict Mediation (standalone page)
   delivery-execution.html     — Delivery, Incidents, Tech Debt, Stakeholders, Expectations, DORA Metrics, Estimation, Planning Artifacts

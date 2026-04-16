@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI &amp; the Modern Engineering Team &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="ai-modern-team.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Start Here</button>
+          <div class="nav-dropdown-menu">
+            <a href="12-week-plan.html">The 12-Week Plan</a>
+            <a href="foundations.html">Foundations</a>
+            <a href="leadership-styles.html">Know Your Style</a>
+            <a href="first-90-days.html">First 90 Days</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Skills</button>
+          <div class="nav-dropdown-menu">
+            <a href="communication-change.html">Communication &amp; Change</a>
+            <a href="technical-excellence.html">Technical Excellence</a>
+            <a href="delivery-execution.html">Delivery &amp; Execution</a>
+            <a href="consulting-mindset.html">Consulting Mindset</a>
+            <a href="ai-modern-team.html">AI &amp; the Modern Team</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">People</button>
+          <div class="nav-dropdown-menu">
+            <a href="people-culture.html">People &amp; Culture</a>
+            <a href="team-health.html">Team Health</a>
+          </div>
+        </div>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>AI &amp; the Modern Engineering Team</h1>
+    <p class="subtitle">Leading a team when a significant share of the code, tests, and docs come from AI &mdash; and the hard questions of judgment, growth, and quality are the ones only a human leader can answer.</p>
+  </div>
+
+  <!-- ─── IN-PAGE TOC ─── -->
+  <div class="page-toc">
+    <h4>On This Page</h4>
+    <ul>
+      <li><a href="#mindset-shift">1. The Leadership Shift: AI as Colleague, Not Tool</a></li>
+      <li><a href="#code-review">2. Code Review When AI Wrote the Code</a></li>
+      <li><a href="#growing-juniors">3. Growing Junior Engineers When AI Does Their Old Work</a></li>
+      <li><a href="#team-norms">4. Team Norms for Using AI Well</a></li>
+      <li><a href="#stakeholders">5. Managing Stakeholder Expectations About AI Velocity</a></li>
+      <li><a href="#your-practice">6. The Leader's Own AI Practice</a></li>
+      <li><a href="#common-traps">7. Common Traps</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1: THE LEADERSHIP SHIFT
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="mindset-shift" class="fade-in">
+    <span class="section-num">Section 1</span>
+    <h2>The Leadership Shift: AI as Colleague, Not Tool</h2>
+    <p class="section-intro">AI has not made engineering leaders optional. It has made some parts of the job cheaper, some parts more important, and some parts harder. Treating AI as just another tool &mdash; like an IDE or a linter &mdash; undersells what is happening. A more honest framing: your team now has an extremely fast, confidently fluent colleague who never gets tired, has read a vast library, and occasionally invents facts with complete conviction. Your job is to help the humans on the team work well with that colleague.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>AI does not replace the work of leadership &mdash; it reshapes it. What gets faster: writing code, drafting docs, generating tests, summarising incidents. What gets more important: judgment about what to build, review that catches plausible-looking wrong code, teaching junior engineers the reasoning that AI skips, setting norms for how the team uses AI together. The work was never just typing. It is becoming clearer that it never was.</p>
+    </div>
+
+    <h3>What Changes, What Doesn't</h3>
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>What Gets Faster (AI Accelerates)</th>
+          <th>What Gets More Important (AI Cannot)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Writing boilerplate code</td>
+          <td>Deciding what to build in the first place</td>
+        </tr>
+        <tr>
+          <td>Generating test scaffolds</td>
+          <td>Knowing which tests would actually catch the bug you fear</td>
+        </tr>
+        <tr>
+          <td>Drafting documentation</td>
+          <td>Knowing what is worth documenting and for whom</td>
+        </tr>
+        <tr>
+          <td>Summarising incidents, meetings, threads</td>
+          <td>The judgment about what the summary misses</td>
+        </tr>
+        <tr>
+          <td>Producing plausible code in unfamiliar languages</td>
+          <td>Reading that code well enough to spot the subtle wrongness</td>
+        </tr>
+        <tr>
+          <td>Prototyping</td>
+          <td>Deciding whether a prototype is ready to become a production system</td>
+        </tr>
+        <tr>
+          <td>Refactoring routine patterns</td>
+          <td>Knowing which refactoring will help and which will destabilise the system</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>The rule of thumb:</strong> AI accelerates the work where the inputs are clear and the outputs are verifiable. It does not accelerate the work where the inputs are ambiguous or the outputs require human trust. Most of a leader's job sits in the second category. That is not a coincidence &mdash; it is why the role is called leadership.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2: CODE REVIEW
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="code-review" class="fade-in">
+    <span class="section-num">Section 2</span>
+    <h2>Code Review When AI Wrote the Code</h2>
+    <p class="section-intro">The most consequential change AI brings to engineering culture is not that code gets written faster. It is that code <em>looks</em> good more often than it <em>is</em> good. Reviewers who scan for surface fluency now miss things that a line-by-line review would have caught. The review discipline that was useful before is now essential.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>The core principle does not change: the author of an MR is accountable for the code, regardless of who or what wrote it. "The AI suggested it" is not a valid defence for a bug. If anything, AI raises the bar on the author's obligation to <em>understand</em> what they are shipping. The reviewer's job is to verify that understanding is real, not just claimed.</p>
+    </div>
+
+    <h3>The New Review Questions</h3>
+    <div class="framework">
+      <h4>Five Questions to Add to Every Review</h4>
+      <ol>
+        <li><strong>"Can the author explain why this approach is right, not just that it works?"</strong>
+          <p>If the author cannot articulate the reasoning &mdash; the alternatives considered, the trade-offs accepted &mdash; they have shipped something they do not own. Ask. Do not accept "the AI suggested it" as an answer.</p>
+        </li>
+        <li><strong>"Does this fit the codebase, or does it have an AI fingerprint?"</strong>
+          <p>AI-generated code often looks correct but uses patterns foreign to the codebase &mdash; a different error-handling style, naming convention, or library choice. Consistency is a real value; mixed idioms slow everyone down. Reviewers should call out patterns that do not match.</p>
+        </li>
+        <li><strong>"Is this plausibly right, or verifiably right?"</strong>
+          <p>AI excels at producing code that looks correct. The reviewer's job is to verify the logic actually is correct for the specific cases it needs to handle. Plausible is not the same as right.</p>
+        </li>
+        <li><strong>"Are the tests testing behaviour, or testing the implementation?"</strong>
+          <p>AI-generated tests frequently verify that the code does what the code does &mdash; tautological tests that pass regardless of whether the behaviour is correct. Good tests describe business expectations. Generated tests often don't.</p>
+        </li>
+        <li><strong>"What is this missing that a human author would have included?"</strong>
+          <p>Context-specific error messages, logging for future debugging, comments on non-obvious choices, edge cases specific to your domain. These are the human touches that reveal an author who thought about the reader &mdash; not just about making the code work.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Common Pitfall</h5>
+        <p>Rubber-stamping AI-generated MRs because the code "looks clean." Clean-looking code is the default output of AI now. The review needs to go deeper than surface fluency.</p>
+      </div>
+      <div class="better">
+        <h5>Better Approach</h5>
+        <p>Reviewing AI-generated code as if it were written by a confident new hire who doesn't yet know the codebase: expect quality, but verify fit, reasoning, and edge cases. If the author cannot explain the choices, that is a blocking comment.</p>
+      </div>
+    </div>
+
+    <h3>Scripts for Reviewing AI-Assisted Code</h3>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          When the author clearly does not understand what they shipped
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> MR review, the code works but the author cannot explain their choices.</p>
+          <p>&ldquo;I want to understand the reasoning behind the approach here. Walk me through why you chose X over Y. I am not trying to catch you out &mdash; I want to make sure we are both confident in this before it merges, because if it breaks in three months, we need to know why it was built this way. If you are not sure, let's pair for 30 minutes and work through it together.&rdquo;</p>
+          <p><em>Why this works:</em> it does not shame, it opens the door to admit uncertainty, and it names the real cost of shipping code nobody understands.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          When the code has an AI fingerprint
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> The implementation is valid but uses patterns the codebase doesn't use elsewhere.</p>
+          <p>&ldquo;This approach works, but it is a different pattern than we use elsewhere in this service (see X for the convention). Consistency matters here more than the local optimum &mdash; when someone comes back to this in six months, they shouldn't have to context-switch between two styles. Can we align this with the existing pattern?&rdquo;</p>
+          <p><em>Why this works:</em> it names consistency as a real value, gives a concrete example of the convention, and treats the mismatch as something to fix rather than something to criticise.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          When the tests look thorough but don't actually test behaviour
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> The MR has lots of test coverage, but the tests are shallow.</p>
+          <p>&ldquo;The coverage is good, but I want to stress-test the tests themselves. If I introduced a bug where [specific scenario], would any of these fail? I ask because some of these look like they verify the code does what the code does, rather than verifying the intended behaviour. Can we add one or two tests that specifically encode the business expectation, not the implementation?&rdquo;</p>
+          <p><em>Why this works:</em> it names the pattern of tautological tests without making it an accusation, and it asks for a concrete addition rather than a vague improvement.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Consider a team norm:</strong> every MR description explicitly notes how AI was used (if at all) and what the author verified independently. This is not about policing &mdash; it is about making verification visible. Teams that adopt this norm find their review quality improves even for the MRs that weren't AI-assisted, because the framing makes everyone think about verification.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3: GROWING JUNIORS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="growing-juniors" class="fade-in">
+    <span class="section-num">Section 3</span>
+    <h2>Growing Junior Engineers When AI Does Their Old Work</h2>
+    <p class="section-intro">This is the hardest leadership question of the current moment, and the one most likely to distinguish teams that produce strong senior engineers over the next decade from teams that don't. The traditional junior-engineer path &mdash; struggle through boilerplate, learn by doing, slowly develop intuition &mdash; has been partly eroded by AI. The juniors who lean on AI heavily ship more, faster, in their first year. The question is whether they become capable senior engineers after that year, and the honest answer is: it depends entirely on how they used the AI, and how we taught them to use it.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>AI removes the friction that used to be where learning happened. Friction is expensive, but some of it is productive &mdash; the struggle to name a variable correctly, the confusion of a stack trace you have to read slowly, the hour spent debugging a subtle bug. If AI absorbs every unit of friction a junior encounters, they ship more in year one and learn less. The leader's job is not to ban AI. It is to protect deliberate practice on the skills that only friction teaches.</p>
+    </div>
+
+    <h3>The Capabilities That Need Deliberate Practice</h3>
+    <p>These are the skills that junior engineers used to develop by accident because there was no way around them. In an AI-assisted world, they have to be practised deliberately &mdash; or they won't be practised at all.</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Reading Code</h4>
+        <p>The ability to read unfamiliar code and understand what it does, why it is structured the way it is, and where it might break. This used to be forced on juniors through onboarding, code review, and debugging. Now AI often paraphrases or explains code for them, shortcutting the comprehension they need to build.</p>
+        <p><strong>Practice:</strong> assign regular "read this code, explain it back" exercises in 1:1s, without AI help.</p>
+      </div>
+      <div class="card">
+        <h4>Debugging From Scratch</h4>
+        <p>The capacity to form hypotheses, test them, and narrow down a cause when the cause is not obvious. AI is poor at debugging code it did not write; this capability remains deeply human.</p>
+        <p><strong>Practice:</strong> regularly hand juniors bugs to investigate alone before reaching for AI. Debrief afterwards &mdash; what hypotheses did you try? What would you try differently?</p>
+      </div>
+      <div class="card">
+        <h4>Naming and Communication</h4>
+        <p>Choosing names that convey intent, writing commit messages that explain why, commenting the non-obvious. AI-generated names are generic. The human judgment of "what will a future reader need to understand?" is learned, not generated.</p>
+        <p><strong>Practice:</strong> in code reviews, push back gently on generic names. Ask: "What does this function do, in plain words? What would you call it if you had to explain it to someone new?"</p>
+      </div>
+      <div class="card">
+        <h4>Knowing When You Don't Know</h4>
+        <p>The metacognitive skill of noticing you are out of your depth &mdash; before you have confidently shipped something wrong. AI can make juniors feel competent in areas where they are not, because the output sounds competent. Distinguishing real understanding from AI-borrowed confidence is a learnable skill.</p>
+        <p><strong>Practice:</strong> after an AI-assisted task, ask the junior to explain the approach without the AI in the room. What they can and cannot explain reveals what they actually learned.</p>
+      </div>
+    </div>
+
+    <h3>Structuring Junior Growth in an AI-Augmented World</h3>
+    <div class="framework">
+      <h4>A Framework: The AI-Off Hour</h4>
+      <p>Most junior engineers will default to AI for everything within their first week. That is fine for productivity. It is not fine for learning. Build in deliberate practice where AI is not the answer.</p>
+      <ol>
+        <li><strong>Reserve one hour per day (or per MR) for AI-off work.</strong> Reading, debugging, or writing a small piece of code without assistance. Not to slow them down permanently &mdash; to build the muscles AI otherwise skips.</li>
+        <li><strong>In 1:1s, include a "teach me what you learned" moment.</strong> Ask them to explain a concept from this week's work without referring to notes or AI. If they can teach it, they own it. If they cannot, they borrowed it.</li>
+        <li><strong>Pair them with humans for the skills AI cannot teach.</strong> Code review conversations, design discussions, stakeholder conversations. The judgment work has to transfer person-to-person.</li>
+        <li><strong>Frame AI as a tutor, not a crutch.</strong> The question is not "did you use AI?" but "what did you learn that you didn't know before?" Juniors who can answer are growing. Juniors who can't are stalling.</li>
+      </ol>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;</span>
+      <p><strong>The most dangerous pattern in junior development right now:</strong> a junior engineer ships competent-looking work for six months, gets positive feedback, and then fails their first real ownership challenge because they cannot form hypotheses on their own. The work was not theirs; it was borrowed. The signal that this is happening is hard to see in shipped code and obvious in unstructured conversation. Ask the questions AI cannot help them answer.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4: TEAM NORMS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="team-norms" class="fade-in">
+    <span class="section-num">Section 4</span>
+    <h2>Team Norms for Using AI Well</h2>
+    <p class="section-intro">If the team has not explicitly talked about how they use AI, they are operating on whatever norms individual members brought in from elsewhere. That is how codebases end up with five different prompting styles, three different AI tools, inconsistent output conventions, and silent disagreements about what is acceptable. Teams that deliberately set norms produce better work and argue less.</p>
+
+    <div class="framework">
+      <h4>Decisions Worth Making Together</h4>
+      <ol>
+        <li>
+          <strong>Which tools is the team using, and for what?</strong>
+          <p>Rather than everyone choosing individually, agree on a small set. Reduces tool sprawl, makes pairing easier, concentrates shared prompt expertise. Revisit every quarter &mdash; the landscape moves.</p>
+        </li>
+        <li>
+          <strong>What goes into the AI, and what doesn't?</strong>
+          <p>Secrets, proprietary code, client data, unpublished architecture. The team should have a shared, written answer. "Use your judgment" is not a norm &mdash; it is an abdication.</p>
+        </li>
+        <li>
+          <strong>How do we flag AI involvement in MRs?</strong>
+          <p>A one-line note in the MR description ("Used AI for initial draft; verified X, Y, Z") is low-cost and makes verification visible. The note is not for policing &mdash; it is for honesty.</p>
+        </li>
+        <li>
+          <strong>Which tasks do we use AI for, and which do we deliberately not?</strong>
+          <p>Not every speed-up is a win. Some tasks are where humans learn, build judgment, or exercise care. Explicitly naming "we draft feedback ourselves, not with AI" (for example) protects the team's human craft.</p>
+        </li>
+        <li>
+          <strong>How do we share prompt knowledge?</strong>
+          <p>Prompts that produce good output are a form of team intellectual capital. A shared library (even a single doc) makes the whole team faster. Without it, each person reinvents the wheel.</p>
+        </li>
+      </ol>
+    </div>
+
+    <h3>Running the Norms-Setting Conversation</h3>
+    <p>The single highest-leverage meeting a leader can run right now is a structured team conversation about AI practice. Most teams have never had one.</p>
+
+    <div class="framework">
+      <h4>A 60-Minute Team AI Norms Session</h4>
+      <ol>
+        <li><strong>5 min &mdash; Frame the session.</strong> "We all use AI differently. We have never talked about it as a team. Today we set shared norms so we stop making these decisions alone."</li>
+        <li><strong>15 min &mdash; Silent listing.</strong> Everyone writes, individually: how they currently use AI, what works, what concerns them. Silent writing surfaces opinions that get crushed in group discussion.</li>
+        <li><strong>20 min &mdash; Grouping and discussion.</strong> Cluster the responses. Identify the patterns and the disagreements. Let the disagreements surface explicitly.</li>
+        <li><strong>15 min &mdash; Agree on three norms.</strong> Not twenty. Three. The ones most worth agreeing on. Write them down. Commit to trying them for one month.</li>
+        <li><strong>5 min &mdash; Close with review date.</strong> Book a 30-minute follow-up in four weeks. The first set of norms will be wrong. That is expected.</li>
+      </ol>
+      <p><strong>Why this matters:</strong> explicit norms, revisited quarterly, dramatically reduce the silent friction of different people bringing different assumptions. The conversation itself is where half the value lives.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 5: STAKEHOLDERS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="stakeholders" class="fade-in">
+    <span class="section-num">Section 5</span>
+    <h2>Managing Stakeholder Expectations About AI Velocity</h2>
+    <p class="section-intro">Stakeholders have read the same headlines you have. Some of them believe AI has made engineering 10x faster. A subset believes any delay is a failure of the team to use AI well. You will be asked "why can't AI just do this?" &mdash; sometimes in good faith, sometimes as pressure. How you answer shapes how much autonomy your team gets to work.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Do not over-claim or under-claim. Over-claiming ("AI has made us 2x faster") sets expectations you cannot sustain and gets applied to work AI did not actually accelerate. Under-claiming ("AI hasn't changed much") sounds like defensiveness and erodes credibility. The honest answer &mdash; "AI accelerates certain kinds of work dramatically, and we are thoughtful about where it does and doesn't help" &mdash; is the one that builds lasting trust.</p>
+    </div>
+
+    <h3>Reframing the "Why Can't AI Do It Faster?" Conversation</h3>
+    <div class="framework">
+      <h4>A Stakeholder Conversation Framework</h4>
+      <ol>
+        <li>
+          <strong>Acknowledge the acceleration that is real.</strong>
+          <p>"You are right that AI has accelerated some parts of our work &mdash; prototyping, drafting, scaffolding. On this piece specifically, AI wrote the initial version in under an hour."</p>
+        </li>
+        <li>
+          <strong>Name the work that doesn't accelerate.</strong>
+          <p>"What takes the remaining time is verifying that the output is correct for our domain, testing the edge cases that matter for our users, reviewing it well enough that I'd stake our production system on it, and integrating it with the existing codebase. Those things are not AI-accelerated &mdash; if anything, they take longer because the AI-generated first draft can look more correct than it is."</p>
+        </li>
+        <li>
+          <strong>Make the trade-off visible.</strong>
+          <p>"We could ship this faster by skipping the verification steps &mdash; but the last time a team did that, they ended up in a [specific cost: incident / rework / loss of trust]. I'd rather ship in five days with confidence than in two with hope."</p>
+        </li>
+        <li>
+          <strong>Offer a partnership framing.</strong>
+          <p>"If you ever see a part of our work where you think AI should be accelerating us more than it is, I want to hear it. Sometimes we are slow where we should be fast. I just want to make sure we are not fast where we should be careful."</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          When a stakeholder says "AI should make this trivial"
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> A stakeholder pushing for faster delivery on a specific task, assuming AI should collapse the work.</p>
+          <p>&ldquo;I hear you, and I want to be transparent about where AI is helping us and where it isn't. For this specific work: the first draft is AI-generated and took about an hour. What takes the remaining time is verifying the behaviour against the edge cases our users hit, reviewing it well enough to ship with confidence, and integrating it cleanly with the existing system. If we skip those steps, we ship faster &mdash; and I've seen what happens when teams do that. I'd rather give you a date I can hit than one I hope I can hit. Does that trade-off make sense?&rdquo;</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          When leadership asks "how much AI are you using?"
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> A board-level or exec conversation about AI adoption metrics.</p>
+          <p>&ldquo;We use AI extensively &mdash; every engineer on the team has it in their daily workflow. What I would not measure us on is 'lines of code per engineer' or 'percentage of code written by AI'. Those measures incentivise the wrong behaviour: more code, less thinking. What we do measure is delivery frequency, change failure rate, and the quality of what we ship. AI is in the process; the outcomes are what we report on. If you want, I can walk you through the specific ways AI has changed our workflow.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6: YOUR OWN AI PRACTICE
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="your-practice" class="fade-in">
+    <span class="section-num">Section 6</span>
+    <h2>The Leader's Own AI Practice</h2>
+    <p class="section-intro">How you use AI matters not only because it makes you more effective &mdash; it sets the visible norm for what "good AI use" looks like on your team. People imitate what leaders do more than what they say. If your team hears you say "be thoughtful about AI" and sees you paste unedited AI output into everything, they will imitate what they see.</p>
+
+    <h3>Where AI Genuinely Helps a Leader</h3>
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Drafting and Revising Documents</h4>
+        <p>First drafts of status updates, stakeholder memos, job descriptions, meeting agendas. AI is excellent at the first 70% of a written artefact. The last 30% &mdash; the voice, the judgment calls, the specific examples &mdash; still has to come from you.</p>
+      </div>
+      <div class="card">
+        <h4>Summarising Long Inputs</h4>
+        <p>Incident timelines, long Slack threads, meeting transcripts, lengthy documents. AI collapses them fast. Always verify that the summary didn't drop the one critical detail.</p>
+      </div>
+      <div class="card">
+        <h4>Thinking Partner for Drafts</h4>
+        <p>"Stress-test this stakeholder memo &mdash; what is a reader going to push back on?" or "What am I missing in this plan?" AI is a useful devil's-advocate partner, especially for pre-flighting high-stakes conversations.</p>
+      </div>
+      <div class="card">
+        <h4>Pattern Analysis</h4>
+        <p>Summarising a set of 1:1 notes from a quarter, grouping retro feedback, identifying themes across multiple incident reports. AI is good at finding patterns in volume that would take hours of human reading.</p>
+      </div>
+    </div>
+
+    <h3>Where AI Should Not Replace You</h3>
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Feedback to Your Team</h4>
+        <p>Drafting feedback with AI, especially constructive feedback, produces words that sound caring but avoid what actually needs to be said. The hard sentence has to come from you. If you cannot write it, you are not ready to deliver it.</p>
+      </div>
+      <div class="card">
+        <h4>1:1 Conversations</h4>
+        <p>Your team knows when you showed up prepared and when you showed up distracted. No amount of AI-generated talking points substitutes for actually having thought about the person this week. Prep with AI is fine; outsource the thinking to it at your team's cost.</p>
+      </div>
+      <div class="card">
+        <h4>Conflict Mediation</h4>
+        <p>The human work of holding space, listening, and naming emotions cannot be delegated to a model that has never met the people involved. AI can help you rehearse. It cannot facilitate the conversation for you.</p>
+      </div>
+      <div class="card">
+        <h4>Decisions That Require Courage</h4>
+        <p>A decision you are avoiding is not one AI can help you make. If you find yourself asking AI to validate a decision, the question to ask is why you needed outside validation. The courage has to be yours.</p>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>A useful rule:</strong> use AI for the work that is mostly about clarity of output (drafting, summarising, analysing patterns). Do not use AI for the work that is mostly about human presence (feedback, difficult conversations, relationship-building). The team will read your AI practice carefully &mdash; make sure what they read is the practice you want them to adopt.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 7: COMMON TRAPS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="common-traps" class="fade-in">
+    <span class="section-num">Section 7</span>
+    <h2>Common Traps</h2>
+    <p class="section-intro">The patterns that derail teams in the AI transition are rarely technical. They are patterns of under-thinking, over-claiming, or outsourcing the wrong things to the wrong tools.</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Treating AI as a Universal Accelerator</h4>
+        <p>Assuming every task is equally AI-accelerated, and measuring the team accordingly. Some work genuinely gets 5&times; faster; some doesn't speed up at all; some gets slower because verification is now more expensive than writing. Leaders who average the two into "AI makes us faster" set expectations that fracture on contact with reality.</p>
+        <p><strong>Ask yourself:</strong> "Am I treating 'AI accelerates engineering' as a uniform claim, or am I specific about where it does and doesn't?"</p>
+      </div>
+      <div class="card">
+        <h4>Measuring the Wrong Things</h4>
+        <p>Tracking "percentage of code written by AI" or "AI adoption rate" as if those are good outcomes. They incentivise AI use where it does not help. The right outcomes are still deployment frequency, change failure rate, and whether the team ships things that work.</p>
+        <p><strong>Ask yourself:</strong> "Am I measuring AI inputs or engineering outcomes?"</p>
+      </div>
+      <div class="card">
+        <h4>Letting Juniors Skip the Hard Parts</h4>
+        <p>When a junior uses AI for everything and ships competent-looking work, it feels like they are growing. They are not. They are borrowing. The bill comes due when they hit a situation AI cannot help them out of &mdash; usually a debugging problem, an architecture decision, or an incident under pressure.</p>
+        <p><strong>Ask yourself:</strong> "Would this junior engineer be able to handle [today's task] without AI? If not, what are we doing about that?"</p>
+      </div>
+      <div class="card">
+        <h4>Outsourcing Your Own Judgment</h4>
+        <p>Asking AI to make decisions that require human judgment &mdash; performance feedback, hiring calls, whether to escalate, how to handle a conflict. AI can inform these; it cannot make them for you. Leaders who over-rely on AI here become less trusted by their teams in ways that compound.</p>
+        <p><strong>Ask yourself:</strong> "Am I using AI to think better, or to avoid thinking?"</p>
+      </div>
+      <div class="card">
+        <h4>Assuming Verification Takes Care of Itself</h4>
+        <p>Teams adopt AI for writing code and do not correspondingly invest in reading, reviewing, and testing. The result is code that ships faster and breaks more often. If you are accelerating the write side, you have to match the verify side.</p>
+        <p><strong>Ask yourself:</strong> "Has our review and testing capacity kept pace with our writing speed? What is our change failure rate doing?"</p>
+      </div>
+      <div class="card">
+        <h4>Skipping the Team Conversation</h4>
+        <p>Assuming everyone on the team has compatible views on when to use AI, what to flag in MRs, what data is safe to paste into prompts. Without an explicit conversation, you will find out who disagreed with whom when something goes wrong.</p>
+        <p><strong>Ask yourself:</strong> "When was the last time we deliberately talked as a team about how we use AI? If never, what's stopping us?"</p>
+      </div>
+      <div class="card">
+        <h4>Using AI to Avoid Hard Conversations</h4>
+        <p>Drafting feedback, a performance message, or a stakeholder escalation with AI because the words are hard to find. What you ship is words that sound careful and avoid the point. The person on the other end feels managed, not respected. The hard words have to be yours.</p>
+        <p><strong>Ask yourself:</strong> "Am I using AI to soften a difficult message &mdash; and if so, am I softening it past the point of honesty?"</p>
+      </div>
+      <div class="card">
+        <h4>Treating the AI Conversation as Finished</h4>
+        <p>The norms you set today will be wrong in six months. The tools will change, the capabilities will change, the team's experience will change. Leaders who set norms once and move on miss the ongoing work. Revisit every quarter.</p>
+        <p><strong>Ask yourself:</strong> "When is my next scheduled team conversation about how we use AI? If the answer is 'never,' book one now."</p>
+      </div>
+    </div>
+
+    <div class="tip purple-tip">
+      <span class="tip-icon">&#128218;</span>
+      <p><strong>Go deeper:</strong> for the broader conversation, Ethan Mollick's <em>Co-Intelligence</em> is the most accessible book on treating AI as a colleague rather than a tool. For engineering-specific practice, the Pragmatic Engineer newsletter has tracked how real teams are adapting their workflows. The field is moving monthly &mdash; prefer primary sources and fresh writing over books older than a year.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CLOSING ─── -->
+  <section class="fade-in">
+    <div class="quote">
+      <p>The team you lead will not be judged by how much AI they used. They will be judged by what they shipped, what they learned, and whether anyone wants to work with them next.</p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="12-week-plan.html">The 12-Week Plan</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="leadership-styles.html">Know Your Style</a>
+      <a href="communication-change.html">Communication &amp; Change</a>
+      <a href="first-90-days.html">First 90 Days</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="consulting-mindset.html">Consulting Mindset</a>
+      <a href="ai-modern-team.html">AI &amp; the Modern Team</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
