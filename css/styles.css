@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════
    Beyond IC — Design System
    Palette: "The Scholarly Leader"
-   Fonts: Lora (body) + Inter (headings/UI)
+   Fonts: Source Sans 3 (body) + Inter (headings/UI)
    ═══════════════════════════════════════════ */
 
 :root {
@@ -69,11 +69,11 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.8;
-  font-size: 17px;
+  line-height: 1.75;
+  font-size: 16.5px;
   transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
 }
