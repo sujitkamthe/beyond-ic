@@ -19,8 +19,10 @@
         <a href="index.html">Home</a>
         <a href="foundations.html">Foundations</a>
         <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="first-90-days.html">First 90 Days</a>
         <a href="technical-excellence.html">Technical Excellence</a>
         <a href="people-culture.html">People &amp; Culture</a>
+        <a href="team-health.html">Team Health</a>
         <a href="delivery-execution.html">Delivery &amp; Execution</a>
         <a href="resources.html">Resources</a>
         <a href="self-assessment.html">Self-Assessment</a>
@@ -47,6 +49,9 @@
       <li><a href="#tech-debt">3. Tech Debt as Culture, Not Hero Work</a></li>
       <li><a href="#stakeholder-communication">4. Stakeholder Communication</a></li>
       <li><a href="#setting-expectations">5. Setting Clear Expectations</a></li>
+      <li><a href="#engineering-metrics">6. Engineering Metrics That Matter</a></li>
+      <li><a href="#estimation">7. Estimation and Capacity Planning</a></li>
+      <li><a href="#planning-artifacts">8. Planning Artifacts That Build Confidence</a></li>
     </ul>
   </div>
 
@@ -456,6 +461,262 @@
 
   <div class="section-divider"></div>
 
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6: ENGINEERING METRICS THAT MATTER
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="engineering-metrics">
+    <span class="section-num">Section 6</span>
+    <h2>Engineering Metrics That Matter</h2>
+    <p class="section-intro">What you measure shapes what the team optimizes for. The right metrics illuminate health and progress. The wrong ones create perverse incentives. Choosing wisely &mdash; and interpreting honestly &mdash; is a core leadership responsibility.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Lines of code, number of commits, and hours worked measure activity, not value. The metrics that actually predict team health and delivery capability are the DORA metrics &mdash; and they work because they measure outcomes, not effort.</p>
+    </div>
+
+    <h3>The 4 DORA Metrics</h3>
+    <p>The DORA metrics, born from years of research into high-performing engineering teams, give you a reliable picture of your team's delivery health. Here is what each one measures and why it matters:</p>
+
+    <div class="framework">
+      <h4>The 4 DORA Metrics</h4>
+      <ol>
+        <li><strong>Deployment Frequency:</strong> How often does your team deploy to production? Higher frequency means smaller batch sizes, faster feedback loops, and lower risk per deployment. Elite teams deploy on demand (multiple times per day). Low-performing teams deploy monthly or less.</li>
+        <li><strong>Lead Time for Changes:</strong> How long from code commit to code running in production? This measures the efficiency of your pipeline and process. If a one-line fix takes 3 days to reach production, your process has friction that needs attention.</li>
+        <li><strong>Change Failure Rate:</strong> What percentage of deployments cause a failure in production? This measures quality. If you deploy frequently but break things often, speed without quality is not progress. The target is under 15%.</li>
+        <li><strong>Mean Time to Recovery (MTTR):</strong> When something does break, how quickly can you restore service? This measures your incident response maturity. Fast recovery is more realistic (and valuable) than zero failures.</li>
+      </ol>
+    </div>
+
+    <h3>Metrics to Use vs. Metrics to Avoid</h3>
+    <p>Not all metrics are created equal. Some drive the right behaviours; others create perverse incentives that actively harm team performance:</p>
+
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>Metrics to Use</th>
+          <th>Metrics to Avoid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Deployment frequency</td>
+          <td>Number of commits (incentivizes small, meaningless commits)</td>
+        </tr>
+        <tr>
+          <td>Lead time for changes</td>
+          <td>Lines of code (incentivizes verbosity)</td>
+        </tr>
+        <tr>
+          <td>Change failure rate</td>
+          <td>Number of bugs found (penalizes testing thoroughness)</td>
+        </tr>
+        <tr>
+          <td>MTTR</td>
+          <td>Individual velocity (destroys collaboration, gameable)</td>
+        </tr>
+        <tr>
+          <td>Cycle time per story</td>
+          <td>Hours worked (incentivizes presence, not productivity)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Introducing Metrics Without Creating Fear</h3>
+    <p>Metrics can be a powerful tool for learning or a destructive tool for surveillance. The difference lies entirely in how they are introduced and used:</p>
+
+    <div class="framework">
+      <h4>How to Introduce Metrics Without Creating Fear</h4>
+      <ol>
+        <li><strong>Start with team metrics, not individual metrics.</strong> The moment you track individuals, people optimize for their numbers, not team outcomes. DORA metrics are team-level by design.</li>
+        <li><strong>Use metrics for learning, not punishment.</strong> "Our lead time increased this month &mdash; let us investigate why" is healthy. "Your deployment frequency is too low" is toxic.</li>
+        <li><strong>Track trends, not snapshots.</strong> A single data point means nothing. Look at direction over 3+ months. Are things getting better or worse?</li>
+        <li><strong>Let the team own the dashboard.</strong> When the team builds and maintains their own metrics dashboard, they take ownership of improving it. When leadership imposes it, it feels like surveillance.</li>
+      </ol>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Start by measuring just one DORA metric</strong> &mdash; deployment frequency is the easiest to track and the most revealing. Once the team is comfortable with that, add lead time. Build the measurement habit before pursuing perfection.</p>
+    </div>
+
+    <div class="tip purple-tip">
+      <span class="tip-icon">&#128218;</span>
+      <p><strong>Go deeper:</strong> Read <em>Accelerate</em> by Nicole Forsgren, Jez Humble, and Gene Kim &mdash; the definitive research on what makes engineering teams high-performing. It is the source of the DORA metrics framework.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 7: ESTIMATION AND CAPACITY PLANNING
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="estimation">
+    <span class="section-num">Section 7</span>
+    <h2>Estimation and Capacity Planning</h2>
+    <p class="section-intro">Estimation is one of the most frustrating parts of software development &mdash; and one of the most important for building stakeholder trust. The goal is not perfect predictions. The goal is honest, useful forecasts that help the team and its stakeholders make good decisions.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Teams that are bad at estimation are not bad at guessing &mdash; they are usually bad at decomposition. The smaller you break work down, the more accurate your estimates become. A story estimated at 8 points is a bet. Five stories estimated at 1&ndash;2 points each is a forecast.</p>
+    </div>
+
+    <h3>The Estimation Playbook</h3>
+    <p>Estimation is a skill that improves with practice and the right techniques. Here are five approaches that consistently help teams move from guessing to forecasting:</p>
+
+    <div class="framework">
+      <h4>The Estimation Playbook</h4>
+      <ol>
+        <li><strong>Reference Stories:</strong> Establish 3&ndash;5 "reference stories" that the whole team agrees represent a 1, 3, 5, and 8 on your scale. When estimating new work, compare: "Is this bigger or smaller than the login endpoint refactor we all agreed was a 3?" Shared calibration prevents individual bias.</li>
+        <li><strong>Planning Poker:</strong> Each person estimates independently, then reveals simultaneously. If estimates diverge wildly (e.g., a 2 and an 8), discuss. The person who estimated high often sees a risk the others missed. This technique surfaces hidden complexity.</li>
+        <li><strong>The Spike Rule:</strong> If a story cannot be estimated because too much is unknown, it is not ready for estimation. Convert it to a timeboxed spike: "Spend half a day investigating, then come back with what you learned and a revised estimate." Estimating unknowns is guessing. Investigating unknowns is engineering.</li>
+        <li><strong>The 1.5x Buffer:</strong> For any non-trivial piece of work, multiply your gut estimate by 1.5. This is not padding &mdash; it is accounting for the integration work, edge cases, review cycles, and context switching that your gut systematically underestimates.</li>
+        <li><strong>Track Accuracy Over Time:</strong> After each sprint, compare estimates to actuals. Not to punish overruns, but to calibrate. If the team consistently underestimates by 30%, adjust the baseline. If one type of work is always underestimated, investigate why.</li>
+      </ol>
+    </div>
+
+    <h3>Common Estimation Mistakes</h3>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h4>Common Pitfall</h4>
+        <p>Giving precise estimates under pressure &mdash; a stakeholder asks "how long?" and you say "3 days" without decomposing the work. You have just made a commitment based on a guess.</p>
+      </div>
+      <div class="better">
+        <h4>Better Approach</h4>
+        <p>Giving a range with conditions &mdash; "Based on what we know now, 3&ndash;5 days. The main risk is the API integration &mdash; if that is straightforward, closer to 3; if we hit surprises, closer to 5. I will know more after a day of investigation."</p>
+      </div>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;&#65039;</span>
+      <p><strong>Never let anyone outside the team estimate on behalf of the team.</strong> Estimates made by people who will not do the work are wishes, not forecasts. The team estimates its own work &mdash; full stop.</p>
+    </div>
+
+    <h3>Estimation Traps</h3>
+    <p>Even well-intentioned teams fall into predictable estimation traps. Recognising these patterns is the first step to avoiding them:</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Anchoring</h4>
+        <p>The first number mentioned dominates. If a manager says "I think this is about 2 days" before the team estimates, the team will cluster around 2. This is why planning poker uses simultaneous reveal.</p>
+      </div>
+      <div class="card">
+        <h4>Optimism Bias</h4>
+        <p>Developers estimate for the happy path. They forget about testing, review cycles, deployment, edge cases, and the Slack question that eats an hour. The 1.5x buffer corrects for this.</p>
+      </div>
+      <div class="card">
+        <h4>Scope Creep Amnesia</h4>
+        <p>The story was estimated as "build the form." By the time it is done, it includes validation, error handling, accessibility, analytics, and a loading state. If scope grows, the estimate must be revisited.</p>
+      </div>
+      <div class="card">
+        <h4>Hero Estimation</h4>
+        <p>Estimating based on how long it would take the best person on the team under ideal conditions. Estimate for the realistic case: an average team member, with interruptions, doing it for the first time.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 8: PLANNING ARTIFACTS THAT BUILD CONFIDENCE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="planning-artifacts">
+    <span class="section-num">Section 8</span>
+    <h2>Planning Artifacts That Build Confidence</h2>
+    <p class="section-intro">Great delivery is not just about writing code &mdash; it is about making work visible, building shared understanding, and giving stakeholders confidence that the team knows where it is going. The right planning artifacts turn ambiguity into alignment.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>If a stakeholder asks "what is the plan?" and the answer lives entirely in someone's head or scattered across Jira tickets, the team does not have a plan &mdash; it has a hope. Plans need to be visible, shareable, and updatable.</p>
+    </div>
+
+    <h3>Four Artifacts Every Leader Should Know</h3>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>The Showcase Deck</h4>
+        <p><strong>What it is:</strong> A short (5&ndash;10 slide) presentation that communicates what the team built, why it matters, and what comes next. Used in sprint reviews, stakeholder demos, and all-hands.</p>
+        <p><strong>Why it matters:</strong> It translates engineering work into business impact. It gives the team a moment to take pride in their work. And it builds stakeholder trust far more effectively than a Jira dashboard ever will.</p>
+        <p><strong>Structure:</strong></p>
+        <ul>
+          <li><strong>Slide 1:</strong> One-line summary of the sprint or release goal.</li>
+          <li><strong>Slides 2&ndash;4:</strong> What was delivered (demo or screenshots, framed as user outcomes, not ticket numbers).</li>
+          <li><strong>Slide 5:</strong> Metrics and impact (before/after if possible).</li>
+          <li><strong>Slide 6:</strong> What is next and any risks.</li>
+          <li><strong>Slide 7:</strong> Acknowledgements &mdash; who contributed, who went above and beyond.</li>
+        </ul>
+        <p><strong>Tip:</strong> Let team members present their own work. This builds their communication skills and gives them visibility.</p>
+      </div>
+      <div class="card">
+        <h4>The Release Plan</h4>
+        <p><strong>What it is:</strong> A visual overview of what is shipping, when, and in what order. It maps features to sprints or time periods and shows dependencies.</p>
+        <p><strong>Why it matters:</strong> It creates shared understanding between the team and stakeholders about scope, sequencing, and trade-offs. When someone asks "can we add this?" you can show them what it displaces.</p>
+        <p><strong>What to include:</strong></p>
+        <ul>
+          <li>Feature list with target sprint or dates.</li>
+          <li>Dependencies between features (which ones block others).</li>
+          <li>Milestones and external deadlines.</li>
+          <li>Risks and assumptions.</li>
+          <li>A "cut line" &mdash; everything below this line is at risk if timelines slip.</li>
+        </ul>
+        <p><strong>Tip:</strong> Keep it on one page. If the release plan requires a 20-page document, it is too complex to communicate effectively.</p>
+      </div>
+      <div class="card">
+        <h4>The Gantt Chart (Visual Timeline)</h4>
+        <p><strong>What it is:</strong> A timeline view showing work streams running in parallel, with dependencies marked. Simple tools (Google Sheets, Miro, or even a whiteboard) work fine &mdash; no need for Microsoft Project.</p>
+        <p><strong>Why it matters:</strong> It makes parallelisation visible. It answers: "What can run at the same time? What has to finish before something else starts? Where is the critical path?"</p>
+        <p><strong>When to use it:</strong> For releases spanning 3+ sprints, for projects with cross-team dependencies, or when stakeholders need to see the "big picture" timeline.</p>
+        <p><strong>Common mistake:</strong> Building a beautiful Gantt chart that nobody updates. A Gantt chart is a living document. If it goes stale after week 1, it becomes misleading rather than helpful.</p>
+      </div>
+      <div class="card">
+        <h4>Story Parallelisation</h4>
+        <p><strong>What it is:</strong> The practice of breaking features into independent slices that multiple people can work on simultaneously, rather than a single linear chain.</p>
+        <p><strong>Why it matters:</strong> A feature estimated at 10 days by one person can often be delivered in 4 days by three people working in parallel &mdash; if the work is sliced correctly. Parallelisation is the difference between "we will start feature B after feature A is done" and "features A and B ship in the same sprint."</p>
+        <p><strong>How to slice:</strong></p>
+        <ul>
+          <li>Slice by layer (API, frontend, data migration &mdash; but coordinate the contract).</li>
+          <li>Slice by user flow (login, dashboard, settings as independent work streams).</li>
+          <li>Slice by scenario (happy path first, error handling second, edge cases third).</li>
+        </ul>
+        <p>The key is that each slice is independently deployable and testable.</p>
+        <p><strong>Common mistake:</strong> Slicing stories so thin that integration overhead outweighs the parallelisation benefit. If every story needs a 30-minute sync meeting, the slices are too interdependent.</p>
+      </div>
+    </div>
+
+    <h3>How to Build a Release Plan</h3>
+
+    <div class="framework">
+      <h4>5 Steps From Backlog to Shared Plan</h4>
+      <ol>
+        <li><strong>List all features and stories for the release with rough estimates.</strong> Get everything on the table before you start sequencing. Include both new work and known technical debt items that must ship with the release.</li>
+        <li><strong>Identify dependencies &mdash; which stories block others?</strong> Draw the dependency graph. This does not need to be formal &mdash; sticky notes on a whiteboard or a simple diagram in Miro works. The goal is to see the shape of the work.</li>
+        <li><strong>Identify the critical path.</strong> The critical path is the longest chain of dependent stories. This determines your minimum timeline. Everything else can flex, but the critical path sets the floor.</li>
+        <li><strong>Look for parallelisation opportunities.</strong> Which stories have no dependencies between them and can run simultaneously? This is where you turn a 12-week plan into an 8-week plan &mdash; not by working faster, but by working smarter.</li>
+        <li><strong>Map to sprints and share.</strong> Assign stories to time periods based on dependencies, capacity, and priority. Mark milestones and external deadlines. Share with stakeholders for feedback before committing &mdash; a plan that surprises stakeholders on day one is not a plan, it is a decree.</li>
+      </ol>
+    </div>
+
+    <h3>Sequential vs. Parallel Delivery</h3>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h4>Common Pitfall</h4>
+        <p>The hero narrative &mdash; one person works on each feature sequentially, finishing one before starting the next. The work is predictable but slow. The team has 5 people but only 1&ndash;2 are ever working on the most important thing.</p>
+      </div>
+      <div class="better">
+        <h4>Better Approach</h4>
+        <p>Deliberate parallelisation &mdash; the feature is decomposed into 3&ndash;4 independent slices with clear integration points. Three people work on it simultaneously with a shared contract (API spec, data schema). It ships in one sprint instead of three.</p>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Start the showcase habit this sprint.</strong> Every sprint review should end with a brief showcase. It does not need to be polished &mdash; even a 5-minute walkthrough with screenshots builds more stakeholder confidence than a status email. The team will take pride in it, and stakeholders will start looking forward to it.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- ─── CLOSING QUOTE ─── -->
   <section class="fade-in">
     <div class="quote">
@@ -470,8 +731,10 @@
       <a href="index.html">Home</a>
       <a href="foundations.html">Foundations</a>
       <a href="communication-change.html">Communication &amp; Change</a>
-        <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="first-90-days.html">First 90 Days</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
       <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
       <a href="delivery-execution.html">Delivery &amp; Execution</a>
       <a href="resources.html">Resources</a>
       <a href="self-assessment.html">Self-Assessment</a>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First 90 Days as a Leader &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="first-90-days.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="first-90-days.html">First 90 Days</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="team-health.html">Team Health</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Your First 90 Days as a Leader</h1>
+    <p class="subtitle">A practical playbook for your transition into leadership &mdash; what to do in your first week, first month, and first quarter.</p>
+  </div>
+
+  <!-- ─── IN-PAGE TABLE OF CONTENTS ─── -->
+  <div class="page-toc">
+    <h4>On This Page</h4>
+    <ul>
+      <li><a href="#listen-phase">Listen Phase</a></li>
+      <li><a href="#learn-phase">Learn Phase</a></li>
+      <li><a href="#act-phase">Act Phase</a></li>
+      <li><a href="#week-1-essentials">Week 1 Essentials</a></li>
+      <li><a href="#common-traps">Common Traps</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       YOUR FIRST 90 DAYS AS A LEADER
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="first-90-days">
+    <h2>Your First 90 Days as a Leader</h2>
+    <p class="section-intro">Stepping into a leadership role for the first time is exciting and overwhelming in equal measure. The decisions you make &mdash; and the ones you resist making &mdash; in your first 90 days set the foundation for everything that follows.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Your first 90 days set the tone for your leadership. Resist the urge to change everything immediately. Listen first, build trust, then act. The leaders who succeed in transitions are the ones who earn credibility before spending it.</p>
+    </div>
+
+    <h3>The First 90 Days Framework</h3>
+    <div class="framework">
+      <h4>Three Phases: Listen &rarr; Learn &rarr; Act</h4>
+      <ol>
+        <li id="listen-phase">
+          <strong>Week 1&ndash;2: LISTEN</strong>
+          <p>Meet every team member 1:1. Ask three questions: "What is working well? What is frustrating? What would you change if you could?" Do not promise anything yet. Do not share grand plans. Your only job is to understand the lay of the land. Take notes. Look for patterns across conversations. Pay attention to what people say &mdash; and what they avoid saying.</p>
+        </li>
+        <li id="learn-phase">
+          <strong>Month 1: LEARN</strong>
+          <p>Understand the codebase, the delivery rhythm, the stakeholder landscape. Identify the top 3 problems the team faces. Map who knows what &mdash; who are the domain experts, who are the go-to people for different systems, where are the single points of failure? Attend every meeting as an observer first. Resist the urge to "add value" in every discussion. Your value right now is in understanding, not in opining.</p>
+        </li>
+        <li id="act-phase">
+          <strong>Month 2&ndash;3: ACT</strong>
+          <p>Pick ONE thing to improve. Make it small, visible, and achievable. Build credibility through a quick win before attempting larger changes. Share what you are doing and why &mdash; with the team and with stakeholders. When you deliver that first improvement, you earn the trust to tackle bigger things. Communicate your observations and plan: "Here is what I have heard, here is what I think we should focus on, here is why."</p>
+        </li>
+      </ol>
+    </div>
+
+    <h3 id="week-1-essentials">Week 1 Essentials</h3>
+    <div class="checklist">
+      <h4>First Week Checklist</h4>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-1on1">
+        <label for="first90-1on1">Had a 1:1 with every team member</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-retros">
+        <label for="first90-retros">Read the last 3 retrospective notes</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-board">
+        <label for="first90-board">Reviewed the sprint board and delivery metrics</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-goto">
+        <label for="first90-goto">Identified who the go-to people are for different domains</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-stakeholders">
+        <label for="first90-stakeholders">Understood the stakeholder relationships and expectations</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="first90-incidents">
+        <label for="first90-incidents">Read the last 5 incident post-mortems (if any exist)</label>
+      </div>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;</span>
+      <p><strong>The biggest mistake new leaders make</strong> is trying to prove themselves by changing things too fast. Your team has context you do not have yet. They have tried things that did not work. They have reasons for the way things are &mdash; some good, some outdated, but all worth understanding. Earn the right to lead by listening before acting.</p>
+    </div>
+
+    <h3 id="common-traps">Common First-90-Day Traps</h3>
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Fixing Everything at Once</h4>
+        <p>You see ten things that could be better and try to change all of them simultaneously. The result: you lose credibility, exhaust the team, and nothing gets finished. Change fatigue is real. Pick one thing, do it well, then move to the next.</p>
+        <p><strong>Ask yourself:</strong> "If I could only fix one thing in the next 30 days, which one would create the most trust and momentum?"</p>
+      </div>
+      <div class="card">
+        <h4>Being the Hero Coder</h4>
+        <p>You default to what is comfortable &mdash; taking on the hardest stories, writing the most code, being the top contributor on the commit graph. It feels productive, but you are doing IC work while leadership work goes undone. Your team does not need another coder. They need a leader.</p>
+        <p><strong>Ask yourself:</strong> "Am I coding because the team needs me to, or because it makes me feel useful?"</p>
+      </div>
+      <div class="card">
+        <h4>Avoiding Hard Conversations</h4>
+        <p>You notice a performance issue or a team dynamic problem but convince yourself it will sort itself out. It will not. Problems left unaddressed in month 1 become crises by month 3. Having a respectful, honest conversation early is always easier than having a difficult one later.</p>
+        <p><strong>Ask yourself:</strong> "Am I avoiding this conversation because it is unnecessary, or because it is uncomfortable?"</p>
+      </div>
+      <div class="card">
+        <h4>Not Asking for Help</h4>
+        <p>You feel like you should have all the answers because you are "the leader" now. You do not. Nobody does. Find a mentor &mdash; someone who has been through this transition before. Talk to peer leaders on other teams. Ask your own manager for guidance. The strongest leaders are the ones who know what they do not know and seek help actively.</p>
+        <p><strong>Ask yourself:</strong> "Who can I learn from? Who has navigated this transition before me?"</p>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Recommended reading:</strong> <em>The First 90 Days</em> by Michael D. Watkins is the definitive guide to leadership transitions. While written for general management, the core frameworks &mdash; learning plans, early wins, building alliances &mdash; translate directly to engineering leadership.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── CLOSING ─── -->
+  <section class="fade-in">
+    <div class="quote">
+      <p>The first step is the hardest &mdash; but it is also the one that matters most.</p>
+    </div>
+  </section>
+
+<!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="communication-change.html">Communication &amp; Change</a>
+      <a href="first-90-days.html">First 90 Days</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

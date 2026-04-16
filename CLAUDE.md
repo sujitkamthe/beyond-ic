@@ -44,11 +44,14 @@ This is a **learning resource**, not a performance review. The tone must be:
 ```
 multiplier-playbook/
   index.html                  — Home page with "Choose Your Path" grid
-  foundations.html             — Mindshift, Problem Solving, Decisions, Driving Change, Status Quo
-  technical-excellence.html   — Clean Code, Standards, Testing, Observability, Tooling
-  people-culture.html         — Mentoring, Feedback, Ownership, Huddles, Hard Conversations, Growing People
-  delivery-execution.html     — Delivery, Incidents, Tech Debt, Stakeholders, Expectations
-  resources.html              — Books, videos, external links
+  foundations.html             — Mindshift, Problem Solving, Decisions, Time Management, Self-Awareness, Personality Types
+  communication-change.html   — Pyramid Principle, Executive Presence, Managing Up, Influence Without Authority, Driving Change, Status Quo, Written Artifacts
+  first-90-days.html          — Listen/Learn/Act framework, Week 1 Essentials, Common Traps (standalone page)
+  technical-excellence.html   — Clean Code (multi-language), Standards, Testing, Observability, Security, Tooling
+  people-culture.html         — Delegation, Mentoring, Feedback, Ownership, Huddles, Hard Conversations, Hiring, Feedback Tracking, Underperformance, 1:1s
+  team-health.html            — Psychological Safety, Remote Leadership, Burnout Prevention, Conflict Mediation (standalone page)
+  delivery-execution.html     — Delivery, Incidents, Tech Debt, Stakeholders, Expectations, DORA Metrics, Estimation, Planning Artifacts
+  resources.html              — Books, videos, podcasts, blogs, communities, framework quick-reference
   self-assessment.html        — Interactive checklist with localStorage persistence
   css/
     styles.css                — Shared design system
@@ -73,19 +76,38 @@ multiplier-playbook/
 1. **IC to Leader mindshift** — from doing to enabling
 2. **Problem-solving thinking** — root cause analysis, 5 Whys, prioritisation
 3. **Decision making** — one-way/two-way doors, time-boxing, facilitating discussions
-4. **Driving change** — understanding why people don't change (overload, clarity, confidence, motivation, habit)
-5. **Clean code & standards** — modern language features, MR reviews as teaching, design principles
-6. **Testing** — systemic approach to preventing bugs, not just "be more careful"
-7. **Mentoring** — asking prompting questions instead of giving answers, growth check-ins
-8. **Feedback** — Radical Candor framework, SBI model, frequent informal feedback
-9. **Ownership** — "it's everyone's code", finishing what you start, peer accountability
-10. **Dev huddles** — making sure all voices are heard, not just the loudest
-11. **Delivery** — sprint hygiene, the 30% rule for risk, "almost done" checks
-12. **Incidents** — severity assessment, blameless post-mortems, safety nets
-13. **Stakeholder communication** — translating tech to business, the "no surprises" rule
-14. **Setting expectations** — defining "meets" vs "exceeds", evidence-based assessment
-15. **Challenging the status quo** — questioning processes, leveraging AI, continuous improvement
-16. **Learning culture** — "learn and teach" contracts, "show me in code" challenges
+4. **Time management** — the 40/30/20/10 guideline, protecting leadership time
+5. **Self-awareness & emotional regulation** — managing your own triggers, the Pause Protocol
+6. **Understanding personality types** — 4 communication styles (Analytical/Driver/Connector/Supporter), adapting delegation and feedback
+7. **First 90 days** — listen, learn, act framework for new leaders (standalone page)
+8. **Structured communication** — Pyramid Principle, MECE, SCR, Issue-Impact-Action
+9. **Managing up** — no surprises, recommendations not problems, predictability
+10. **Influence without authority** — 4 currencies of influence, cross-team collaboration
+11. **Driving change** — understanding why people don't change (overload, clarity, confidence, motivation, habit, disagreement)
+12. **Written artifacts** — design docs, RFCs, ADRs, how to write and review them
+13. **Clean code & standards** — modern language features (multi-language), MR reviews as teaching, design principles
+14. **Testing** — systemic approach to preventing bugs, not just "be more careful"
+15. **Security mindset** — threat modeling, OWASP, dependency scanning, secure-by-default
+16. **Mentoring** — asking prompting questions instead of giving answers, growth check-ins
+17. **Feedback** — Radical Candor framework, SBI model, frequent informal feedback
+18. **Ownership** — "it's everyone's code", finishing what you start, peer accountability
+19. **Dev huddles** — making sure all voices are heard, not just the loudest
+20. **Running effective 1:1s** — 3-part structure, cadence by person, questions that unlock real conversations
+21. **Hiring & onboarding** — evaluating beyond technical skills, the first 90 days framework
+22. **Navigating underperformance** — escalation path, diagnosing skill/motivation/clarity/fit gaps
+23. **Psychological safety** — Edmondson's research, 5 daily practices, signs of safety vs fear
+24. **Remote & distributed leadership** — async-first, timezone awareness, combating isolation
+25. **Burnout recognition & prevention** — early warning signs, sustainable pace, leader self-care
+26. **Conflict mediation** — 5-step mediation framework, when to step in vs let it resolve
+27. **Delivery** — sprint hygiene, the 30% rule for risk, "almost done" checks
+28. **Incidents** — severity assessment, blameless post-mortems, safety nets
+29. **Stakeholder communication** — translating tech to business, the "no surprises" rule
+30. **Setting expectations** — defining "meets" vs "exceeds", evidence-based assessment
+31. **Engineering metrics** — DORA metrics, introducing metrics without fear, tracking trends
+32. **Estimation** — reference stories, planning poker, spike rule, 1.5x buffer
+33. **Planning artifacts** — showcase decks, release plans, Gantt charts, story parallelisation
+34. **Challenging the status quo** — questioning processes, leveraging AI, continuous improvement
+35. **Learning culture** — "learn and teach" contracts, "show me in code" challenges
 
 ## Tech Stack Context (for examples in content)
 Examples in the content reference: Java (modern features up to Java 25), Spring Boot, Angular, PostgreSQL, MongoDB, Kubernetes, AWS, Terraform, Docker, GitLab CI, Grafana, Prometheus, Kibana, Claude AI. These are illustrative examples, not mandates for a specific team.

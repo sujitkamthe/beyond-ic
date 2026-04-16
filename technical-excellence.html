@@ -19,8 +19,10 @@
         <a href="index.html">Home</a>
         <a href="foundations.html">Foundations</a>
         <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="first-90-days.html">First 90 Days</a>
         <a href="technical-excellence.html">Technical Excellence</a>
         <a href="people-culture.html">People &amp; Culture</a>
+        <a href="team-health.html">Team Health</a>
         <a href="delivery-execution.html">Delivery &amp; Execution</a>
         <a href="resources.html">Resources</a>
         <a href="self-assessment.html">Self-Assessment</a>
@@ -46,6 +48,7 @@
       <li><a href="#standards">Setting and Maintaining Standards</a></li>
       <li><a href="#testing">Testing That Actually Catches Bugs</a></li>
       <li><a href="#observability">Building an Observability Mindset</a></li>
+      <li><a href="#security">Building a Security Mindset</a></li>
       <li><a href="#tools">Getting the Most from Your Tools</a></li>
     </ul>
   </div>
@@ -64,106 +67,106 @@
 
     <!-- ── Modern Language Features ── -->
     <h3>Modern Language Features</h3>
-    <p>Languages evolve, and teams that keep up write simpler, safer, more expressive code. The challenge isn't learning new features &mdash; it's building a habit of reaching for them instead of falling back on familiar patterns. Here's a framework using Java as an illustrative example; the same principle applies to whatever language your team uses.</p>
+    <p>Languages evolve, and teams that keep up write simpler, safer, more expressive code. The challenge is not learning new features &mdash; it is building a habit of reaching for them instead of falling back on familiar patterns. The principles below apply across languages; the examples show how they look in practice across different stacks.</p>
 
     <div class="accordion">
 
-      <!-- Records -->
+      <!-- Data Classes -->
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          Records &mdash; Replace Boilerplate DTOs
+          Data Classes &mdash; Replace Boilerplate with Intent
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Records let you express "this is just data" in a single line, eliminating the noise of getters, equals, hashCode, and toString that obscure intent.</p>
+          <p>Most modern languages now offer concise ways to declare "this is just data" &mdash; eliminating boilerplate and making intent clear.</p>
           <div class="pattern-grid">
             <div class="pitfall">
               <h5>Pitfall</h5>
-              <p>A 60-line class with private fields, constructor, six getters, equals, hashCode, and toString &mdash; just to carry three fields between layers.</p>
+              <p>A 60-line class with private fields, constructor, getters, equals, hashCode, and toString &mdash; just to carry three fields between layers. In Python: a plain class with <code>__init__</code>, <code>__eq__</code>, and <code>__repr__</code> manually written. In TypeScript: a class with constructor and redundant property declarations.</p>
             </div>
             <div class="better">
               <h5>Better Approach</h5>
-              <p><code>record OrderSummary(String orderId, BigDecimal total, Instant createdAt) {}</code> &mdash; one line, immutable, clear intent.</p>
+              <p>Java: <code>record OrderSummary(String orderId, BigDecimal total, Instant createdAt) {}</code> &mdash; one line, immutable, clear intent. Python: <code>@dataclass(frozen=True)</code> with type annotations. TypeScript: a simple <code>interface</code> or <code>type</code> alias. Kotlin: <code>data class</code>. Go: a plain struct with exported fields. The principle is the same: express "this is data" in the least amount of code.</p>
             </div>
           </div>
           <div class="tip">
             <span class="tip-icon">&#9889;</span>
-            <p><strong>Action:</strong> Search your codebase for DTOs that are pure data carriers. Convert one to a record in your next MR and share the before/after with the team.</p>
+            <p><strong>Action:</strong> Search your codebase for data carriers that are heavier than they need to be. Convert one using your language's modern idiom and share the before/after.</p>
           </div>
         </div>
       </div>
 
-      <!-- Sealed Classes -->
+      <!-- Type-Safe Domain Modelling -->
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          Sealed Classes &mdash; Express Domain Constraints in Types
+          Type-Safe Domain Modelling &mdash; Encode Constraints in the Type System
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Sealed classes let the compiler enforce that only a known, finite set of subtypes exist. This turns runtime surprises into compile-time errors and makes domain models self-documenting.</p>
+          <p>Every modern language has tools to make illegal states unrepresentable. The specifics vary &mdash; sealed classes in Java/Kotlin, union types in TypeScript, Enums in Python/Rust, sum types in Go &mdash; but the principle is universal: let the compiler catch mistakes that runtime checks miss.</p>
           <div class="pattern-grid">
             <div class="pitfall">
               <h5>Pitfall</h5>
-              <p>An open class hierarchy where any module can extend <code>PaymentResult</code>, leading to unexpected subtypes and fragile <code>instanceof</code> chains.</p>
+              <p>Using strings or loosely-typed enums to represent a fixed set of outcomes. A <code>status</code> field that is a string means any typo compiles. An <code>if/else</code> chain that forgets a case fails silently at runtime.</p>
             </div>
             <div class="better">
               <h5>Better Approach</h5>
-              <p><code>sealed interface PaymentResult permits Approved, Declined, PendingReview {}</code> &mdash; the compiler guarantees exhaustive handling.</p>
+              <p>Java/Kotlin: <code>sealed interface PaymentResult permits Approved, Declined, PendingReview</code>. TypeScript: <code>type PaymentResult = { kind: 'approved'; ... } | { kind: 'declined'; reason: string } | { kind: 'pending' }</code>. Python: <code>Enum</code> or <code>@dataclass</code> unions with match statements. The compiler guarantees exhaustive handling.</p>
             </div>
           </div>
           <div class="tip">
             <span class="tip-icon">&#9889;</span>
-            <p><strong>Action:</strong> Identify one place where your code uses a string or enum to represent a fixed set of outcomes. Model it with sealed types instead and discuss the tradeoffs in a team review.</p>
+            <p><strong>Action:</strong> Find one place where your code uses a string or loosely-typed value to represent a fixed set of outcomes. Model it with your language's type-safe alternative.</p>
           </div>
         </div>
       </div>
 
-      <!-- Pattern Matching -->
+      <!-- Modern Concurrency -->
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          Pattern Matching &mdash; Safer, More Readable Conditionals
+          Modern Concurrency &mdash; Simplify Async Without Callback Hell
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Pattern matching eliminates the <code>instanceof</code>-then-cast dance and makes conditional logic declarative. Combined with sealed classes, it gives you exhaustiveness checking.</p>
+          <p>Every major language has evolved its concurrency model in recent years. The goal is the same everywhere: write code that reads sequentially but executes concurrently, without the complexity of manual thread management or deeply nested callbacks.</p>
           <div class="pattern-grid">
             <div class="pitfall">
               <h5>Pitfall</h5>
-              <p>Chains of <code>if (obj instanceof Foo) { Foo f = (Foo) obj; ... }</code> &mdash; verbose, error-prone, and easy to forget a case.</p>
+              <p>Thread pool exhaustion in Java, callback pyramids in JavaScript, GIL contention in Python, goroutine leaks in Go. Each language has its own version of concurrency pain, but the root cause is the same: managing concurrency at too low a level of abstraction.</p>
             </div>
             <div class="better">
               <h5>Better Approach</h5>
-              <p><code>if (obj instanceof Foo f) { ... }</code> or <code>switch</code> expressions with pattern cases &mdash; the variable is scoped, typed, and the compiler checks coverage.</p>
+              <p>Java: Virtual threads via <code>Executors.newVirtualThreadPerTaskExecutor()</code>. JavaScript/TypeScript: <code>async/await</code> with proper error boundaries. Python: <code>asyncio</code> or structured concurrency with <code>TaskGroup</code>. Go: goroutines with context cancellation and <code>errgroup</code>. Kotlin: coroutines with structured concurrency. The principle: use your language's highest-level concurrency primitive and let the runtime handle scheduling.</p>
             </div>
           </div>
           <div class="tip">
             <span class="tip-icon">&#9889;</span>
-            <p><strong>Action:</strong> Grep for <code>instanceof</code> in your codebase. Pick one instance and refactor it to use pattern matching. Note how much cleaner the result reads.</p>
+            <p><strong>Action:</strong> Identify one I/O-heavy service. Prototype it with your language's modern concurrency model. Benchmark the difference and share results.</p>
           </div>
         </div>
       </div>
 
-      <!-- Virtual Threads -->
+      <!-- Immutability by Default -->
       <div class="accordion-item">
         <div class="accordion-header" onclick="toggleAccordion(this)">
-          Virtual Threads &mdash; Simple Concurrency for I/O-Heavy Services
+          Immutability by Default &mdash; Reduce Bugs by Reducing Mutation
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Virtual threads let you write straightforward blocking code that scales like async, without the complexity of reactive chains or callback hell. They're ideal for services that spend most of their time waiting on I/O.</p>
+          <p>Mutable state is the single biggest source of subtle bugs in production systems. Modern language features and conventions make it progressively easier to default to immutability &mdash; reducing the surface area for an entire class of errors.</p>
           <div class="pattern-grid">
             <div class="pitfall">
               <h5>Pitfall</h5>
-              <p>A thread pool of 200 platform threads handling 2000 concurrent requests, with most threads blocked waiting on database or HTTP calls &mdash; leading to thread exhaustion and cascading timeouts.</p>
+              <p>Mutable objects passed between layers that get modified unexpectedly. A list returned from a service that a caller modifies, corrupting the original. A DTO whose fields change between validation and use.</p>
             </div>
             <div class="better">
               <h5>Better Approach</h5>
-              <p>Virtual threads via <code>Executors.newVirtualThreadPerTaskExecutor()</code> &mdash; each request gets its own lightweight thread. The code reads sequentially, but scales to thousands of concurrent operations.</p>
+              <p>Java: <code>record</code> types and <code>List.copyOf()</code>. TypeScript: <code>readonly</code> properties and <code>as const</code>. Python: <code>frozen=True</code> on dataclasses and tuples instead of lists. Go: return copies instead of pointers to internal state. Kotlin: <code>val</code> over <code>var</code>, <code>listOf</code> over <code>mutableListOf</code>. The principle: make the default immutable, and require explicit opt-in for mutation.</p>
             </div>
           </div>
           <div class="tip">
             <span class="tip-icon">&#9889;</span>
-            <p><strong>Action:</strong> Identify one I/O-heavy service in your stack. Prototype it with virtual threads and benchmark the difference. Share results with the team to build confidence.</p>
+            <p><strong>Action:</strong> In your next MR review, look for mutable state that crosses boundaries. Suggest an immutable alternative and explain why.</p>
           </div>
         </div>
       </div>
@@ -175,25 +178,17 @@
           <span class="arrow">&#9660;</span>
         </div>
         <div class="accordion-body">
-          <p>Not every improvement requires a major refactor. These smaller language features can be adopted incrementally and improve readability immediately:</p>
+          <p>Not every improvement requires a major refactor. Every language has small, modern features that can be adopted incrementally for immediate readability gains:</p>
           <ul>
-            <li><strong><code>stream.toList()</code></strong> &mdash; replaces <code>.collect(Collectors.toList())</code>. Less noise, same result.</li>
-            <li><strong>Text blocks</strong> &mdash; multi-line strings without concatenation or escape characters. Great for SQL queries, JSON templates, and test fixtures.</li>
-            <li><strong>Helpful NullPointerExceptions</strong> &mdash; the JVM now tells you exactly which reference was null in a chain. Enable this and save debugging time.</li>
+            <li><strong>Java:</strong> <code>stream.toList()</code> instead of <code>.collect(Collectors.toList())</code>, text blocks for multi-line strings, helpful NullPointerExceptions</li>
+            <li><strong>TypeScript:</strong> optional chaining (<code>?.</code>), nullish coalescing (<code>??</code>), template literal types, <code>satisfies</code> operator</li>
+            <li><strong>Python:</strong> f-strings over <code>.format()</code>, walrus operator (<code>:=</code>), <code>match</code> statements (3.10+), type hints everywhere</li>
+            <li><strong>Go:</strong> generics (1.18+), <code>errors.Is</code>/<code>errors.As</code> over type assertions, structured logging with <code>slog</code></li>
+            <li><strong>Kotlin:</strong> scope functions (<code>let</code>, <code>apply</code>, <code>also</code>), sealed classes, extension functions for domain clarity</li>
           </ul>
-          <div class="pattern-grid">
-            <div class="pitfall">
-              <h5>Pitfall</h5>
-              <p>Sticking with verbose, older idioms out of habit &mdash; <code>.collect(Collectors.toList())</code>, manual string concatenation for multi-line SQL, cryptic NPE stack traces.</p>
-            </div>
-            <div class="better">
-              <h5>Better Approach</h5>
-              <p>Adopting small, zero-risk improvements incrementally. Each one is a tiny readability win; together they add up to a noticeably cleaner codebase.</p>
-            </div>
-          </div>
           <div class="tip">
             <span class="tip-icon">&#9889;</span>
-            <p><strong>Action:</strong> Add a "quick wins" section to your team's coding conventions doc. List three small modern idioms and encourage everyone to use them in their next MR.</p>
+            <p><strong>Action:</strong> Add a "quick wins" section to your team's coding conventions. List three modern idioms for your language and encourage everyone to use them in their next MR.</p>
           </div>
         </div>
       </div>
@@ -470,7 +465,7 @@
 
     <!-- ── Stack-Specific Standards Accordion ── -->
     <h3>Stack-Specific Standards</h3>
-    <p>These are illustrative examples organized by technology layer. Adapt them to whatever stack your team uses.</p>
+    <p>These are illustrative examples organized by technology layer. Your team may use different technologies &mdash; the principles transfer even if the specific tools do not. Adapt them to your stack.</p>
 
     <div class="accordion">
 
@@ -710,10 +705,81 @@
   <div class="section-divider"></div>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- SECTION 5: Getting the Most from Your Tools             -->
+  <!-- SECTION 5: Building a Security Mindset                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="security" class="fade-in">
+    <span class="section-num">Section 5</span>
+    <h2>Building a Security Mindset</h2>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Security is not a feature you add at the end &mdash; it is a mindset you build into the team from the start. As a leader, you set the bar. If security is an afterthought in your reviews and standards, it will be an afterthought in the code.</p>
+    </div>
+
+    <!-- ── The Security Leader's Checklist Framework ── -->
+    <h3>The Security Leader's Checklist</h3>
+    <p>Security at scale is not about one person running a scan. It is about building habits across the team so that secure thinking becomes automatic. These five practices, adopted consistently, will dramatically reduce your attack surface.</p>
+
+    <div class="framework">
+      <h4>Five Practices for Security-Minded Teams</h4>
+      <ol>
+        <li><strong>Threat modeling for new features:</strong> Before building, ask: "What could an attacker do with this? What data are we exposing? What are the trust boundaries?" A 30-minute threat modeling session during design prevents weeks of remediation later.</li>
+        <li><strong>Dependency scanning in CI:</strong> Automated tools (Snyk, Dependabot, Trivy) that flag known vulnerabilities in your dependencies. If it is not in the pipeline, it is not happening. Make it a merge blocker for critical/high findings.</li>
+        <li><strong>OWASP Top 10 awareness:</strong> Every engineer should know the OWASP Top 10. Run a brown-bag session. Make it part of onboarding. The most common vulnerabilities (injection, broken auth, XSS) are also the most preventable.</li>
+        <li><strong>Secrets management hygiene:</strong> No secrets in code, no secrets in environment variables checked into repos, no shared credentials. Use a secrets manager (Vault, AWS Secrets Manager). Rotate credentials on a schedule. Audit access regularly.</li>
+        <li><strong>Security review as a code review habit:</strong> Add security to your MR review checklist: input validation, parameterized queries, output encoding, authentication checks, authorization boundaries. These should be as automatic as checking for tests.</li>
+      </ol>
+    </div>
+
+    <!-- ── Security Smells in Code Reviews Cards ── -->
+    <h3>Security Smells in Code Reviews</h3>
+    <p>Train your eye to spot these patterns during MR reviews. Each one represents a category of vulnerability that is common, preventable, and worth flagging every time.</p>
+
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>SQL/NoSQL Injection</h4>
+        <p>String concatenation in queries instead of parameterized queries. Even one instance is a critical vulnerability.</p>
+      </div>
+      <div class="card">
+        <h4>Missing Input Validation</h4>
+        <p>User input flowing directly into business logic without sanitization. Validate at the boundary. Trust nothing from outside.</p>
+      </div>
+      <div class="card">
+        <h4>Exposed Secrets</h4>
+        <p>API keys, passwords, or tokens in code, config files, or logs. If it is in the repo history, it is compromised. Rotate immediately.</p>
+      </div>
+      <div class="card">
+        <h4>Broken Authorization</h4>
+        <p>Endpoints that check authentication but not authorization. Logged in does not mean allowed. Check permissions for every sensitive operation.</p>
+      </div>
+      <div class="card">
+        <h4>Excessive Data Exposure</h4>
+        <p>API responses returning more fields than the consumer needs. Return only what is necessary. Internal IDs, timestamps, and metadata should not leak to clients.</p>
+      </div>
+      <div class="card">
+        <h4>Missing Rate Limiting</h4>
+        <p>Public endpoints with no throttling. Every public-facing endpoint should have rate limiting. It is your first line of defence against abuse.</p>
+      </div>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;</span>
+      <p>If your team discovers a security vulnerability, treat it like a production incident &mdash; not a backlog item. Assess the blast radius, patch it, and do a post-mortem. Security debt compounds faster than tech debt.</p>
+    </div>
+
+    <div class="tip purple-tip">
+      <span class="tip-icon">&#128218;</span>
+      <p><strong>Go deeper:</strong> The OWASP Testing Guide and the OWASP Application Security Verification Standard (ASVS) are practical frameworks for systematically improving your team's security posture.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 6: Getting the Most from Your Tools             -->
   <!-- ═══════════════════════════════════════════════════════ -->
   <section id="tools" class="fade-in">
-    <span class="section-num">Section 5</span>
+    <span class="section-num">Section 6</span>
     <h2>Getting the Most from Your Tools</h2>
 
     <div class="key-insight">
@@ -785,8 +851,10 @@
       <a href="index.html">Home</a>
       <a href="foundations.html">Foundations</a>
       <a href="communication-change.html">Communication &amp; Change</a>
-        <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="first-90-days.html">First 90 Days</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
       <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
       <a href="delivery-execution.html">Delivery &amp; Execution</a>
       <a href="resources.html">Resources</a>
       <a href="self-assessment.html">Self-Assessment</a>

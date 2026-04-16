@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Health &mdash; Beyond IC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-current-page="team-health.html">
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Beyond IC</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="foundations.html">Foundations</a>
+        <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="first-90-days.html">First 90 Days</a>
+        <a href="technical-excellence.html">Technical Excellence</a>
+        <a href="people-culture.html">People &amp; Culture</a>
+        <a href="team-health.html">Team Health</a>
+        <a href="delivery-execution.html">Delivery &amp; Execution</a>
+        <a href="resources.html">Resources</a>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">&#127769;</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE HEADER ─── -->
+  <div class="page-header">
+    <h1>Team Health</h1>
+    <p class="subtitle">The foundations of a resilient team &mdash; psychological safety, remote collaboration, sustainable pace, and navigating conflict.</p>
+  </div>
+
+  <!-- ─── IN-PAGE TOC ─── -->
+  <div class="page-toc">
+    <h4>In This Section</h4>
+    <ul>
+      <li><a href="#psychological-safety">Building Psychological Safety</a></li>
+      <li><a href="#remote-leadership">Leading Remote and Distributed Teams</a></li>
+      <li><a href="#burnout">Recognising and Preventing Burnout</a></li>
+      <li><a href="#conflict-mediation">Mediating Conflict Between Team Members</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 1: Building Psychological Safety
+       ═══════════════════════════════════════════════════════ -->
+  <section id="psychological-safety" class="fade-in">
+    <span class="section-num">Section 01</span>
+    <h2>Building Psychological Safety</h2>
+    <p class="section-intro">
+      Psychological safety is the foundation everything else in this section is built on. Without it, people will not give honest feedback, admit mistakes, ask for help, or challenge ideas. Building it is not a one-time event &mdash; it is a daily practice that requires consistency and intention.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Amy Edmondson's research shows that the highest-performing teams are not the ones that make the fewest mistakes &mdash; they are the ones where people feel safe to report mistakes, ask questions, and take risks. Psychological safety is not about being comfortable. It is about being safe to be uncomfortable.</p>
+    </div>
+
+    <div class="framework">
+      <h4>5 Daily Practices That Build Safety</h4>
+      <ol>
+        <li><strong>Respond to mistakes with curiosity, not blame</strong> &mdash; "What can we learn from this?" not "How did you let this happen?" Your reaction to the first mistake someone admits sets the tone for every future admission.</li>
+        <li><strong>Ask for help publicly</strong> &mdash; When you as a leader say "I don't know &mdash; who can help me understand this?" you normalize vulnerability. If you never ask for help, nobody else will either.</li>
+        <li><strong>Thank people for bad news</strong> &mdash; "Thank you for raising this early" rewards the behaviour you want. If people get punished for surfacing problems, they will stop surfacing them &mdash; and the problems will get worse in silence.</li>
+        <li><strong>Separate learning from evaluation</strong> &mdash; Post-mortems and retros are for learning, not for performance tracking. If people worry that admitting a mistake in a retro will affect their review, the retro becomes theatre.</li>
+        <li><strong>Follow through on feedback</strong> &mdash; When someone gives you feedback and you act on it visibly, you prove that speaking up leads to change. When you ignore feedback, you prove it does not.</li>
+      </ol>
+    </div>
+
+    <h3>Signs of Safety vs. Signs of Fear</h3>
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>Signs of Safety</th>
+          <th>Signs of Fear</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>People volunteer mistakes in retros</td>
+          <td>Mistakes are only discovered when they become incidents</td>
+        </tr>
+        <tr>
+          <td>Junior members ask questions in group settings</td>
+          <td>Junior members only ask in private DMs</td>
+        </tr>
+        <tr>
+          <td>People challenge senior members' ideas constructively</td>
+          <td>Senior opinions go unquestioned</td>
+        </tr>
+        <tr>
+          <td>Retros produce honest, sometimes uncomfortable discussions</td>
+          <td>Retros are superficial &mdash; "everything's fine"</td>
+        </tr>
+        <tr>
+          <td>People say "I don't know" without hesitation</td>
+          <td>People bluff or stay silent rather than admit gaps</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Scripts for Building Safety</h3>
+    <p>These scripts give you the actual words for moments that define your team's culture. Adapt them to your voice, but preserve the intent.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"After someone makes a mistake"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Team channel or standup, right after a bug reaches production.</p>
+          <p>"Before we dig into the fix, I want to say &mdash; thank you for catching this and raising it immediately. That is exactly what I want to see. Now let us figure out what happened and what safety net we can add. No blame &mdash; just learning."</p>
+          <p><strong>Why it works:</strong> It rewards the disclosure publicly, which sets the norm for the whole team.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"Opening a retro when the team is guarded"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Sprint retrospective where people have been holding back.</p>
+          <p>"I want to try something different today. Before we start, I will go first. One thing I think I could have done better this sprint is [share a genuine self-critique]. Now &mdash; what is one thing that frustrated you this sprint that you have not said out loud yet? Write it down. We will share anonymously."</p>
+          <p><strong>Why it works:</strong> The leader's vulnerability breaks the ice. Anonymous writing removes the fear of being judged.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"When someone stays silent in discussions"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private 1:1, after noticing a pattern of silence.</p>
+          <p>"I have noticed you have been quieter in our design discussions lately. I want to make sure you know that your perspective is genuinely valued &mdash; I have seen you catch things others miss. Is there something making it harder to speak up? Is there a format that would work better for you? I want to make space for your voice."</p>
+          <p><strong>Why it works:</strong> It names the observation without judgment, affirms their value, and asks what they need instead of prescribing a fix.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128065;</span>
+      <p><strong>Handle with care:</strong> Psychological safety is fragile. It takes months to build and one bad reaction to destroy. A single moment of publicly shaming someone for a mistake can undo a year of trust-building. Guard it fiercely.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 2: Leading Remote and Distributed Teams
+       ═══════════════════════════════════════════════════════ -->
+  <section id="remote-leadership" class="fade-in">
+    <span class="section-num">Section 02</span>
+    <h2>Leading Remote and Distributed Teams</h2>
+    <p class="section-intro">
+      Whether your team is fully remote, hybrid, or distributed across time zones, leading through screens requires deliberate adaptations. The core leadership principles remain the same &mdash; communication, trust, feedback, ownership &mdash; but the practices that deliver them must change.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Remote teams do not fail because of the technology. They fail because leaders assume that what works in an office will work on a screen. It will not. Remote leadership requires more structure, more intentional communication, and more deliberate relationship-building &mdash; not less.</p>
+    </div>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Async-First Communication</h4>
+        <p>Default to written communication that people can consume on their own schedule. Reserve synchronous meetings for discussions that need real-time interaction: brainstorming, conflict resolution, sensitive conversations. Every important decision should have a written record, not just a Zoom memory.</p>
+      </div>
+      <div class="card">
+        <h4>Intentional 1:1s</h4>
+        <p>In an office, you pick up signals naturally &mdash; body language, hallway conversations, lunch chatter. Remote removes all of that. Your 1:1s become your primary sensor. Ask "How are you really doing?" and mean it. Notice changes in energy, communication patterns, or responsiveness.</p>
+      </div>
+      <div class="card">
+        <h4>Timezone-Aware Collaboration</h4>
+        <p>If your team spans multiple time zones, rotate meeting times so the same people are not always inconvenienced. Create overlap windows for real-time collaboration and protect them. Document decisions in shared channels so nobody wakes up to surprises.</p>
+      </div>
+      <div class="card">
+        <h4>Combating Isolation</h4>
+        <p>Remote work can be lonely, especially for new team members. Build informal connection points: virtual coffee chats, non-work Slack channels, optional social calls. Do not mandate fun &mdash; create the space and let it happen organically.</p>
+      </div>
+    </div>
+
+    <h3>The Remote Standup That Works</h3>
+    <div class="framework">
+      <h4>Framework: Async-First Standups</h4>
+      <p>Instead of synchronous daily standups (which are painful across timezones), try an async-first approach:</p>
+      <ol>
+        <li><strong>Use an async standup bot or shared channel</strong> &mdash; Each person posts by a certain time in their day with three updates: what I worked on yesterday, what I am working on today, and any blockers.</li>
+        <li><strong>Reserve one synchronous standup per week</strong> &mdash; Use this for discussion, alignment, and human connection. Keep it focused but leave room for informal conversation.</li>
+        <li><strong>Use the rest of the week async</strong> &mdash; People read updates on their own schedule. Blockers get addressed in threads. No one sits through a 15-minute call to share a 30-second update.</li>
+      </ol>
+      <p style="margin-top:16px;">This approach respects everyone's time, works across timezones, and produces a written record that people can reference later.</p>
+    </div>
+
+    <h3>Common Patterns</h3>
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Pitfall: Measuring Presence Instead of Output</h5>
+        <p>Monitoring online status, expecting instant replies, conflating "visible" with "productive." This breeds resentment and signals distrust.</p>
+      </div>
+      <div class="better">
+        <h5>Better: Measuring Outcomes</h5>
+        <p>Did the work get done? Were commitments met? Was communication clear? Trust your team with how they structure their day. Focus on results, not hours.</p>
+      </div>
+    </div>
+
+    <h3>Scripts for Remote Leadership</h3>
+    <p>Remote work strips away the informal signals you rely on in an office. These scripts help you be intentional about the conversations that matter most.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"Checking in beyond status"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Remote 1:1, opening.</p>
+          <p>"Before we get into work stuff &mdash; how are you actually doing? Not the project, not the sprint. You. I know remote work can feel isolating sometimes, and I want to make sure I am not missing anything. Is there anything you need that you are not getting?"</p>
+          <p><strong>Why it works:</strong> It separates the human check-in from the work check-in, which is especially important when you cannot read body language.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"When someone is overworking silently"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private message after noticing late-night commits or weekend activity.</p>
+          <p>"Hey, I noticed you have been pushing commits late at night this week. I appreciate the dedication, but I want to check in &mdash; is the workload manageable? Is there something blocking you during the day? I would rather adjust scope or get you help than have you burning the candle at both ends. Sustainable pace is not optional on this team."</p>
+          <p><strong>Why it works:</strong> It shows you are paying attention, expresses care without judgment, and offers concrete help.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128065;</span>
+      <p><strong>The health signal:</strong> The strongest signal of a healthy remote team: people proactively share context without being asked. They update threads, write things down, and over-communicate by default. If you have to chase people for updates, the communication norms need work.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 3: Recognising and Preventing Burnout
+       ═══════════════════════════════════════════════════════ -->
+  <section id="burnout" class="fade-in">
+    <span class="section-num">Section 03</span>
+    <h2>Recognising and Preventing Burnout</h2>
+    <p class="section-intro">
+      Burnout is not a badge of honour &mdash; it is a failure of sustainability. As a leader, you are responsible for recognising burnout in yourself and in your team, and for building a pace that people can maintain long-term.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Burnout does not look like someone dramatically collapsing. It looks like a gradual withdrawal &mdash; less participation, less enthusiasm, less care. By the time someone tells you they are burned out, they have been struggling for weeks or months. The earlier you spot the signals, the easier they are to address.</p>
+    </div>
+
+    <h3>Early Warning Signs</h3>
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>Cynicism</h4>
+        <p>Previously engaged team members become dismissive or sarcastic. "What's the point, it will just change again."</p>
+      </div>
+      <div class="card">
+        <h4>Withdrawal</h4>
+        <p>Someone who used to contribute actively in discussions goes quiet. Cameras off in meetings. Shorter messages.</p>
+      </div>
+      <div class="card">
+        <h4>Quality Drop</h4>
+        <p>Uncharacteristic mistakes, missed edge cases, less attention to detail. Not carelessness &mdash; exhaustion.</p>
+      </div>
+      <div class="card">
+        <h4>Overwork Without Impact</h4>
+        <p>Working longer hours but getting less done. Busyness without progress is a classic burnout signal.</p>
+      </div>
+      <div class="card">
+        <h4>Resistance to New Things</h4>
+        <p>A person who used to be curious about new approaches now resists any change. They have no cognitive bandwidth left.</p>
+      </div>
+      <div class="card">
+        <h4>Physical Symptoms</h4>
+        <p>Mentioning poor sleep, headaches, or being "always tired." These are not small talk &mdash; they are data points.</p>
+      </div>
+    </div>
+
+    <h3>The Leader's Burnout Prevention Protocol</h3>
+    <div class="framework">
+      <h4>Framework: 5 Actions to Prevent Burnout</h4>
+      <ol>
+        <li><strong>Model sustainable pace</strong> &mdash; If you send messages at midnight and work weekends, your team will feel they should too &mdash; regardless of what you say. Your behaviour sets the real norm, not your words.</li>
+        <li><strong>Protect recovery time</strong> &mdash; Discourage after-hours work. Do not celebrate "heroic" late-night pushes. After an intense period (release, incident), give the team explicit recovery time. A day off after a hard push is an investment, not a cost.</li>
+        <li><strong>Watch the workload distribution</strong> &mdash; Is one person carrying a disproportionate load? Use the sprint board and MR activity to check. Quiet overwork is the most dangerous kind because it is invisible until the person breaks.</li>
+        <li><strong>Have explicit conversations</strong> &mdash; In 1:1s, ask directly: "How sustainable does this pace feel?" and "Is there anything I should take off your plate?" Do not wait for people to ask for help. Most will not.</li>
+        <li><strong>Address the systemic causes</strong> &mdash; If burnout is recurring, the problem is not individual resilience &mdash; it is the system. Too much WIP, unrealistic commitments, insufficient staffing, or constant context switching. Fix the system, not the symptoms.</li>
+      </ol>
+    </div>
+
+    <h3>Scripts for Addressing Burnout</h3>
+    <p>These are some of the hardest conversations a leader has. They require genuine care, specific observations, and the courage to name what you see.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"When you suspect someone is burning out"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private 1:1, when you have noticed warning signs.</p>
+          <p>"I wanted to check in about something I have been noticing. You seem less energised than usual &mdash; you have been quieter in discussions, and some of the recent work does not look like your normal standard. I am not saying this as criticism. I am saying it because I care about how you are doing, not just what you are delivering. Is something going on? How sustainable does this pace feel to you?"</p>
+          <p><strong>Why it works:</strong> It names specific observations without diagnosing. It separates the person from the output. It opens the door without forcing it.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"After an intense period"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Team channel, after a crunch (release, incident).</p>
+          <p>"The team did exceptional work getting through [the release/incident]. I am genuinely proud of how everyone showed up. Now we need to recover. I am clearing the slate for the next two days &mdash; no new feature work, no meetings except standups. Use the time to close loose ends, review what happened, or just breathe. We earned it."</p>
+          <p><strong>Why it works:</strong> It acknowledges the effort, makes recovery explicit (not optional), and signals that sustainable pace is a team value.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;&#65039;</span>
+      <p><strong>Leader burnout is real too.</strong> You cannot pour from an empty cup. If you are running on fumes, your judgment, empathy, and patience all degrade &mdash; and the team feels it. Take your own advice. Rest is not optional.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 4: Mediating Conflict Between Team Members
+       ═══════════════════════════════════════════════════════ -->
+  <section id="conflict-mediation" class="fade-in">
+    <span class="section-num">Section 04</span>
+    <h2>Mediating Conflict Between Team Members</h2>
+    <p class="section-intro">
+      Conflict between team members is inevitable on any team that cares about its work. Healthy disagreement drives better decisions. But when conflict becomes personal or persistent, it drains the team's energy and undermines trust. Learning to mediate effectively is one of the most valuable &mdash; and underappreciated &mdash; leadership skills.
+    </p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Most interpersonal conflicts on engineering teams are not personality clashes &mdash; they are disagreements about approach, priorities, or standards that have been left unaddressed until they became personal. The earlier you step in, the easier the resolution.</p>
+    </div>
+
+    <h3>The 5-Step Mediation Framework</h3>
+    <div class="framework">
+      <h4>Framework: 5 Steps to Effective Mediation</h4>
+      <ol>
+        <li><strong>Talk to each person separately first</strong> &mdash; Understand each perspective without the other person present. Ask: "What is your understanding of what is happening? What is the impact on you? What outcome would you like?" Listen without judging or taking sides.</li>
+        <li><strong>Identify the real issue</strong> &mdash; Is this a technical disagreement? A communication style clash? A feeling of disrespect? A resource or workload conflict? The presenting complaint is rarely the root issue. Keep asking until you find it.</li>
+        <li><strong>Bring them together with structure</strong> &mdash; Set ground rules: each person speaks uninterrupted, focus on impact not intent, use "I" statements. Your role is facilitator, not judge. "I want us to find a path forward that works for both of you."</li>
+        <li><strong>Find the shared goal</strong> &mdash; Almost always, both people want the same thing at a higher level: to do good work, to be respected, to deliver for the team. Name that shared goal explicitly: "You both want the best outcome for this project. Let us figure out how to get there together."</li>
+        <li><strong>Agree on specific next steps</strong> &mdash; Vague resolutions ("let's communicate better") fail. Specific agreements ("we will discuss design decisions in a shared doc before implementation, with 24 hours for async feedback") stick. Write it down. Follow up in a week.</li>
+      </ol>
+    </div>
+
+    <h3>When to Step In vs. When to Let It Resolve</h3>
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Let It Resolve</h4>
+        <p>Two engineers debating an approach in a PR &mdash; healthy disagreement. Step in only if it becomes personal or goes in circles for days.</p>
+      </div>
+      <div class="card">
+        <h4>Step In</h4>
+        <p>One person is consistently dismissive of another's ideas in group settings. This is damaging psychological safety and needs a private conversation.</p>
+      </div>
+      <div class="card">
+        <h4>Let It Resolve</h4>
+        <p>A temporary frustration during a stressful sprint. People snap sometimes. If it is out of character and resolves quickly, monitor but do not overreact.</p>
+      </div>
+      <div class="card">
+        <h4>Step In</h4>
+        <p>Two people are avoiding each other, not reviewing each other's code, or communicating only through you. Silent conflict is corrosive and must be addressed.</p>
+      </div>
+    </div>
+
+    <h3>Scripts for Mediation Conversations</h3>
+    <p>Mediation is one of the most delicate leadership skills. These scripts give you a starting point for each stage of the process.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"Opening the individual conversation"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private 1:1 with one of the two people in conflict.</p>
+          <p>"I wanted to talk to you about something I have been observing between you and [name]. I am not here to take sides &mdash; I genuinely want to understand your perspective. Can you walk me through what has been happening from your point of view? What is the impact on you? And if you could wave a magic wand, what would the ideal outcome look like?"</p>
+          <p><strong>Why it works:</strong> It is non-judgmental, asks for their narrative first, and focuses on impact and desired outcome rather than blame.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"Bringing them together"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> A meeting with both people present.</p>
+          <p>"Thank you both for agreeing to this. I want to set some ground rules: each person gets to speak without interruption. We focus on impact, not intent. And we are here to find a path forward, not to relitigate the past. [Name], would you start by sharing what has been on your mind?"</p>
+          <p><strong>Why it works:</strong> Clear structure reduces anxiety. Ground rules prevent escalation. Starting with one person gives them the stage without interruption.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"When the conflict is about code review style"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private conversation after repeated friction in MR reviews.</p>
+          <p>"I have noticed that your MR reviews have been a source of tension between you and [name]. I have read some of the comments, and I think the technical feedback is often valid &mdash; but the way it lands is causing friction. Comments like 'this is wrong, do it this way' feel dismissive, even if that is not the intent. Could we try a different format? Something like: name the concern, explain why it matters, and suggest an alternative. The same feedback, but framed as coaching instead of correction. Would you be open to trying that for the next sprint?"</p>
+          <p><strong>Why it works:</strong> It validates their technical competence, names the specific behaviour (not the person), gives a concrete alternative, and asks for a time-bound experiment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip warning-tip">
+      <span class="tip-icon">&#9888;&#65039;</span>
+      <p><strong>Never take sides publicly.</strong> Even if one person is clearly more at fault, the moment you visibly pick a side, the mediation is over. Your role is to facilitate resolution, not to be judge and jury. Address individual behaviour issues separately in private 1:1s.</p>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128065;</span>
+      <p><strong>Follow up matters:</strong> After mediation, check in with both people individually after one week. Ask: "How are things going? Is the agreement working?" Unresolved conflict that looks resolved often resurfaces. Following up prevents this.</p>
+    </div>
+  </section>
+
+  <!-- ─── CLOSING QUOTE ─── -->
+  <blockquote class="closing-quote fade-in">
+    <p>&ldquo;A team that takes care of each other can take on anything.&rdquo;</p>
+  </blockquote>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="communication-change.html">Communication &amp; Change</a>
+      <a href="first-90-days.html">First 90 Days</a>
+      <a href="technical-excellence.html">Technical Excellence</a>
+      <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
+      <a href="delivery-execution.html">Delivery &amp; Execution</a>
+      <a href="resources.html">Resources</a>
+      <a href="self-assessment.html">Self-Assessment</a>
+    </div>
+    <p>Built for engineers who lead. One step at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

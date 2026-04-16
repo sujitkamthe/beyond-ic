@@ -19,8 +19,10 @@
         <a href="index.html">Home</a>
         <a href="foundations.html">Foundations</a>
         <a href="communication-change.html">Communication &amp; Change</a>
+        <a href="first-90-days.html">First 90 Days</a>
         <a href="technical-excellence.html">Technical Excellence</a>
         <a href="people-culture.html">People &amp; Culture</a>
+        <a href="team-health.html">Team Health</a>
         <a href="delivery-execution.html">Delivery &amp; Execution</a>
         <a href="resources.html">Resources</a>
         <a href="self-assessment.html">Self-Assessment</a>
@@ -44,8 +46,10 @@
     <ul>
       <li><a href="#communication">1. Communicate with Structure and Presence</a></li>
       <li><a href="#managing-up">2. Managing Up</a></li>
-      <li><a href="#driving-change">3. Driving Change</a></li>
-      <li><a href="#status-quo">4. Challenging the Status Quo</a></li>
+      <li><a href="#influence">3. Influence Without Authority</a></li>
+      <li><a href="#driving-change">4. Driving Change</a></li>
+      <li><a href="#status-quo">5. Challenging the Status Quo</a></li>
+      <li><a href="#written-artifacts">6. Written Artifacts That Drive Decisions</a></li>
     </ul>
   </div>
 
@@ -284,10 +288,138 @@
   <div class="section-divider"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SECTION 3: DRIVING CHANGE
+       SECTION 3: INFLUENCE WITHOUT AUTHORITY
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="influence">
+    <span class="section-num">Section 3</span>
+    <h2>Influence Without Authority</h2>
+    <p class="section-intro">As you grow into leadership, you quickly discover that most of the people you need to align with do not report to you. Driving outcomes across teams, functions, and organisational boundaries requires a different set of skills than managing a team you directly lead.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>Most engineering leaders don't have direct authority over everyone they need to influence. Product managers, other team leads, platform teams, stakeholders &mdash; you can't tell them what to do. You have to earn influence through credibility, relationships, and clear communication.</p>
+    </div>
+
+    <h3>The 4 Currencies of Influence</h3>
+    <p>Influence is not a single skill &mdash; it is built on four distinct foundations. Each one can be developed deliberately over time.</p>
+
+    <div class="card-grid two-col">
+      <div class="card">
+        <h4>Technical Credibility</h4>
+        <p>People listen to those who have demonstrated sound judgment. Build this by being right often, admitting when you're wrong, and showing your reasoning openly. One well-reasoned ADR does more for your credibility than a dozen opinions in Slack.</p>
+      </div>
+      <div class="card">
+        <h4>Relationship Capital</h4>
+        <p>Invest in relationships before you need them. A 15-minute coffee chat with the platform team lead pays dividends when you need their help in a crunch. Know the people, understand their pressures, build genuine rapport.</p>
+      </div>
+      <div class="card">
+        <h4>Shared Context</h4>
+        <p>People resist what they don't understand. Before asking someone to change their approach or prioritize your request, make sure they understand the full picture. Share data. Explain the "why." Give them the same context you have.</p>
+      </div>
+      <div class="card">
+        <h4>Reliable Follow-Through</h4>
+        <p>Every commitment you keep builds your influence. Every one you break erodes it. The simplest way to build influence is to consistently do what you said you would do, when you said you would do it.</p>
+      </div>
+    </div>
+
+    <h3>Influencing Across Teams</h3>
+    <p>Cross-team collaboration is where influence is most tested. These five practices turn peer-level requests into productive partnerships.</p>
+
+    <div class="framework">
+      <h4>Five Steps to Effective Cross-Team Influence</h4>
+      <ol>
+        <li><strong>Lead with their problem, not yours.</strong> Frame your request in terms of what the other team cares about. "This will reduce your on-call alerts by 40%" lands better than "We need you to change your API contract."</li>
+        <li><strong>Come with options, not demands.</strong> "Could we try X or Y?" opens doors. "We need you to do Z" closes them. Giving people choice creates ownership over the solution.</li>
+        <li><strong>Build coalitions.</strong> If 3 teams agree something matters, it's harder to ignore than if only you're asking. Alignment across multiple stakeholders creates momentum that a single voice cannot.</li>
+        <li><strong>Document agreements publicly.</strong> After a cross-team decision, send a summary to all parties. Shared written agreements prevent "I don't remember agreeing to that." A brief email or a shared document keeps everyone honest.</li>
+        <li><strong>Give credit generously.</strong> When a cross-team collaboration succeeds, make sure the other team gets visible credit. This makes them want to work with you again. Influence compounds when people associate working with you with good outcomes.</li>
+      </ol>
+    </div>
+
+    <h3>Escalation vs. Influence</h3>
+    <p>One of the hardest judgment calls in cross-team work is knowing when to keep working the relationship and when to escalate. Get it wrong in either direction and you pay a price.</p>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Common Pitfall</h5>
+        <p>Escalating too quickly &mdash; going to your manager or their manager the moment you hit resistance. This burns relationship capital and signals that you can't handle peer-level negotiation. It also makes the other team defensive, which makes future collaboration harder.</p>
+      </div>
+      <div class="better">
+        <h5>Better Approach</h5>
+        <p>Having a direct conversation first. "I think we see this differently. Can we grab 30 minutes to align? I want to understand your constraints." Most cross-team friction dissolves with a direct conversation. Save escalation for when you have genuinely exhausted peer-level options.</p>
+      </div>
+    </div>
+
+    <h3>When to Influence vs. When to Escalate</h3>
+
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>Influence (handle it yourself)</th>
+          <th>Escalate (involve leadership)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Disagreement on approach &mdash; different technical opinions</td>
+          <td>Blocked for 2+ weeks with no movement</td>
+        </tr>
+        <tr>
+          <td>Competing priorities &mdash; your request vs theirs</td>
+          <td>Commitment was made and repeatedly broken</td>
+        </tr>
+        <tr>
+          <td>Different interpretations of requirements</td>
+          <td>Decision needed that neither of you has authority to make</td>
+        </tr>
+        <tr>
+          <td>Resistance to a new practice or tool</td>
+          <td>Team is actively working against an agreed decision</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Scripts for Building Influence</h3>
+    <p>Influence across teams lives or dies in the specific words you choose. These scripts show how to ask for help and hold people accountable without damaging the relationship.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"Asking another team for help"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Slack or meeting with a peer team lead.</p>
+          <p>"Hey [name], I need your help with something. We have been seeing [specific issue] that I think touches your team's [service/area]. I have done some investigation on our side and narrowed it down to [specifics]. I know your team is busy &mdash; could we grab 20 minutes this week to look at it together? I want to make sure we solve this in a way that works for both teams, not just push the problem your way."</p>
+          <p><strong>Why it works:</strong> It leads with respect for their time, shows you have done your homework, and frames it as collaboration not delegation.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>"When a cross-team agreement is not being honoured"</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="accordion-body">
+          <p><strong>Setting:</strong> Private conversation with the other team's lead.</p>
+          <p>"Hey [name], I wanted to check in about the [API change / migration / dependency] we discussed last month. We agreed on [specific thing] by [date], and it looks like it has slipped. I want to understand what happened &mdash; has something changed on your side? I am not trying to escalate this. I just want to figure out the right path forward together. If the timeline needs to shift, I would rather know now so we can adjust on our end."</p>
+          <p><strong>Why it works:</strong> It references the specific agreement, asks for context instead of blaming, and explicitly says it is not an escalation &mdash; which keeps the relationship intact.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Worth remembering:</strong> The leaders who have the most influence are rarely the loudest. They are the ones who listen well, follow through consistently, and make other people's work easier. Influence is built one interaction at a time.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4: DRIVING CHANGE
        ═══════════════════════════════════════════════════════════ -->
   <section class="fade-in" id="driving-change">
-    <span class="section-num">Section 3</span>
+    <span class="section-num">Section 4</span>
     <h2>Driving Change</h2>
     <p class="section-intro">Spotting what needs to change is the easier part. Making change actually happen &mdash; in real teams, with real constraints and real human nature &mdash; is where leadership is tested. This section gives you frameworks for understanding why change stalls and how to push it through to lasting adoption.</p>
 
@@ -458,10 +590,10 @@
   <div class="section-divider"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SECTION 4: CHALLENGING THE STATUS QUO
+       SECTION 5: CHALLENGING THE STATUS QUO
        ═══════════════════════════════════════════════════════════ -->
   <section class="fade-in" id="status-quo">
-    <span class="section-num">Section 4</span>
+    <span class="section-num">Section 5</span>
     <h2>Challenging the Status Quo</h2>
     <p class="section-intro">Healthy teams are never fully satisfied with "this is how we do it." Not because they are restless, but because they understand that the environment is always changing &mdash; and processes that were optimal last year may be holding them back today.</p>
 
@@ -521,14 +653,105 @@
 
   <div class="section-divider"></div>
 
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6: WRITTEN ARTIFACTS THAT DRIVE DECISIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="fade-in" id="written-artifacts">
+    <span class="section-num">Section 6</span>
+    <h2>Written Artifacts That Drive Decisions</h2>
+    <p class="section-intro">Engineers communicate as much through written documents as through meetings. Design docs, RFCs, and Architecture Decision Records are not bureaucracy &mdash; they are tools for aligning teams, capturing reasoning, and making decisions durable. Learning to write and review these well is one of the most overlooked leadership skills.</p>
+
+    <div class="key-insight">
+      <h4>Key Insight</h4>
+      <p>The best engineering decisions are not made in meetings &mdash; they are made in documents that were circulated before the meeting. When people have time to read, think, and comment asynchronously, the quality of the decision goes up and the length of the meeting goes down.</p>
+    </div>
+
+    <h3>Three Artifacts Every Engineering Leader Should Know</h3>
+
+    <div class="card-grid three-col">
+      <div class="card">
+        <h4>Design Doc</h4>
+        <p><strong>Used when:</strong> starting a new feature, significant refactor, or system change.</p>
+        <p><strong>Contains:</strong> problem statement, proposed solution, alternatives considered, trade-offs, risks, and a request for feedback.</p>
+        <p><strong>Length:</strong> 2&ndash;5 pages. The goal is alignment, not perfection.</p>
+        <p><em>"The best design docs are written before the first line of code, not after."</em></p>
+      </div>
+      <div class="card">
+        <h4>RFC (Request for Comments)</h4>
+        <p><strong>Used when:</strong> proposing a change that affects multiple teams or establishes a new standard.</p>
+        <p><strong>Contains:</strong> motivation, detailed proposal, migration plan, and open questions. The "request" framing matters &mdash; it signals that feedback is genuinely wanted, not just tolerated.</p>
+        <p><em>"An RFC that receives no comments was either perfect or unread. Bet on the latter."</em></p>
+      </div>
+      <div class="card">
+        <h4>ADR (Architecture Decision Record)</h4>
+        <p><strong>Used when:</strong> making a significant technical decision that future engineers will question.</p>
+        <p><strong>Contains:</strong> context, decision, consequences, and status. ADRs are short (1 page) and stored in the repo alongside code.</p>
+        <p><em>"The goal is not to justify the decision to today's team &mdash; it is to explain it to the engineer who joins in 18 months and wonders why."</em></p>
+      </div>
+    </div>
+
+    <h3>The Design Doc Template</h3>
+    <div class="framework">
+      <h4>A Structure for Capturing Decisions</h4>
+      <ol>
+        <li><strong>Title and Date</strong> &mdash; What are we deciding? When?</li>
+        <li><strong>Authors</strong> &mdash; Who is driving this? (Ownership, not just attribution)</li>
+        <li><strong>Status</strong> &mdash; Draft / Under Review / Accepted / Superseded</li>
+        <li><strong>Problem Statement</strong> &mdash; What problem are we solving? Why now? (2&ndash;3 sentences. Use the Issue-Impact-Action structure from Section 1.)</li>
+        <li><strong>Proposed Solution</strong> &mdash; What do you recommend? How does it work? Include enough detail for someone to evaluate the approach, but not so much that it reads like implementation docs.</li>
+        <li><strong>Alternatives Considered</strong> &mdash; What else did you evaluate? Why did you reject them? This is the most important section &mdash; it shows your thinking, prevents others from re-proposing rejected approaches, and builds confidence in the recommendation.</li>
+        <li><strong>Trade-offs and Risks</strong> &mdash; What are you giving up? What could go wrong? Being upfront about downsides builds trust.</li>
+        <li><strong>Open Questions</strong> &mdash; What do you still need input on? This gives reviewers a clear invitation to contribute.</li>
+        <li><strong>Decision</strong> &mdash; Once accepted: what was decided, by whom, and when.</li>
+      </ol>
+    </div>
+
+    <div class="pattern-grid">
+      <div class="pitfall">
+        <h5>Common Pitfall</h5>
+        <p>Writing the design doc after the implementation is done. The code is already merged, the doc is a formality, and nobody reviews it because the decision has already been made. The doc exists to satisfy process, not to improve the outcome.</p>
+      </div>
+      <div class="better">
+        <h5>Better Approach</h5>
+        <p>Writing the design doc before coding starts. Circulate it with a clear feedback deadline. Hold a 30-minute review meeting where the only agenda is the doc. Make design doc review as normal as code review.</p>
+      </div>
+    </div>
+
+    <h3>How to Review a Design Doc</h3>
+    <div class="framework">
+      <h4>Five Questions That Make Reviews Count</h4>
+      <ol>
+        <li><strong>"Does the problem statement match what I understand the problem to be?"</strong> &mdash; If not, the rest of the doc is solving the wrong thing.</li>
+        <li><strong>"Were the alternatives genuinely considered, or is this a justification for a predetermined choice?"</strong> &mdash; The alternatives section reveals the quality of thinking.</li>
+        <li><strong>"What could go wrong that the author has not mentioned?"</strong> &mdash; Your job as reviewer is to stress-test, not rubber-stamp.</li>
+        <li><strong>"Will I be able to explain this decision to someone in 6 months using only this document?"</strong> &mdash; If not, it needs more context.</li>
+        <li><strong>"What questions would a new team member have?"</strong> &mdash; Fresh-eyes thinking catches assumptions the author cannot see.</li>
+      </ol>
+    </div>
+
+    <div class="tip info-tip">
+      <span class="tip-icon">&#128161;</span>
+      <p><strong>Start with one artifact.</strong> If your team writes no design docs today, mandate them only for changes that touch 3+ services or take longer than a sprint. That alone will catch 80% of the decisions that need documentation. Expand from there.</p>
+    </div>
+
+    <div class="tip purple-tip">
+      <span class="tip-icon">&#128218;</span>
+      <p><strong>Go deeper:</strong> Read the <em>Architectural Decision Records</em> specification by Michael Nygard for the definitive guide to ADRs. For design docs, Google's Design Doc culture and the Stripe engineering blog have excellent practical examples.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="foundations.html">Foundations</a>
       <a href="communication-change.html">Communication &amp; Change</a>
+      <a href="first-90-days.html">First 90 Days</a>
       <a href="technical-excellence.html">Technical Excellence</a>
       <a href="people-culture.html">People &amp; Culture</a>
+      <a href="team-health.html">Team Health</a>
       <a href="delivery-execution.html">Delivery &amp; Execution</a>
       <a href="resources.html">Resources</a>
       <a href="self-assessment.html">Self-Assessment</a>
